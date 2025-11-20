@@ -1,0 +1,44 @@
+/* Liora 메인 스타일 파일 */
+/* 모든 페이지에서 사용되는 전역 스타일 */
+
+/* 텍스트 스타일 시스템 import */
+@import url('./text-styles.css');
+
+/* 공통 컴포넌트 스타일 import */
+@import url('./components.css');
+
+/* Home 페이지 스타일 import */
+@import url('./home.css');
+
+/* Anti-aging 페이지 스타일 import */
+@import url('./anti-aging.css');
+
+/* Pigmentation 페이지 스타일 import */
+@import url('./pigmentation.css');
+
+/* Troubles-improvement 페이지 스타일 import */
+@import url('./troubles-improvement.css');
+
+/* Petit&Skin Care 페이지 스타일 import */
+@import url('./petit-skin-care.css');
+
+/* Location 페이지 스타일 import */
+@import url('./location.css');
+
+/* Patents 페이지 스타일 import */
+@import url('./patents.css');
+
+/* Medical/Device 페이지 스타일 import */
+@import url('./medical-device.css');
+
+/* Signature Package 페이지 스타일 import */
+@import url('./signature-package.css');
+
+/* Before & After 페이지 스타일 import */
+@import url('./before-after.css');
+
+/* Event 페이지 스타일 import */
+@import url('./event.css');
+
+/* 추가 전역 스타일은 여기에 작성 */
+

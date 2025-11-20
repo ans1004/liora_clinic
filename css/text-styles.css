@@ -1,0 +1,460 @@
+/* Liora 텍스트 스타일 시스템 */
+
+/* ============================================
+   기본 폰트 설정
+   ============================================ */
+
+body {
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* ============================================
+   Desktop 텍스트 스타일
+   ============================================ */
+
+/* Display 스타일 - Italiana 폰트 */
+.liora-display-1 {
+    font-family: 'Italiana', serif;
+    font-size: 132px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 132px;
+    letter-spacing: 0;
+}
+
+.liora-display-2 {
+    font-family: 'Italiana', serif;
+    font-size: 120px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 120px;
+    letter-spacing: 0;
+}
+
+.liora-display-3 {
+    font-family: 'Italiana', serif;
+    font-size: 88px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 88px;
+    letter-spacing: 0;
+}
+
+.liora-display-4 {
+    font-family: 'Italiana', serif;
+    font-size: 72px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 72px;
+    letter-spacing: 0;
+}
+
+.liora-display-5 {
+    font-family: 'Italiana', serif;
+    font-size: 60px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 60px;
+    letter-spacing: 0;
+}
+
+.liora-display-6 {
+    font-family: 'Italiana', serif;
+    font-size: 44px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 44px;
+    letter-spacing: 0;
+}
+
+/* Body 스타일 - Pretendard 폰트 */
+.liora-body-1 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 32px;
+    font-weight: 300; /* Light */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.96px;
+}
+
+.liora-body-1-emphasized {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 32px;
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.96px;
+}
+
+.liora-body-2 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 20px;
+    font-weight: 400; /* Regular */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+}
+
+.liora-body-2-emphasized {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 20px;
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+}
+
+.liora-body-3 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    font-weight: 400; /* Regular */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.48px;
+}
+
+.liora-body-3-light {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    font-weight: 300; /* Light */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.48px;
+}
+
+/* Title 스타일 - Forum 폰트 */
+.liora-title-1 {
+    font-family: 'Forum', serif;
+    font-size: 40px;
+    font-weight: 100; /* Thin - 가장 얇게 */
+    font-style: normal;
+    line-height: 56px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.liora-title-2 {
+    font-family: 'Forum', serif;
+    font-size: 24px;
+    font-weight: 100; /* Thin - 가장 얇게 */
+    font-style: normal;
+    line-height: 33.6px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.liora-title-3 {
+    font-family: 'Forum', serif;
+    font-size: 16px;
+    font-weight: 100; /* Thin - 가장 얇게 */
+    font-style: normal;
+    line-height: 22.4px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ============================================
+   Mobile 텍스트 스타일
+   ============================================ */
+
+/* Mobile Display 스타일 */
+.liora-mobile-display-1 {
+    font-family: 'Italiana', serif;
+    font-size: 96px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 96px;
+    letter-spacing: 0;
+}
+
+.liora-mobile-display-2 {
+    font-family: 'Italiana', serif;
+    font-size: 72px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 72px;
+    letter-spacing: 0;
+}
+
+.liora-mobile-display-3 {
+    font-family: 'Italiana', serif;
+    font-size: 56px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 56px;
+    letter-spacing: 0;
+}
+
+.liora-mobile-display-4 {
+    font-family: 'Italiana', serif;
+    font-size: 48px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 48px;
+    letter-spacing: 0;
+}
+
+.liora-mobile-display-5 {
+    font-family: 'Italiana', serif;
+    font-size: 44px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 44px;
+    letter-spacing: 0;
+}
+
+.liora-mobile-display-6 {
+    font-family: 'Italiana', serif;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 40px;
+    letter-spacing: 0;
+}
+
+/* Mobile Body 스타일 */
+.liora-mobile-body-1 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 28px;
+    font-weight: 300; /* Light */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.84px;
+}
+
+.liora-mobile-body-1-emphasized {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 28px;
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.84px;
+}
+
+.liora-mobile-body-2 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    font-weight: 400; /* Regular */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.48px;
+}
+
+.liora-mobile-body-2-emphasized {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.48px;
+}
+
+.liora-mobile-body-3 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 14px;
+    font-weight: 400; /* Regular */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.42px;
+}
+
+.liora-mobile-body-3-emphasized {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 14px;
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.42px;
+}
+
+.liora-mobile-body-3-light {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 14px;
+    font-weight: 300; /* Light */
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.42px;
+}
+
+/* Mobile Title 스타일 */
+.liora-mobile-title-1 {
+    font-family: 'Forum', serif;
+    font-size: 28px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 39.2px;
+    letter-spacing: 0;
+}
+
+.liora-mobile-title-2 {
+    font-family: 'Forum', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: 0;
+}
+
+.liora-mobile-title-3 {
+    font-family: 'Forum', serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 19.6px;
+    letter-spacing: 0;
+}
+
+/* ============================================
+   반응형 적용
+   ============================================ */
+
+/* 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+    .liora-display-1 { 
+        font-size: 96px; 
+        line-height: 96px; 
+    }
+
+    .liora-display-2 { 
+        font-size: 72px; 
+        line-height: 72px; 
+    }
+
+    .liora-display-3 { 
+        font-size: 56px; 
+        line-height: 56px; 
+    }
+
+    .liora-display-4 { 
+        font-size: 48px; 
+        line-height: 48px; 
+    }
+
+    .liora-display-5 { 
+        font-size: 44px; 
+        line-height: 44px; 
+    }
+
+    .liora-display-6 { 
+        font-size: 40px; 
+        line-height: 40px; 
+    }
+
+    .liora-body-1 { 
+        font-size: 28px; 
+    }
+
+    .liora-body-1-emphasized { 
+        font-size: 28px; 
+    }
+
+    .liora-body-2 { 
+        font-size: 16px; 
+    }
+
+    .liora-body-2-emphasized { 
+        font-size: 16px; 
+    }
+
+    .liora-body-3 { 
+        font-size: 14px; 
+    }
+
+    .liora-body-3-light { 
+        font-size: 14px; 
+    }
+
+    .liora-title-1 { 
+        font-size: 28px; 
+        line-height: 39.2px; 
+    }
+
+    .liora-title-2 { 
+        font-size: 20px; 
+        line-height: 28px; 
+    }
+
+    .liora-title-3 { 
+        font-size: 14px; 
+        line-height: 19.6px; 
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .liora-display-1 { 
+        font-size: 72px; 
+        line-height: 72px; 
+    }
+
+    .liora-display-2 { 
+        font-size: 56px; 
+        line-height: 56px; 
+    }
+
+    .liora-display-3 { 
+        font-size: 48px; 
+        line-height: 48px; 
+    }
+
+    .liora-display-4 { 
+        font-size: 44px; 
+        line-height: 44px; 
+    }
+
+    .liora-display-5 { 
+        font-size: 40px; 
+        line-height: 40px; 
+    }
+
+    .liora-display-6 { 
+        font-size: 36px; 
+        line-height: 36px; 
+    }
+
+    .liora-body-1 { 
+        font-size: 24px; 
+    }
+
+    .liora-body-1-emphasized { 
+        font-size: 24px; 
+    }
+
+    .liora-body-2 { 
+        font-size: 14px; 
+    }
+
+    .liora-body-2-emphasized { 
+        font-size: 14px; 
+    }
+
+    .liora-body-3 { 
+        font-size: 12px; 
+    }
+
+    .liora-body-3-light { 
+        font-size: 12px; 
+    }
+
+    .liora-title-1 { 
+        font-size: 24px; 
+        line-height: 33.6px; 
+    }
+
+    .liora-title-2 { 
+        font-size: 18px; 
+        line-height: 25.2px; 
+    }
+
+    .liora-title-3 { 
+        font-size: 12px; 
+        line-height: 16.8px; 
+    }
+}
+

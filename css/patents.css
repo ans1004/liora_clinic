@@ -1,0 +1,255 @@
+/* Patents 페이지 스타일 */
+
+/* Hero Section */
+.patents-hero {
+    width: 100%;
+    padding: 160px 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+.patents-hero-content {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.patents-hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.patents-hero-title {
+    text-align: left;
+    color: #000000;
+}
+
+.patents-hero-subtitle {
+    text-align: left;
+    color: #000000;
+}
+
+/* Content Section */
+.patents-content {
+    width: 100%;
+    padding: 0 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+.patents-content-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+/* Tab Menu */
+.patents-tab {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.patents-tab-item {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.patents-tab-item span {
+    display: block;
+    color: #111111;
+    transition: color 0.3s;
+}
+
+.patents-tab-item.active span {
+    color: #111111;
+}
+
+.patents-tab-item:not(.active) span {
+    color: #999999;
+}
+
+/* Patent Card List */
+.patents-card-list {
+    display: grid;
+    grid-template-columns: repeat(4, 325px);
+    gap: 20px;
+    margin-bottom: 48px;
+    justify-content: start;
+}
+
+.patents-card {
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+}
+
+.patents-card-image {
+    width: 325px;
+    height: 433px;
+    overflow: hidden;
+    border: 1px solid #bbbbbb;
+    margin-bottom: 20px;
+}
+
+.patents-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.patents-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.patents-card-title {
+    color: #111111;
+    font-size: 24px;
+    line-height: 33.6px;
+}
+
+.patents-card-number {
+    color: #111111;
+}
+
+/* Pagination */
+.patents-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    opacity: 0.2;
+}
+
+.pagination-arrow:not(:disabled) {
+    opacity: 1;
+}
+
+.pagination-arrow:disabled {
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.48px;
+}
+
+.pagination-number.active {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1439px) {
+    .patents-hero {
+        padding: 160px 40px 120px 40px;
+    }
+
+    .patents-content {
+        padding: 0 40px 120px 40px;
+    }
+
+    .patents-card-list {
+        grid-template-columns: repeat(3, 325px);
+        justify-content: start;
+    }
+    
+    .patents-card {
+        width: 325px;
+    }
+    
+    .patents-card-image {
+        width: 325px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .patents-hero {
+        padding: 80px 24px;
+    }
+
+    .patents-content {
+        padding: 0 24px 80px 24px;
+    }
+
+    .patents-card-list {
+        grid-template-columns: repeat(2, 325px);
+        gap: 24px;
+        justify-content: start;
+    }
+    
+    .patents-card {
+        width: 325px;
+    }
+    
+    .patents-card-image {
+        width: 325px;
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .patents-hero {
+        padding: 60px 20px;
+    }
+
+    .patents-content {
+        padding: 0 20px 60px 20px;
+    }
+
+    .patents-tab {
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    .patents-card-list {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        justify-content: center;
+    }
+    
+    .patents-card {
+        width: 100%;
+        max-width: 325px;
+        margin: 0 auto;
+    }
+    
+    .patents-card-image {
+        width: 100%;
+        height: 280px;
+    }
+}
+

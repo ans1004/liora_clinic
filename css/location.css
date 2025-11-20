@@ -1,0 +1,315 @@
+/* Location 페이지 스타일 */
+
+/* Hero Section */
+.location-hero {
+    width: 100%;
+    padding: 160px 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+.location-hero-content {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.location-hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.location-hero-title {
+    text-align: left;
+    color: #111111;
+}
+
+.location-hero-subtitle {
+    text-align: left;
+    color: #111111;
+}
+
+/* Content Section */
+.location-content {
+    width: 100%;
+    padding: 0 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+/* Image Area */
+.location-image-area {
+    max-width: 1360px;
+    margin: 0 auto 80px auto;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+}
+
+.location-image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Block */
+.location-text-block {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* Section Title */
+.location-section-title {
+    color: #000000;
+    margin-bottom: 40px;
+    width: 140px;
+    text-align: left;
+}
+
+.location-time .location-section-title {
+    text-align: left;
+}
+
+.location-address .location-section-title {
+    text-align: center;
+}
+
+.location-inquiry .location-section-title {
+    text-align: left;
+}
+
+/* Section Content */
+.location-section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Time Section */
+.location-time {
+    display: flex;
+    gap: 400px;
+    align-items: flex-start;
+}
+
+@media screen and (min-width: 1441px) {
+    .location-time {
+        gap: 400px;
+    }
+}
+
+.location-time-content {
+    flex: 1;
+}
+
+.location-time-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.location-time-row:last-of-type {
+    margin-bottom: 0;
+}
+
+.location-time-item {
+    color: #000000;
+}
+
+.location-time-item:first-child {
+    width: 155px;
+}
+
+.location-time-notice {
+    margin-top: 16px;
+    color: #000000;
+}
+
+/* Location Section */
+.location-address {
+    display: flex;
+    gap: 400px;
+    align-items: flex-start;
+}
+
+@media screen and (min-width: 1441px) {
+    .location-address {
+        gap: 400px;
+    }
+}
+
+.location-address-content {
+    flex: 1;
+}
+
+.location-address-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.location-address-row:first-child {
+    margin-bottom: 16px; /* 서울 서초구...와 아래 항목 사이 간격 */
+}
+
+.location-address-row:nth-child(2) {
+    margin-bottom: 4px; /* 위치...와 주차... 사이 간격 */
+}
+
+.location-address-row:last-child {
+    margin-bottom: 0;
+}
+
+.location-address-item {
+    display: flex;
+    gap: 12px;
+    color: #000000;
+}
+
+/* Inquiry Section */
+.location-inquiry {
+    display: flex;
+    gap: 400px;
+    align-items: flex-start;
+}
+
+@media screen and (min-width: 1441px) {
+    .location-inquiry {
+        gap: 400px;
+    }
+}
+
+.location-inquiry-content {
+    flex: 1;
+}
+
+.location-inquiry-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.location-inquiry-row:last-child {
+    margin-bottom: 0;
+}
+
+.location-inquiry-item {
+    color: #000000;
+}
+
+.location-inquiry-item:first-child {
+    width: 68px;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1440px) {
+    .location-hero {
+        padding: 160px 40px 120px 40px;
+    }
+
+    .location-content {
+        padding: 0 40px 120px 40px;
+    }
+
+    .location-hero-content,
+    .location-image-area,
+    .location-text-block {
+        max-width: 100%;
+    }
+
+    /* 1440px 이하에서도 각 섹션의 gap을 더 크게 유지 */
+    .location-time,
+    .location-address,
+    .location-inquiry {
+        gap: 206px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .location-hero {
+        padding: 80px 24px;
+    }
+
+    .location-content {
+        padding: 0 24px 80px 24px;
+    }
+
+    .location-image-area {
+        height: 360px;
+        margin-bottom: 60px;
+    }
+
+    .location-text-block {
+        gap: 60px;
+    }
+
+    .location-time,
+    .location-address,
+    .location-inquiry {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .location-section-title {
+        margin-bottom: 0;
+    }
+
+    .location-time-row,
+    .location-inquiry-row {
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .location-hero {
+        padding: 60px 20px;
+    }
+
+    .location-content {
+        padding: 0 20px 60px 20px;
+    }
+
+    .location-image-area {
+        height: 240px;
+        margin-bottom: 40px;
+    }
+
+    .location-text-block {
+        gap: 40px;
+    }
+
+    .location-time,
+    .location-address,
+    .location-inquiry {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .location-section-title {
+        margin-bottom: 0;
+        width: auto;
+    }
+
+    .location-time-row,
+    .location-inquiry-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .location-time-item:first-child,
+    .location-inquiry-item:first-child {
+        width: auto;
+    }
+
+    .location-address-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+

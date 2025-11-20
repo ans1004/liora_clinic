@@ -1,0 +1,297 @@
+/* Before & After 페이지 스타일 */
+
+/* Hero Section */
+.before-after-hero {
+    width: 100%;
+    padding: 160px 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+.before-after-hero-content {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.before-after-hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.before-after-hero-title {
+    text-align: left;
+    color: #000000;
+}
+
+.before-after-hero-subtitle {
+    text-align: left;
+    color: #000000;
+}
+
+/* Content Section */
+.before-after-content {
+    width: 100%;
+    padding: 0 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+.before-after-content-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+/* #1 Tab */
+.before-after-tab {
+    max-width: 1360px;
+    margin: 0 auto 40px auto;
+}
+
+.before-after-tab-list {
+    display: flex;
+    gap: 20px;
+}
+
+.before-after-tab-item {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.before-after-tab-item.active {
+    color: #000000;
+    font-weight: 600;
+}
+
+.before-after-tab-item:not(.active) {
+    color: #000000;
+    font-weight: 400;
+}
+
+/* #2 Before After */
+.before-after-section {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.before-after-card-list {
+    display: grid;
+    grid-template-columns: repeat(2, 670px);
+    gap: 48px 20px;
+    margin-bottom: 60px;
+    justify-content: start;
+}
+
+.before-after-card {
+    width: 670px;
+    display: flex;
+    flex-direction: column;
+}
+
+.before-after-card-image-area {
+    width: 100%;
+    height: 335px;
+    display: flex;
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.before-after-card-row {
+    width: 334px;
+    height: 335px;
+    position: relative;
+}
+
+.before-after-card-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.before-after-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.before-after-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 5px 12px;
+    color: #000000;
+    width: 80px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.before-after-card-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 670px;
+    height: 58px;
+}
+
+.before-after-card-title {
+    color: #000000;
+    text-align: left;
+}
+
+.before-after-card-description {
+    color: #000000;
+    text-align: left;
+}
+
+/* Pagination */
+.before-after-pagination {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.pagination-arrow {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000000;
+    transition: opacity 0.3s;
+}
+
+.pagination-arrow svg {
+    width: 24px;
+    height: 24px;
+}
+
+.pagination-arrow:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.pagination-arrow:not(:disabled):hover {
+    opacity: 0.7;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.pagination-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-number.active {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.pagination-number:not(.active):hover {
+    background-color: #f0f0f0;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1440px) {
+    .before-after-card-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px 20px;
+        justify-content: start;
+    }
+
+    .before-after-card {
+        width: 100%;
+        max-width: 670px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .before-after-hero {
+        padding: 80px 24px;
+    }
+
+    .before-after-content {
+        padding: 0 24px 80px 24px;
+    }
+
+    .before-after-tab {
+        margin-bottom: 40px;
+    }
+
+    .before-after-card-list {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        justify-items: center;
+    }
+
+    .before-after-card {
+        width: 100%;
+        max-width: 670px;
+    }
+
+    .before-after-card-image-area {
+        height: 300px;
+    }
+
+    .before-after-card-row {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .before-after-hero {
+        padding: 60px 20px;
+    }
+
+    .before-after-content {
+        padding: 0 20px 60px 20px;
+    }
+
+    .before-after-tab-list {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .before-after-card-image-area {
+        height: 250px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .before-after-card-row {
+        width: 100%;
+        height: 250px;
+    }
+
+    .before-after-card-text-block {
+        width: 100%;
+    }
+}
+

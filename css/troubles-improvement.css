@@ -1,0 +1,498 @@
+/* Troubles-improvement 페이지 스타일 */
+
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 810px;
+    margin-top: 0;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-section-text {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    right: 40px;
+    max-width: 1360px;
+    margin: 0 auto;
+    transform: translateY(-50%); /* 위아래 가운데 정렬 */
+    z-index: 2;
+}
+
+.hero-title {
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.hero-subtitle {
+    color: #ffffff;
+}
+
+.hero-icon {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.arrow-button-solo {
+    width: 48px;
+    height: 48px;
+    border: none; /* 아웃라인 제거 */
+    border-radius: 0; /* border-radius 제거 */
+    background-color: transparent;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    padding: 0;
+}
+
+.arrow-button-solo:hover {
+    opacity: 0.8;
+}
+
+.arrow-button-solo img {
+    width: 48px; /* 아이콘 사이즈 48px */
+    height: 48px; /* 아이콘 사이즈 48px */
+    display: block;
+}
+
+/* ============================================
+   Content Section
+   ============================================ */
+
+.content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* #1 About Section */
+.section-about {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 120px 0;
+}
+
+.text-block {
+    max-width: 1360px; /* 피그마 디자인 최대 너비 */
+    margin-bottom: 48px;
+    display: flex;
+    gap: 40px; /* 기본 간격 (반응형 대응) */
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+/* 큰 화면에서 피그마 디자인과 일치하도록 gap 조정 */
+@media screen and (min-width: 1440px) {
+    .text-block {
+        gap: 534px; /* 피그마 디자인: 1360 - 156 - 670 = 534px */
+    }
+}
+
+.section-title {
+    color: #111111;
+    flex-shrink: 0;
+    width: 178px; /* 제목 고정 너비 */
+    text-align: left;
+    margin: 0;
+}
+
+.section-description {
+    color: #111111;
+    flex: 1; /* 남은 공간을 모두 차지하여 우측 마진까지 확장 */
+    min-width: 0;
+    text-align: left;
+    margin: 0;
+}
+
+.image-area {
+    max-width: 1360px;
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* #2 Troubles Improvement Effect Section */
+.section-effect {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.effect-title {
+    color: #111111;
+    margin-bottom: 60px;
+}
+
+.card-list {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.circle-card {
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.circle-card .card-image {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 28px;
+    flex-shrink: 0;
+}
+
+.circle-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.circle-card .card-text-block {
+    width: 100%;
+}
+
+.circle-card .card-title {
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.circle-card .card-description {
+    color: #111111;
+    line-height: 24px;
+}
+
+/* #3 Care Program Section - Philosophy 구조 사용 */
+.core-technology {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 120px 40px 120px 40px; /* 위 120px, 좌우 40px, 아래 120px */
+}
+
+.core-technology-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.core-technology-title {
+    text-align: center;
+}
+
+.core-technology-title h2 {
+    color: #111111;
+}
+
+.core-technology-card-list {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+}
+
+.core-technology-card {
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+}
+
+.core-technology-card-image {
+    width: 100%;
+    height: 325px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.core-technology-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.core-technology-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.core-technology-card-title {
+    margin-bottom: 4px;
+}
+
+.core-technology-card-title p {
+    color: #111111;
+    text-align: left;
+}
+
+.core-technology-card-text p {
+    color: #111111;
+}
+
+/* #4 Outtro Section */
+.section-outtro {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 80px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* headline 하단에 맞춰 정렬 */
+    gap: 40px;
+}
+
+.outtro-headline {
+    color: #171414;
+    flex: 1;
+    max-width: 962px;
+    font-size: 44px; /* 피그마 디자인: Pretendard Light 44px */
+    line-height: 61.6px; /* 피그마 디자인: line-height 61.6px */
+    letter-spacing: -1.32px; /* 피그마 디자인: letter-spacing -1.32px */
+}
+
+.btn-text {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #111111;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.btn-text:hover {
+    opacity: 0.7;
+}
+
+.btn-text-label {
+    color: #111111;
+    font-size: 44px; /* 피그마 디자인: Pretendard Light 44px */
+    line-height: 61.6px; /* 피그마 디자인: line-height 61.6px */
+    letter-spacing: -1.32px; /* 피그마 디자인: letter-spacing -1.32px */
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* ============================================
+   반응형 스타일
+   ============================================ */
+
+/* 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+    .hero-section {
+        height: 600px;
+    }
+
+    .hero-section-text {
+        top: 50%;
+        left: 24px;
+        right: 24px;
+        transform: translateY(-50%); /* 위아래 가운데 정렬 */
+    }
+
+    .hero-icon {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 40px;
+    }
+
+    .content {
+        padding: 0 24px;
+    }
+
+    .section-about {
+        padding: 80px 0;
+    }
+
+    .text-block {
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 48px;
+    }
+
+    .section-title {
+        width: 100%;
+    }
+
+    .image-area {
+        height: 400px;
+    }
+
+    .section-effect {
+        padding: 60px 0;
+    }
+
+    .core-technology {
+        padding: 80px 24px 200px 24px;
+    }
+
+    .core-technology-content {
+        gap: 40px;
+    }
+
+    .core-technology-card-list {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .core-technology-card {
+        width: calc(50% - 12px);
+        max-width: 325px;
+    }
+
+    .card-list {
+        gap: 24px;
+    }
+
+    .circle-card {
+        width: 280px;
+    }
+
+    .circle-card .card-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .section-outtro {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 0;
+    }
+
+    .outtro-headline {
+        max-width: 100%;
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .hero-section {
+        height: 500px;
+    }
+
+    .hero-section-text {
+        top: 50%;
+        left: 16px;
+        right: 16px;
+        transform: translateY(-50%); /* 위아래 가운데 정렬 */
+    }
+
+    .hero-icon {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 40px;
+    }
+
+    .content {
+        padding: 0 16px;
+    }
+
+    .section-about {
+        padding: 60px 0;
+    }
+
+    .text-block {
+        margin-bottom: 32px;
+    }
+
+    .image-area {
+        height: 300px;
+    }
+
+    .section-effect {
+        padding: 40px 0;
+    }
+
+    .core-technology {
+        padding: 60px 16px 180px 16px;
+    }
+
+    .core-technology-content {
+        gap: 32px;
+    }
+
+    .core-technology-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .core-technology-card-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-list {
+        gap: 32px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .circle-card {
+        width: 100%;
+        max-width: 325px;
+    }
+
+    .circle-card .card-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .section-outtro {
+        padding: 40px 0;
+        gap: 24px;
+    }
+
+    .btn-text {
+        width: 100%;
+        justify-content: center;
+    }
+}
+

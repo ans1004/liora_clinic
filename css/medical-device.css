@@ -1,0 +1,212 @@
+/* Medical/Device 페이지 스타일 */
+
+/* Hero Section */
+.medical-device-hero {
+    width: 100%;
+    padding: 160px 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+.medical-device-hero-content {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.medical-device-hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.medical-device-hero-title {
+    text-align: left;
+    color: #000000;
+}
+
+.medical-device-hero-subtitle {
+    text-align: left;
+    color: #000000;
+}
+
+/* Content Section */
+.medical-device-content {
+    width: 100%;
+    padding: 0 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+.medical-device-content-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+/* Medical Section */
+.medical-section {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.medical-section-reverse {
+    flex-direction: row-reverse;
+}
+
+.medical-image-area {
+    width: 555px;
+    height: 555px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.medical-image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.medical-text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    min-width: 0;
+}
+
+.medical-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.medical-title {
+    color: #111111;
+    text-align: left;
+}
+
+.medical-subtext {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.medical-subtitle {
+    color: #111111;
+}
+
+.medical-description {
+    color: #111111;
+}
+
+/* Medical Button */
+.medical-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 24px;
+    border: 1px solid #111111;
+    background-color: transparent;
+    color: #111111;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.medical-button:hover {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.medical-button svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.medical-button-filled {
+    background-color: #e6e6fa;
+    border: 1px solid #111111;
+}
+
+.medical-button-filled:hover {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1440px) {
+    .medical-device-hero {
+        padding: 160px 40px 120px 40px;
+    }
+
+    .medical-device-content {
+        padding: 0 40px 120px 40px;
+    }
+
+    .medical-section {
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .medical-device-hero {
+        padding: 80px 24px;
+    }
+
+    .medical-device-content {
+        padding: 0 24px 80px 24px;
+    }
+
+    .medical-device-content-wrapper {
+        gap: 80px;
+    }
+
+    .medical-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .medical-section-reverse {
+        flex-direction: column;
+    }
+
+    .medical-image-area {
+        width: 100%;
+        max-width: 555px;
+        height: 400px;
+    }
+
+    .medical-text-block {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .medical-device-hero {
+        padding: 60px 20px;
+    }
+
+    .medical-device-content {
+        padding: 0 20px 60px 20px;
+    }
+
+    .medical-device-content-wrapper {
+        gap: 60px;
+    }
+
+    .medical-image-area {
+        height: 300px;
+    }
+
+    .medical-text {
+        gap: 20px;
+    }
+
+    .medical-text-block {
+        gap: 32px;
+    }
+}
+

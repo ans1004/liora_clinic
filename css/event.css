@@ -1,0 +1,145 @@
+/* Event 페이지 스타일 */
+
+/* Hero Section */
+.event-hero {
+    width: 100%;
+    padding: 160px 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+.event-hero-content {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.event-hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.event-hero-title {
+    text-align: left;
+    color: #000000;
+}
+
+.event-hero-subtitle {
+    text-align: left;
+    color: #000000;
+}
+
+/* Content Section */
+.event-content {
+    width: 100%;
+    padding: 0 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+/* #2 Event */
+.event-section {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.event-card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 440px);
+    gap: 40px;
+    justify-content: start;
+}
+
+.event-card {
+    width: 440px;
+    height: 408px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card-image-area {
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.event-card-image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    height: 58px;
+}
+
+.event-card-title {
+    color: #000000;
+    text-align: left;
+}
+
+.event-card-date {
+    color: #000000;
+    text-align: left;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1440px) {
+    .event-card-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        justify-content: start;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 440px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .event-hero {
+        padding: 80px 24px;
+    }
+
+    .event-content {
+        padding: 0 24px 80px 24px;
+    }
+
+    .event-card-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        justify-items: center;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 440px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .event-hero {
+        padding: 60px 20px;
+    }
+
+    .event-content {
+        padding: 0 20px 60px 20px;
+    }
+
+    .event-card-list {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        justify-items: center;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 440px;
+    }
+}
+
