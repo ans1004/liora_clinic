@@ -27,6 +27,9 @@ yarn-error.log*
 *.swp
 *.swo
 
+# MCP Server (not needed for website)
+cursor-talk-to-figma-mcp/
+
 
 
 
