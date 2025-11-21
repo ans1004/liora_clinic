@@ -1,0 +1,118 @@
+{
+  "privacy": [
+    {
+      "text": "개인정보처리방침",
+      "href": "#"
+    },
+    {
+      "text": "비급여항목고지",
+      "href": "#"
+    },
+    {
+      "text": "이용약관",
+      "href": "#"
+    }
+  ],
+  "sns": [
+    {
+      "type": "kk",
+      "href": "#"
+    },
+    {
+      "type": "fc",
+      "href": "#"
+    },
+    {
+      "type": "in",
+      "href": "#"
+    },
+    {
+      "type": "yt",
+      "href": "#"
+    }
+  ],
+  "menu": [
+    {
+      "title": "병원소개",
+      "items": [
+        {
+          "text": "병원소개",
+          "href": "about.html"
+        },
+        {
+          "text": "의료진 소개",
+          "href": "our-doctors.html"
+        },
+        {
+          "text": "오시는 길",
+          "href": "location.html"
+        }
+      ]
+    },
+    {
+      "title": "클리닉",
+      "items": [
+        {
+          "text": "안티에이징",
+          "href": "anti-aging.html"
+        },
+        {
+          "text": "색소 개선",
+          "href": "pigmentation.html"
+        },
+        {
+          "text": "트러블 개선",
+          "href": "troubles-improvement.html"
+        },
+        {
+          "text": "쁘띠/스킨케어",
+          "href": "petit-skin-care.html"
+        }
+      ]
+    },
+    {
+      "title": "시그니처",
+      "items": [
+        {
+          "text": "특허 기술",
+          "href": "patents.html"
+        },
+        {
+          "text": "시설/디바이스",
+          "href": "medical-device.html"
+        },
+        {
+          "text": "시그니처 패키지",
+          "href": "signature-package.html"
+        }
+      ]
+    },
+    {
+      "title": "커뮤니티",
+      "items": [
+        {
+          "text": "비포애프터",
+          "href": "before-after.html"
+        },
+        {
+          "text": "공지사항",
+          "href": "notice.html"
+        },
+        {
+          "text": "이벤트/프로모션",
+          "href": "event.html"
+        },
+        {
+          "text": "FAQ",
+          "href": "faq.html"
+        }
+      ]
+    }
+  ],
+  "copyright": [
+    "©2025 LioraClinic All rights reserved.",
+    "Made by The Grap."
+  ]
+}
+
+

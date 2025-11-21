@@ -56,5 +56,10 @@
     } else {
         handleScroll();
     }
+    
+    // 네비게이션 초기화 함수 (컴포넌트에서 호출)
+    window.initNavbar = function() {
+        handleScroll();
+    };
 })();
 

@@ -2,39 +2,43 @@
 
 /* Hero Section */
 .signature-package-hero {
+    position: relative;
     width: 100%;
     height: 810px;
     background-image: url('../public/images/Signature-package/hero-section.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
 .signature-package-hero-content {
-    max-width: 1360px;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 0 40px;
-    position: relative;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    z-index: 1;
 }
 
 .signature-package-hero-text-block {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    right: 40px;
+    max-width: 1360px;
+    margin: 0 auto;
+    transform: translateY(-50%); /* 위아래 가운데 정렬 */
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-bottom: 80px;
 }
 
 .signature-package-hero-title {
     color: #ffffff;
     text-align: left;
+    margin-bottom: 0;
 }
 
 .signature-package-hero-subtitle {
@@ -47,16 +51,17 @@
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
     width: 48px;
     height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .signature-package-hero-icon img {
     width: 48px;
     height: 48px;
+    display: block;
 }
 
 /* Content Section */
@@ -299,9 +304,7 @@
 
 .btn-text-label {
     color: #111111;
-    font-size: 44px; /* 피그마 디자인: Pretendard Light 44px */
-    line-height: 61.6px; /* 피그마 디자인: line-height 61.6px */
-    letter-spacing: -1.32px; /* 피그마 디자인: letter-spacing -1.32px */
+    /* text-styles.css의 liora-body-large 클래스 사용 */
 }
 
 .btn-icon {
@@ -312,7 +315,8 @@
     justify-content: center;
 }
 
-.btn-icon svg {
+.btn-icon svg,
+.btn-icon img {
     width: 40px;
     height: 40px;
 }
@@ -332,6 +336,19 @@
 @media screen and (max-width: 1024px) {
     .signature-package-hero {
         height: 600px;
+    }
+
+    .signature-package-hero-text-block {
+        top: 50%;
+        left: 24px;
+        right: 24px;
+        transform: translateY(-50%); /* 위아래 가운데 정렬 */
+    }
+
+    .signature-package-hero-icon {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 40px;
     }
 
     .signature-package-intro {
@@ -382,7 +399,16 @@
     }
 
     .signature-package-hero-text-block {
-        margin-bottom: 40px;
+        top: 50%;
+        left: 16px;
+        right: 16px;
+        transform: translateY(-50%); /* 위아래 가운데 정렬 */
+    }
+
+    .signature-package-hero-icon {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 40px;
     }
 
     .signature-package-intro {
@@ -432,18 +458,12 @@
     .section-outtro {
         flex-direction: column;
         align-items: flex-start;
-        padding: 60px 0;
+        padding: 40px 0;
+        gap: 24px;
     }
 
     .outtro-headline {
         max-width: 100%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .section-outtro {
-        padding: 40px 0;
-        gap: 24px;
     }
 
     .btn-text {

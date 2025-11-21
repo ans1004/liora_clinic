@@ -1,0 +1,98 @@
+{
+  "menuItems": [
+    {
+      "label": "병원소개",
+      "subMenu": [
+        {
+          "en": "About",
+          "kr": "병원소개",
+          "href": "about.html"
+        },
+        {
+          "en": "Our Doctors",
+          "kr": "의료진 소개",
+          "href": "our-doctors.html"
+        },
+        {
+          "en": "Location",
+          "kr": "오시는 길",
+          "href": "location.html"
+        }
+      ]
+    },
+    {
+      "label": "클리닉",
+      "subMenu": [
+        {
+          "en": "Anti-aging",
+          "kr": "안티에이징",
+          "href": "anti-aging.html"
+        },
+        {
+          "en": "Pigmentation",
+          "kr": "색소 개선",
+          "href": "pigmentation.html"
+        },
+        {
+          "en": "Troubles Improvement",
+          "kr": "트러블 개선",
+          "href": "troubles-improvement.html"
+        },
+        {
+          "en": "Petit/Skincare",
+          "kr": "쁘띠/스킨케어",
+          "href": "petit-skin-care.html"
+        }
+      ]
+    },
+    {
+      "label": "시그니처",
+      "subMenu": [
+        {
+          "en": "Patents",
+          "kr": "특허 기술",
+          "href": "patents.html"
+        },
+        {
+          "en": "Medical/Device",
+          "kr": "시설/디바이스",
+          "href": "medical-device.html"
+        },
+        {
+          "en": "Signature Package",
+          "kr": "시그니처 패키지",
+          "href": "signature-package.html"
+        }
+      ]
+    },
+    {
+      "label": "커뮤니티",
+      "subMenu": [
+        {
+          "en": "Before After",
+          "kr": "비포애프터",
+          "href": "before-after.html"
+        },
+        {
+          "en": "Notices",
+          "kr": "공지사항",
+          "href": "notice.html"
+        },
+        {
+          "en": "Events/Promotions",
+          "kr": "이벤트/프로모션",
+          "href": "event.html"
+        },
+        {
+          "en": "FAQ",
+          "kr": "FAQ",
+          "href": "faq.html"
+        }
+      ]
+    }
+  ],
+  "languages": ["KOR", "ENG", "JPN", "CHN"],
+  "currentLanguage": "KOR"
+}
+
+

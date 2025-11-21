@@ -122,6 +122,15 @@ body {
     letter-spacing: -0.48px;
 }
 
+.liora-body-large {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 44px;
+    font-weight: 300; /* Light */
+    font-style: normal;
+    line-height: 61.6px;
+    letter-spacing: -1.32px;
+}
+
 /* Title 스타일 - Forum 폰트 */
 .liora-title-1 {
     font-family: 'Forum', serif;
@@ -370,6 +379,12 @@ body {
         font-size: 14px; 
     }
 
+    .liora-body-large { 
+        font-size: 32px; 
+        line-height: 44.8px;
+        letter-spacing: -0.96px;
+    }
+
     .liora-title-1 { 
         font-size: 28px; 
         line-height: 39.2px; 
@@ -440,6 +455,12 @@ body {
 
     .liora-body-3-light { 
         font-size: 12px; 
+    }
+
+    .liora-body-large { 
+        font-size: 28px; 
+        line-height: 39.2px;
+        letter-spacing: -0.84px;
     }
 
     .liora-title-1 { 

@@ -1,0 +1,94 @@
+{
+  "tabs": [
+    {
+      "id": "all",
+      "label": "전체"
+    },
+    {
+      "id": "treatment",
+      "label": "시술 및 진료"
+    },
+    {
+      "id": "effect",
+      "label": "시술 효과"
+    },
+    {
+      "id": "reservation",
+      "label": "예약 및 방문"
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "시술 전 상담에서 어떤 내용을 확인하나요?",
+      "answer": ""
+    },
+    {
+      "id": 2,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "처음 방문 시 어떤 절차로 진료가 진행되나요?",
+      "answer": ""
+    },
+    {
+      "id": 3,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "시술 후 붓기는 언제쯤 빠지나요?",
+      "answer": "시술 후 붓기는 보통 2-3일 정도면 빠집니다. 하지만 개인에 따라 붓기와 출혈, 멍, 신경손상 등 부작용이 발생할 수 있으며, 해당 시술 결과는 개인마다 차이가 있을 수 있습니다."
+    },
+    {
+      "id": 4,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "시술 후 주의해야 할 점이 있나요?",
+      "answer": ""
+    },
+    {
+      "id": 5,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "약물 복용 중인데 시술 가능할까요?",
+      "answer": ""
+    },
+    {
+      "id": 6,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "일상생활 복귀는 언제 가능한가요?",
+      "answer": ""
+    },
+    {
+      "id": 7,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "부작용이나 리스크가 있나요?",
+      "answer": ""
+    },
+    {
+      "id": 8,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "통증이나 마취는 필요한가요?",
+      "answer": ""
+    },
+    {
+      "id": 9,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "시술은 어떻게 진행되나요?",
+      "answer": ""
+    },
+    {
+      "id": 10,
+      "category": "treatment",
+      "categoryLabel": "시술 및 진료",
+      "question": "결제 및 환불 정책은 어떻게 되나요?",
+      "answer": ""
+    }
+  ]
+}
+
+

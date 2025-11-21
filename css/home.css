@@ -60,7 +60,23 @@ button {
     z-index: 1;
 }
 
-.slide-background img {
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.slide-item.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -73,22 +89,24 @@ button {
     right: 40px;
     max-width: 1360px;
     margin: 0 auto;
-    padding-bottom: 124px;
+    padding-bottom: 116px;
     z-index: 2;
 }
 
 .headline_hr {
     color: #111111;
     margin-bottom: 24px;
+    transition: opacity 0.8s ease;
 }
 
 .description_hr {
     color: #111111;
+    transition: opacity 0.8s ease;
 }
 
 .floating-section {
-    position: absolute; /* carousel-dot은 absolute로 유지 */
-    bottom: 40px;
+    position: absolute; /* absolute로 유지하여 hero-slide 내부에 위치 고정 */
+    bottom: 32px;
     left: 40px;
     right: 40px;
     max-width: 1360px;
@@ -96,7 +114,27 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 3;
+    z-index: 1000; /* 최상위 레이어에 표시 */
+}
+
+/* carousel-dot은 absolute 위치 유지 (hero-slide 내부) */
+.floating-section .carousel-dot {
+    position: relative; /* floating-section 내부에서 상대 위치 */
+}
+
+/* floating-button만 fixed로 변경하여 항상 위에 표시 */
+/* Home 페이지는 floating 패딩 20px 유지 */
+.floating-section .floating-button {
+    position: fixed;
+    bottom: 20px; /* Home 페이지는 20px 유지 */
+    right: calc(50% - 640px); /* 중앙 기준 오른쪽 20px (1360px/2 + 20px) */
+    z-index: 1001; /* carousel-dot보다 위에 표시 */
+}
+
+@media screen and (max-width: 1440px) {
+    .floating-section .floating-button {
+        right: 20px; /* 화면 오른쪽에서 20px (Home 페이지는 20px 유지) */
+    }
 }
 
 /* carousel-dot, floating-button 컴포넌트 스타일은 components.css에서 관리 */
@@ -681,7 +719,7 @@ button {
 
     .floating-button {
         right: 20px; /* 태블릿에서 오른쪽에서 20px 왼쪽으로 고정 */
-        bottom: 40px;
+        bottom: 20px; /* Home 페이지는 20px 유지 */
     }
 
     .brand-essence {
@@ -761,7 +799,7 @@ button {
         height: 48px;
         font-size: 24px;
         right: 20px; /* 모바일에서 오른쪽에서 20px 왼쪽으로 고정 */
-        bottom: 24px;
+        bottom: 20px; /* Home 페이지는 20px 유지 */
     }
 
     .brand-essence {

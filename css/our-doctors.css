@@ -1,0 +1,208 @@
+/* Our Doctors 페이지 스타일 */
+
+/* Hero Section */
+.our-doctors-hero {
+    width: 100%;
+    height: 414px;
+    padding: 160px 40px 0 40px;
+    background-color: #ffffff;
+}
+
+.our-doctors-hero-content {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.our-doctors-hero-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.our-doctors-hero-title {
+    color: #111111;
+    text-align: left;
+    /* text-styles.css의 liora-display-3 클래스 사용 */
+}
+
+.our-doctors-hero-subtitle {
+    color: #111111;
+    text-align: left;
+    /* text-styles.css의 liora-body-2 클래스 사용 */
+}
+
+/* Content Section */
+.our-doctors-content {
+    width: 100%;
+    padding: 0 40px 120px 40px;
+    background-color: #ffffff;
+}
+
+.our-doctors-content-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+/* #1 Doctor Profile Section */
+.our-doctors-section {
+    width: 100%;
+    padding: 0 246px;
+    box-sizing: border-box;
+}
+
+.our-doctors-profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 100px; /* 이미지와 텍스트 블록 사이 간격 */
+    margin-bottom: 120px;
+    padding: 0;
+    width: 100%;
+    max-width: 948px; /* 이미지(424px) + gap(100px) + 텍스트(424px) = 948px */
+}
+
+.our-doctors-profile:last-child {
+    margin-bottom: 0;
+}
+
+.our-doctors-profile-reverse {
+    flex-direction: row-reverse;
+    margin-left: auto; /* 오른쪽 정렬하여 텍스트 블록 위치 통일 */
+}
+
+.our-doctors-profile-image {
+    width: 424px;
+    height: 520px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.our-doctors-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.our-doctors-profile-text-block {
+    width: 424px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* text-block 내부 요소들 간 상하 간격 */
+}
+
+.our-doctors-profile-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.our-doctors-profile-name-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.our-doctors-profile-name {
+    color: #111111;
+    text-align: left;
+    margin: 0;
+    /* text-styles.css의 liora-body-1-emphasized 클래스 사용 */
+}
+
+.our-doctors-profile-title {
+    color: #111111;
+    text-align: left;
+    /* text-styles.css의 liora-body-2 클래스 사용 */
+}
+
+.our-doctors-profile-description {
+    color: #333333;
+    text-align: left;
+    margin: 0;
+    white-space: pre-line;
+    /* text-styles.css의 liora-body-2 클래스 사용 */
+}
+
+.our-doctors-profile-specialty,
+.our-doctors-profile-career {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.our-doctors-profile-label {
+    color: #333333;
+    text-align: left;
+    margin: 0;
+    /* text-styles.css의 liora-title-2 클래스 사용 */
+}
+
+.our-doctors-profile-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.our-doctors-profile-list li {
+    color: #111111;
+    text-align: left;
+    /* text-styles.css의 liora-body-3-light 클래스 사용 */
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1024px) {
+    .our-doctors-hero {
+        padding: 120px 40px 0 40px;
+        height: auto;
+        min-height: 414px;
+    }
+
+    .our-doctors-content {
+        padding: 0 40px 80px 40px;
+    }
+
+    .our-doctors-profile {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .our-doctors-profile-reverse {
+        flex-direction: column;
+    }
+
+    .our-doctors-profile-image {
+        width: 100%;
+        max-width: 424px;
+        height: auto;
+        aspect-ratio: 424 / 520;
+    }
+
+    .our-doctors-profile-text-block {
+        width: 100%;
+        max-width: 424px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .our-doctors-hero {
+        padding: 100px 20px 0 20px;
+        height: auto;
+        min-height: 300px;
+    }
+
+    .our-doctors-content {
+        padding: 0 20px 60px 20px;
+    }
+
+    .our-doctors-profile {
+        gap: 32px;
+    }
+
+    .our-doctors-profile-text-block {
+        gap: 24px; /* 반응형에서도 text-block 내부 요소들 간 상하 간격 24px 유지 */
+    }
+}
+

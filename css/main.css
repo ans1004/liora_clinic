@@ -40,5 +40,20 @@
 /* Event 페이지 스타일 import */
 @import url('./event.css');
 
+/* Event Detail 페이지 스타일 import */
+@import url('./event-detail.css');
+
+/* Notice Detail 페이지 스타일 import */
+@import url('./notice-detail.css');
+
+/* FAQ 페이지 스타일 import */
+@import url('./faq.css');
+
+/* Notice 페이지 스타일 import */
+@import url('./notice.css');
+
+/* Our Doctors 페이지 스타일 import */
+@import url('./our-doctors.css');
+
 /* 추가 전역 스타일은 여기에 작성 */
 

@@ -3,7 +3,7 @@
 /* Hero Section */
 .event-hero {
     width: 100%;
-    padding: 160px 40px 120px 40px;
+    padding: 160px 40px 100px 40px;
     background-color: #ffffff;
 }
 
@@ -36,6 +36,36 @@
     background-color: #ffffff;
 }
 
+/* #1 Tab */
+.event-tab {
+    max-width: 1360px;
+    margin: 0 auto 40px auto;
+}
+
+.event-tab-list {
+    display: flex;
+    gap: 20px;
+}
+
+.event-tab-item {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.event-tab-item.active {
+    color: #000000;
+    font-weight: 600;
+}
+
+.event-tab-item:not(.active) {
+    color: #BBBBBB;
+    font-weight: 400;
+}
+
 /* #2 Event */
 .event-section {
     max-width: 1360px;
@@ -45,7 +75,8 @@
 .event-card-list {
     display: grid;
     grid-template-columns: repeat(3, 440px);
-    gap: 40px;
+    column-gap: 20px !important;
+    row-gap: 48px;
     justify-content: start;
 }
 
@@ -54,10 +85,16 @@
     height: 408px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.event-card:hover {
+    opacity: 0.8;
 }
 
 .event-card-image-area {
-    width: 100%;
+    width: 440px;
     height: 330px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -91,7 +128,8 @@
 @media screen and (max-width: 1440px) {
     .event-card-list {
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        column-gap: 20px !important;
+        row-gap: 48px;
         justify-content: start;
     }
 
@@ -141,5 +179,72 @@
         width: 100%;
         max-width: 440px;
     }
+}
+
+/* Pagination */
+.event-pagination {
+    max-width: 1360px;
+    margin: 60px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.event-pagination .pagination-arrow {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000000;
+    transition: opacity 0.3s;
+}
+
+.event-pagination .pagination-arrow svg {
+    width: 24px;
+    height: 24px;
+}
+
+.event-pagination .pagination-arrow:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.event-pagination .pagination-arrow:not(:disabled):hover {
+    opacity: 0.7;
+}
+
+.event-pagination .pagination-numbers {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.event-pagination .pagination-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.event-pagination .pagination-number.active {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.event-pagination .pagination-number:not(.active):hover {
+    background-color: #f0f0f0;
 }
 

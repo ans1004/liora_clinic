@@ -77,10 +77,15 @@ body:has(.about-hero) .navbar:hover .language-icon svg {
     z-index: 1;
 }
 
-.about-hero-background img {
+.about-hero-background img,
+.about-hero-background video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.about-hero-background video {
+    display: block;
 }
 
 .about-hero-overlay {

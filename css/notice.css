@@ -1,0 +1,351 @@
+/* Notice 페이지 스타일 */
+
+/* Hero Section */
+.notice-hero {
+    width: 100%;
+    padding: 160px 155px 80px 155px; /* 좌우 패딩 155px */
+    background-color: #ffffff;
+}
+
+.notice-hero-content {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.notice-hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.notice-hero-title {
+    text-align: left;
+    color: #000000;
+}
+
+.notice-hero-subtitle {
+    text-align: left;
+    color: #000000;
+}
+
+/* Content Section */
+.notice-content {
+    width: 100%;
+    padding: 0 155px 120px 155px; /* 좌우 패딩 155px */
+    background-color: #ffffff;
+}
+
+.notice-content-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+/* #1 Notice Section */
+.notice-section {
+    width: 100%;
+}
+
+/* Search Container */
+.notice-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0; /* 패딩 제거 */
+    margin: 0 0 32px 0; /* 테이블과의 간격 */
+    height: 52px; /* 피그마 기준: 84px */
+    box-sizing: border-box;
+    gap: 20px; /* 전체 버튼과 검색 입력 필드 사이 간격 20px */
+    outline: none !important; /* 컨테이너 아웃라인 제거 */
+}
+
+.notice-filter-btn {
+    background: transparent;
+    border: 1px solid #555555;
+    padding: 0 20px; /* 좌우 패딩 20px */
+    width: 144px; /* 전체 버튼 사이즈: 144x52px */
+    height: 52px; /* 전체 버튼 사이즈: 144x52px */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 텍스트와 아이콘을 좌우로 배치 */
+    color: #111111;
+    flex-shrink: 0;
+    outline: none !important; /* 아웃라인 완전 제거 */
+    box-shadow: none !important; /* box-shadow 제거 */
+    -webkit-appearance: none; /* 웹킷 브라우저 기본 스타일 제거 */
+    -moz-appearance: none; /* 파이어폭스 기본 스타일 제거 */
+    appearance: none; /* 기본 스타일 제거 */
+    position: relative;
+    box-sizing: border-box;
+}
+
+.notice-filter-btn span {
+    color: #111111;
+}
+
+.notice-filter-icon {
+    flex-shrink: 0;
+    pointer-events: none; /* 클릭 이벤트 방지 */
+}
+
+.notice-search-wrapper {
+    position: relative;
+    width: 300px; /* 검색 입력 필드 사이즈: 300x52px */
+    height: 52px; /* 검색 입력 필드 사이즈: 300x52px */
+    display: flex;
+    align-items: center;
+}
+
+.notice-search-input {
+    width: 100%;
+    height: 100%;
+    padding: 14px 40px 14px 20px; /* 좌우 패딩 20px, 오른쪽에 아이콘 공간 확보 */
+    border: 1px solid #555555;
+    outline: none !important; /* 아웃라인 완전 제거 */
+    box-shadow: none !important; /* box-shadow 제거 */
+    background: transparent;
+    color: #555555;
+    margin-left: 0; /* 버튼과의 간격 없음 */
+    -webkit-appearance: none; /* 웹킷 브라우저 기본 스타일 제거 */
+    -moz-appearance: none; /* 파이어폭스 기본 스타일 제거 */
+    appearance: none; /* 기본 스타일 제거 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.notice-search-icon {
+    position: absolute;
+    right: 18px; /* 피그마 기준: x: 264 (300 - 264 - 16 = 20, 하지만 패딩 고려하여 18px) */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* 클릭 이벤트 방지 */
+    flex-shrink: 0;
+}
+
+.notice-search-input:focus,
+.notice-search-input:active,
+.notice-search-input:hover,
+.notice-search-input:focus-visible {
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid #555555;
+}
+
+.notice-filter-btn:focus,
+.notice-filter-btn:active,
+.notice-filter-btn:hover,
+.notice-filter-btn:focus-visible {
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid #555555;
+}
+
+.notice-search-input::placeholder {
+    color: #555555;
+    text-align: left; /* 좌우 패딩에 맞춰 왼쪽 정렬 */
+}
+
+/* Table List */
+.notice-table-list {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 80px; /* 페이지네이션과의 간격 80px */
+    padding: 0;
+}
+
+/* Table Row */
+.notice-table-row {
+    width: 100%;
+    border-top: 1px solid #555555;
+    border-bottom: 1px solid #555555;
+    border-left: none;
+    border-right: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    height: 88px; /* 피그마 기준: 각 행 높이 88px */
+    box-sizing: border-box;
+}
+
+.notice-table-row:not(:last-child) {
+    border-bottom: none;
+}
+
+.notice-table-row:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.notice-table-row-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 20px 0 0; /* 오른쪽 패딩 20px */
+    gap: 20px;
+}
+
+.notice-table-category {
+    width: 95px;
+    text-align: center;
+    color: #555555;
+    flex-shrink: 0;
+}
+
+.notice-table-title {
+    flex: 1;
+    text-align: left;
+    color: #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.notice-table-date {
+    width: 95px;
+    text-align: center;
+    color: #555555;
+    flex-shrink: 0;
+}
+
+/* Pagination */
+.notice-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    opacity: 0.2;
+}
+
+.pagination-arrow:not(:disabled) {
+    opacity: 1;
+}
+
+.pagination-arrow:disabled {
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-number.active {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1024px) {
+    .notice-hero {
+        padding: 80px 24px;
+    }
+
+    .notice-content {
+        padding: 0 24px 80px 24px;
+    }
+
+    .notice-container {
+        flex-direction: row;
+        justify-content: flex-end;
+        height: 84px;
+        padding: 0; /* 패딩 제거 */
+    }
+
+    .notice-filter-btn {
+        width: 120px;
+        height: 52px;
+    }
+
+    .notice-search-wrapper {
+        width: 250px;
+        height: 52px;
+    }
+
+    .notice-search-input {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .notice-hero {
+        padding: 60px 20px;
+    }
+
+    .notice-content {
+        padding: 0 20px 60px 20px;
+    }
+
+    .notice-container {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        min-height: 84px;
+        padding: 0; /* 패딩 제거 */
+        gap: 12px;
+    }
+
+    .notice-filter-btn {
+        width: 100%;
+        height: 52px;
+    }
+
+    .notice-search-wrapper {
+        width: 100%;
+        height: 52px;
+    }
+
+    .notice-search-input {
+        width: 100%;
+        height: 100%;
+    }
+
+    .notice-table-row {
+        height: auto;
+        min-height: 88px;
+    }
+
+    .notice-table-row-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0; /* 좌우 패딩 제거, 상하 패딩만 유지 */
+        gap: 12px;
+    }
+
+    .notice-table-category,
+    .notice-table-title,
+    .notice-table-date {
+        width: 100%;
+        text-align: left;
+    }
+}
+

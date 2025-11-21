@@ -3,7 +3,7 @@
 /* Hero Section */
 .before-after-hero {
     width: 100%;
-    padding: 160px 40px 120px 40px;
+    padding: 160px 40px 100px 40px;
     background-color: #ffffff;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .before-after-tab-item:not(.active) {
-    color: #000000;
+    color: #BBBBBB;
     font-weight: 400;
 }
 
@@ -81,7 +81,7 @@
     display: grid;
     grid-template-columns: repeat(2, 670px);
     gap: 48px 20px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     justify-content: start;
 }
 

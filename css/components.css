@@ -371,7 +371,7 @@
     cursor: pointer;
     border: none;
     position: fixed; /* floating 버튼만 fixed로 고정 */
-    bottom: 20px;
+    bottom: 20px; /* 모든 페이지에서 20px */
     right: 20px; /* 오른쪽에서 20px 왼쪽으로 고정 */
     z-index: 999; /* navbar보다 낮지만 다른 요소보다 높게 */
     isolation: isolate;
@@ -563,9 +563,9 @@
     align-items: center;
     justify-content: center;
     border: none; /* 아웃라인 제거 */
-    border-radius: 50%;
+    border-radius: 0; /* 라운딩 값 제거 */
     color: #000000;
-    transition: background-color 0.3s, color 0.3s;
+    transition: filter 0.3s; /* 호버 시 색상 변경을 위한 transition */
     text-decoration: none;
     font-size: 0; /* 텍스트 숨기기 */
     background-size: contain;
@@ -595,10 +595,8 @@
 }
 
 .sns-icon:hover {
-    background-color: #000000;
-    color: #ffffff;
-    /* 호버 시 아이콘을 흰색으로 변환 */
-    filter: brightness(0) invert(1);
+    /* 호버 시 아이콘 색상을 #BBBBBB로 변경 */
+    filter: brightness(0) saturate(100%) invert(73%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
 .footer-menu {

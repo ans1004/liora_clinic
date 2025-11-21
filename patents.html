@@ -10,118 +10,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Forum:wght@400&family=Pretendard:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Components JavaScript -->
+    <script src="js/components/navbar.js" defer></script>
+    <script src="js/components/footer.js" defer></script>
     <!-- Navbar JavaScript -->
     <script src="js/navbar.js" defer></script>
     <!-- Patents JavaScript -->
     <script src="js/patents.js" defer></script>
 </head>
 <body>
-    <!-- Navbar -->
+        <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-top">
-                <div class="logo-and-menu">
-                    <div class="logo">
-                        <a href="index.html"><img src="public/logo/logo.svg" alt="Liora Clinic"></a>
-                    </div>
-                    <div class="menu">
-                        <div class="nav-menu-item">
-                            <a href="#" class="nav-menu liora-body-3">병원소개</a>
-                            <div class="nav-menu-sub">
-                                <a href="about.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">About</span>
-                                    <span class="sub-menu-kr liora-body-3">병원소개</span>
-                                </a>
-                                <a href="#" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Medical Staff</span>
-                                    <span class="sub-menu-kr liora-body-3">의료진 소개</span>
-                                </a>
-                                <a href="location.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Location</span>
-                                    <span class="sub-menu-kr liora-body-3">오시는 길</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="nav-menu-item">
-                            <a href="#" class="nav-menu liora-body-3">클리닉</a>
-                            <div class="nav-menu-sub">
-                                <a href="anti-aging.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Anti-aging</span>
-                                    <span class="sub-menu-kr liora-body-3">안티에이징</span>
-                                </a>
-                                <a href="pigmentation.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Pigmentation</span>
-                                    <span class="sub-menu-kr liora-body-3">색소 개선</span>
-                                </a>
-                                <a href="troubles-improvement.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Trouble</span>
-                                    <span class="sub-menu-kr liora-body-3">트러블 개선</span>
-                                </a>
-                                <a href="petit-skin-care.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Petit/Skincare</span>
-                                    <span class="sub-menu-kr liora-body-3">쁘띠/스킨케어</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="nav-menu-item">
-                            <a href="#" class="nav-menu liora-body-3">시그니처</a>
-                            <div class="nav-menu-sub">
-                                <a href="patents.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Patents</span>
-                                    <span class="sub-menu-kr liora-body-3">특허 기술</span>
-                                </a>
-                                <a href="medical-device.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Medical/Device</span>
-                                    <span class="sub-menu-kr liora-body-3">시설/디바이스</span>
-                                </a>
-                                <a href="signature-package.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Signature Package</span>
-                                    <span class="sub-menu-kr liora-body-3">시그니처 패키지</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="nav-menu-item">
-                            <a href="#" class="nav-menu liora-body-3">커뮤니티</a>
-                            <div class="nav-menu-sub">
-                                <a href="before-after.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Before & After</span>
-                                    <span class="sub-menu-kr liora-body-3">비포애프터</span>
-                                </a>
-                                <a href="#" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Notices</span>
-                                    <span class="sub-menu-kr liora-body-3">공지사항</span>
-                                </a>
-                                <a href="event.html" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Events/Promotions</span>
-                                    <span class="sub-menu-kr liora-body-3">이벤트/프로모션</span>
-                                </a>
-                                <a href="#" class="sub-menu-item">
-                                    <span class="sub-menu-en liora-title-2">Q&A</span>
-                                    <span class="sub-menu-kr liora-body-3">Q&A</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="language">
-                    <div class="language-frame">
-                        <span class="language-text liora-title-3">KOR</span>
-                    </div>
-                    <div class="language-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="language-menu">
-                        <a href="#" class="language-menu-item liora-body-3">KOR</a>
-                        <a href="#" class="language-menu-item liora-body-3">ENG</a>
-                        <a href="#" class="language-menu-item liora-body-3">JPN</a>
-                        <a href="#" class="language-menu-item liora-body-3">CHN</a>
-                    </div>
-                </div>
-            </div>
+            <!-- 네비게이션은 js/components/navbar.js에서 동적으로 생성됩니다 -->
         </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section class="patents-hero">
@@ -131,6 +35,9 @@
                 <p class="patents-hero-subtitle liora-body-2">Liora가 만들어낸 압도적인 기술</p>
             </div>
         </div>
+        <button class="floating-button">
+            <span class="icon-add"></span>
+        </button>
     </section>
 
     <!-- Content Section -->
@@ -157,7 +64,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 1">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -166,7 +73,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 2">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -175,7 +82,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 3">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -184,7 +91,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 4">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -194,7 +101,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 5">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -203,7 +110,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 6">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -212,7 +119,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 7">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -221,7 +128,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 8">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -231,7 +138,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 9">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -240,7 +147,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 10">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -249,7 +156,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 11">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -258,7 +165,7 @@
                         <img src="public/images/Patents/image-area.png" alt="Patent 12">
                     </div>
                     <div class="patents-card-text">
-                        <h3 class="patents-card-title liora-title-1">L-Photon Rebalance</h3>
+                        <h3 class="patents-card-title liora-title-2">L-Photon Rebalance</h3>
                         <p class="patents-card-number liora-body-3-light">등록번호 00-000000</p>
                     </div>
                 </div>
@@ -277,8 +184,8 @@
                     </svg>
                 </button>
                 <div class="pagination-numbers">
-                    <button class="pagination-number active">1</button>
-                    <button class="pagination-number">2</button>
+                    <button class="pagination-number liora-body-3 active">1</button>
+                    <button class="pagination-number liora-body-3">2</button>
                 </div>
                 <button class="pagination-arrow pagination-next">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -294,70 +201,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer">
-        <div class="footer-line"></div>
-        <div class="footer-privacy-sns-menu">
-            <div class="footer-privacy-sns">
-                <div class="footer-privacy">
-                    <a href="#" class="liora-body-2">개인정보처리방침</a>
-                    <a href="#" class="liora-body-2">비급여항목고지</a>
-                    <a href="#" class="liora-body-2">이용약관</a>
-                </div>
-                <div class="footer-sns">
-                    <a href="#" class="sns-icon" data-sns="kk"></a>
-                    <a href="#" class="sns-icon" data-sns="fc"></a>
-                    <a href="#" class="sns-icon" data-sns="in"></a>
-                    <a href="#" class="sns-icon" data-sns="yt"></a>
-                </div>
-            </div>
-            <div class="footer-menu">
-                <div class="menu-1">
-                    <p class="nav-menu liora-body-2">병원소개</p>
-                    <div class="sub-menu">
-                        <a href="about.html" class="liora-body-3">병원소개</a>
-                        <a href="#" class="liora-body-3">의료진 소개</a>
-                        <a href="location.html" class="liora-body-3">오시는 길</a>
-                    </div>
-                </div>
-                <div class="menu-2">
-                    <p class="nav-menu liora-body-2">클리닉</p>
-                    <div class="sub-menu">
-                        <a href="anti-aging.html" class="liora-body-3">안티에이징</a>
-                        <a href="pigmentation.html" class="liora-body-3">색소 개선</a>
-                        <a href="troubles-improvement.html" class="liora-body-3">트러블 개선</a>
-                        <a href="petit-skin-care.html" class="liora-body-3">쁘띠 & 스킨케어</a>
-                    </div>
-                </div>
-                <div class="menu-3">
-                    <p class="nav-menu liora-body-2">시그니처</p>
-                    <div class="sub-menu">
-                        <a href="patents.html" class="liora-body-3">특허 기술</a>
-                        <a href="medical-device.html" class="liora-body-3">시설 & 디바이스</a>
-                        <a href="signature-package.html" class="liora-body-3">시그니처 패키지</a>
-                    </div>
-                </div>
-                <div class="menu-4">
-                    <p class="nav-menu liora-body-2">커뮤니티</p>
-                    <div class="sub-menu">
-                        <a href="before-after.html" class="liora-body-3">비포애프터</a>
-                        <a href="#" class="liora-body-3">공지</a>
-                        <a href="#" class="liora-body-3">이벤트</a>
-                        <a href="#" class="liora-body-3">Q&A</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-logo-copyright">
-            <div class="logo">
-                <img src="public/logo/logo.svg" alt="Liora Clinic">
-            </div>
-            <div class="copyright">
-                <p class="liora-title-2">©2025 LioraClinic All rights reserved.</p>
-                <p class="liora-title-2">Made by The Grap.</p>
-            </div>
-        </div>
+        <!-- 푸터는 js/components/footer.js에서 동적으로 생성됩니다 -->
     </footer>
+
 </body>
 </html>
 

@@ -303,9 +303,7 @@
 
 .btn-text-label {
     color: #111111;
-    font-size: 44px; /* 피그마 디자인: Pretendard Light 44px */
-    line-height: 61.6px; /* 피그마 디자인: line-height 61.6px */
-    letter-spacing: -1.32px; /* 피그마 디자인: letter-spacing -1.32px */
+    /* text-styles.css의 liora-body-large 클래스 사용 */
 }
 
 .btn-icon {
@@ -316,7 +314,8 @@
     justify-content: center;
 }
 
-.btn-icon svg {
+.btn-icon svg,
+.btn-icon img {
     width: 40px;
     height: 40px;
 }

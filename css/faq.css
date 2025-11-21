@@ -1,0 +1,346 @@
+/* FAQ 페이지 스타일 */
+
+/* Hero Section */
+.faq-hero {
+    width: 100%;
+    padding: 160px 155px 80px 155px; /* 좌우 패딩 155px */
+    background-color: #ffffff;
+}
+
+.faq-hero-content {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.faq-hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.faq-hero-title {
+    text-align: left;
+    color: #000000;
+}
+
+.faq-hero-subtitle {
+    text-align: left;
+    color: #000000;
+}
+
+/* Content Section */
+.faq-content {
+    width: 100%;
+    padding: 0 155px 120px 155px; /* 좌우 패딩 155px */
+    background-color: #ffffff;
+}
+
+.faq-content-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+/* #1 FAQ Section */
+.faq-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tab and Search Container */
+.faq-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none; /* 라인 제거 */
+    margin: 0;
+    margin-bottom: 32px; /* 아코디언과의 간격 - 10px로 설정하면 실제로 32px로 보임 */
+    min-height: 52px; /* 최소 높이 84px */
+    box-sizing: border-box;
+}
+
+.faq-tab {
+    display: flex;
+    gap: 20px;
+}
+
+.faq-tab-item {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.faq-tab-item span {
+    display: block;
+    color: #555555;
+}
+
+.faq-tab-item.active span {
+    color: #000000;
+}
+
+.faq-tab-item:not(.active) span {
+    color: #555555;
+}
+
+/* Search */
+.faq-search {
+    width: 300px;
+    height: 52px;
+}
+
+.faq-search-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #555555;
+}
+
+.faq-search-input {
+    width: 100%;
+    height: 100%;
+    padding: 14px 40px 14px 20px; /* 좌우 패딩 20px, 오른쪽에 아이콘 공간 확보 */
+    border: none;
+    outline: none !important; /* 아웃라인 완전 제거 */
+    box-shadow: none !important; /* box-shadow 제거 */
+    background: transparent;
+    color: #555555;
+    -webkit-appearance: none; /* 웹킷 브라우저 기본 스타일 제거 */
+    -moz-appearance: none; /* 파이어폭스 기본 스타일 제거 */
+    appearance: none; /* 기본 스타일 제거 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.faq-search-icon {
+    position: absolute;
+    right: 18px; /* 아이콘 위치 */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* 클릭 이벤트 방지 */
+    flex-shrink: 0;
+}
+
+.faq-search-input:focus,
+.faq-search-input:active,
+.faq-search-input:hover,
+.faq-search-input:focus-visible {
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    border: none;
+}
+
+.faq-search-input::placeholder {
+    color: #555555;
+    text-align: left; /* 좌우 패딩에 맞춰 왼쪽 정렬 */
+}
+
+/* Accordion List */
+.faq-accordion-list {
+    width: 100%;
+    margin: 0; /* 모든 마진 제거 */
+    margin-bottom: 80px; /* 아코디언과 페이지네이션 사이 간격 80px */
+    padding: 0; /* 패딩 제거 */
+}
+
+/* Accordion Item */
+.faq-accordion {
+    width: 100%;
+    border-top: 1px solid #555555;
+    border-bottom: 1px solid #555555;
+    border-left: none;
+    border-right: none;
+    margin: 0; /* 모든 마진 제거 */
+    padding: 0; /* 패딩 제거 */
+    background-color: #ffffff;
+    transition: background-color 0.3s;
+    min-height: 126px; /* 피그마 기준: 닫힌 상태 126px */
+}
+
+.faq-accordion:not(:last-child) {
+    border-bottom: none;
+}
+
+.faq-accordion.active {
+    background-color: #f7f7f7;
+    min-height: auto; /* 열린 상태는 내용에 따라 */
+}
+
+.faq-accordion-container {
+    padding: 32px 20px; /* 상하 32px, 좌우 20px */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 텍스트는 상단 정렬 */
+    gap: 0;
+    min-height: 62px; /* 피그마 기준: 닫힌 상태 container height */
+}
+
+.faq-accordion-text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 1058px; /* 피그마 기준 */
+}
+
+.faq-accordion-title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.faq-accordion-category {
+    color: #555555;
+}
+
+.faq-accordion-question {
+    color: #000000;
+}
+
+.faq-accordion-answer {
+    color: #333333;
+    margin-top: 20px; /* 질문과 답변 사이 간격 20px */
+    display: none;
+    white-space: pre-line; /* 줄바꿈 처리 */
+    line-height: 1.4; /* 줄 간격 줄임 (기본 1.5에서 1.4로 조정) */
+    max-width: 800px; /* 텍스트 가로 길이 제한하여 버튼과 겹치지 않도록 */
+    word-wrap: break-word; /* 긴 단어 줄바꿈 */
+}
+
+.faq-accordion.active .faq-accordion-answer {
+    display: block;
+}
+
+.faq-accordion-button {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    margin-left: auto; /* 오른쪽 정렬 */
+    align-self: center; /* 상하 중앙 정렬 */
+}
+
+.faq-accordion-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.faq-accordion.active .faq-accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* Pagination */
+.faq-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    opacity: 0.2;
+}
+
+.pagination-arrow:not(:disabled) {
+    opacity: 1;
+}
+
+.pagination-arrow:disabled {
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-number.active {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1024px) {
+    .faq-hero {
+        padding: 80px 24px;
+    }
+
+    .faq-content {
+        padding: 0 24px 80px 24px;
+    }
+
+    .faq-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .faq-tab {
+        justify-content: flex-start;
+    }
+
+    .faq-search {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .faq-hero {
+        padding: 60px 20px;
+    }
+
+    .faq-content {
+        padding: 0 20px 60px 20px;
+    }
+
+    .faq-container {
+        padding: 16px 20px;
+    }
+
+    .faq-tab {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .faq-accordion-container {
+        padding: 16px 20px;
+    }
+
+    /* .faq-accordion-question, .faq-accordion-answer는 text-styles.css의 liora-body-2 클래스 사용 (모바일: 14px) */
+}
+

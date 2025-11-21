@@ -3,7 +3,7 @@
 /* Hero Section */
 .patents-hero {
     width: 100%;
-    padding: 160px 40px 120px 40px;
+    padding: 160px 40px 100px 40px;
     background-color: #ffffff;
 }
 
@@ -73,7 +73,8 @@
 .patents-card-list {
     display: grid;
     grid-template-columns: repeat(4, 325px);
-    gap: 20px;
+    row-gap: 48px; /* 상하 간격 48px */
+    column-gap: 20px; /* 좌우 간격 20px */
     margin-bottom: 48px;
     justify-content: start;
 }
@@ -106,8 +107,7 @@
 
 .patents-card-title {
     color: #111111;
-    font-size: 24px;
-    line-height: 33.6px;
+    /* text-styles.css의 liora-title-2 클래스 사용 */
 }
 
 .patents-card-number {
@@ -160,11 +160,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Pretendard', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: -0.48px;
+    /* text-styles.css의 liora-body-3 클래스 사용 */
 }
 
 .pagination-number.active {
@@ -207,7 +203,8 @@
 
     .patents-card-list {
         grid-template-columns: repeat(2, 325px);
-        gap: 24px;
+        row-gap: 48px; /* 상하 간격 48px */
+        column-gap: 24px; /* 좌우 간격 24px */
         justify-content: start;
     }
     
@@ -237,7 +234,8 @@
 
     .patents-card-list {
         grid-template-columns: 1fr;
-        gap: 32px;
+        row-gap: 48px; /* 상하 간격 48px */
+        column-gap: 0; /* 좌우 간격 없음 (1열) */
         justify-content: center;
     }
     

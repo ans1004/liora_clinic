@@ -1,0 +1,250 @@
+/* Notice Detail 페이지 스타일 */
+
+/* Content Section */
+.notice-detail-content {
+    width: 100%;
+    padding: 160px 155px 120px 155px; /* 좌우 패딩 155px */
+    background-color: #ffffff;
+}
+
+.notice-detail-content-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 중앙 정렬 */
+}
+
+/* #1 Notice Section */
+.notice-detail-section {
+    width: 100%;
+    max-width: 900px; /* 피그마 기준: 900px */
+}
+
+/* Title */
+.notice-detail-title {
+    width: 100%;
+    border: none; /* 전체 border 제거 */
+    border-bottom: 1px solid #000000; /* 아래쪽 border만 적용 */
+    padding: 0; /* 패딩 제거 */
+    padding-bottom: 40px; /* 아래쪽 패딩만 적용 */
+    margin-bottom: 80px; /* 텍스트와의 간격 */
+    box-sizing: border-box;
+}
+
+.notice-detail-title-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* 피그마 기준: 제목과 날짜 사이 간격 */
+}
+
+.notice-detail-title-main {
+    color: #000000;
+    text-align: left;
+    /* text-styles.css의 liora-body-1-emphasized 클래스 사용 */
+}
+
+.notice-detail-title-date {
+    color: #000000;
+    text-align: left;
+}
+
+/* Text Content */
+.notice-detail-text {
+    width: 100%;
+}
+
+.notice-detail-description {
+    width: 100%;
+    color: #000000;
+    text-align: left;
+    white-space: pre-line; /* 줄바꿈 처리 */
+    /* text-styles.css의 liora-body-3 클래스 사용 (line-height: 1.5 = 24px) */
+}
+
+/* #2 Frame Section */
+.notice-detail-frame {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* download와 table 사이 간격 제거 */
+    margin-top: 80px;
+}
+
+/* Download Section */
+.notice-detail-download {
+    width: 100%;
+    height: 56px;
+    background-color: #f7f7f7;
+    border-top: 1px solid #555555; /* 위쪽 border만 */
+    border-bottom: 1px solid #555555; /* 아래쪽 border만 */
+    border-left: none; /* 좌측 border 제거 */
+    border-right: none; /* 우측 border 제거 */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.notice-detail-download-label {
+    color: #000000;
+    flex-shrink: 0;
+    margin-right: 20px; /* 라벨과 파일명 사이 간격 */
+}
+
+.notice-detail-download-filename {
+    color: #000000;
+    flex-shrink: 0;
+    margin-right: 8px; /* 파일명과 파일 크기 사이 간격 8px */
+}
+
+.notice-detail-download-size {
+    color: #000000;
+    flex: 1;
+    margin-right: 20px; /* 파일 크기와 다운로드 버튼 사이 간격 */
+}
+
+.notice-detail-download-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #000000;
+    flex-shrink: 0;
+}
+
+.notice-detail-download-btn:hover {
+    opacity: 0.7;
+}
+
+.notice-detail-download-icon {
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+/* Navigation Table */
+.notice-detail-table {
+    width: 100%;
+    border-top: none; /* download와 붙어있으므로 위쪽 border 제거 */
+    border-bottom: 1px solid #555555;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.notice-detail-nav-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.notice-detail-nav-row:first-child {
+    margin-bottom: 20px;
+}
+
+.notice-detail-nav-button {
+    width: 32px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #000000;
+    flex-shrink: 0;
+}
+
+.notice-detail-nav-button:hover:not(:disabled) {
+    opacity: 0.7;
+}
+
+.notice-detail-nav-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.notice-detail-nav-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+.notice-detail-nav-text {
+    color: #000000;
+    text-decoration: none;
+    flex: 1;
+}
+
+.notice-detail-nav-text:hover {
+    opacity: 0.7;
+}
+
+.notice-detail-nav-disabled {
+    color: #bbbbbb;
+    cursor: default;
+}
+
+/* List Button */
+.notice-detail-list-btn {
+    width: 84px;
+    height: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-top: 40px; /* 목록 버튼만 40px 떨어뜨림 */
+}
+
+.notice-detail-list-btn:hover {
+    opacity: 0.8;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 1024px) {
+    .notice-detail-content {
+        padding: 120px 40px 80px 40px;
+    }
+
+    .notice-detail-section,
+    .notice-detail-frame {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .notice-detail-content {
+        padding: 100px 20px 60px 20px;
+    }
+
+    .notice-detail-download {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 56px;
+        padding: 12px 20px;
+    }
+
+    .notice-detail-download-size {
+        width: 100%;
+        order: 3;
+    }
+
+    .notice-detail-download-btn {
+        order: 4;
+    }
+}
+

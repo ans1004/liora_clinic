@@ -44,14 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
             currentPage = 1;
             
             // 카드 표시 및 페이지네이션 업데이트
-            showPage(currentPage);
-            updatePaginationNumbers();
+            updatePaginationNumbers(); // 먼저 버튼 생성
+            showPage(currentPage); // 그 다음 페이지 표시
         });
     });
     
     // 페이지 표시 함수
     function showPage(page) {
         if (!cardList) return;
+        
+        currentPage = page; // currentPage 업데이트
         
         // 모든 카드 숨기기
         cards.forEach(card => {
@@ -66,9 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.display = 'flex';
         });
         
-        // 페이지 번호 활성화 업데이트
-        paginationNumbers.forEach((btn, index) => {
-            if (index + 1 === page) {
+        // 페이지 번호 활성화 업데이트 (동적으로 생성된 버튼 다시 선택)
+        const currentPaginationNumbers = document.querySelectorAll('.before-after-pagination .pagination-number');
+        currentPaginationNumbers.forEach((btn) => {
+            if (parseInt(btn.textContent) === page) {
                 btn.classList.add('active');
             } else {
                 btn.classList.remove('active');
@@ -88,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         for (let i = 1; i <= totalPages; i++) {
             const button = document.createElement('button');
-            button.classList.add('pagination-number');
+            button.classList.add('pagination-number', 'liora-body-3');
             button.textContent = i;
             if (i === currentPage) {
                 button.classList.add('active');
@@ -96,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', () => {
                 currentPage = i;
                 showPage(currentPage);
+                updatePaginationNumbers(); // 버튼 다시 생성하여 활성화 상태 업데이트
             });
             numbersContainer.appendChild(button);
         }
@@ -155,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // 초기 페이지 표시
-    showPage(1);
-    updatePaginationNumbers();
+    updatePaginationNumbers(); // 먼저 버튼 생성
+    showPage(1); // 그 다음 페이지 표시
 });
 
