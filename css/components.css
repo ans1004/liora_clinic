@@ -116,7 +116,7 @@
     text-decoration: none;
     color: #111111;
     transition: background-color 0.3s, color 0.3s;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: none; /* 서브메뉴 항목 사이 라인 제거 */
     cursor: pointer;
     position: relative;
 }
@@ -188,7 +188,8 @@
 .language-menu {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 50%; /* language 버튼 가운데 정렬 */
+    transform: translateX(-50%); /* 메뉴 자체의 가운데 정렬 */
     width: 100px;
     background-color: #f7f7f7;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -211,7 +212,8 @@
     text-decoration: none;
     color: #111111;
     transition: background-color 0.3s;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: none; /* 서브메뉴 항목 사이 라인 제거 */
+    text-align: center; /* 가운데 정렬 */
 }
 
 .language-menu-item:last-child {
@@ -419,6 +421,83 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Floating 버튼 active 상태 - X 아이콘으로 변경 */
+.floating-button.active .icon-add::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.floating-button.active .icon-add::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* 서브 Floating 버튼 컨테이너 */
+.floating-sub-buttons {
+    position: fixed;
+    bottom: 96px; /* 메인 버튼 위쪽에 위치 (20px + 64px 버튼 높이 + 12px gap) */
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 998;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-sub-buttons.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* 서브 Floating 버튼 */
+.floating-sub-button {
+    width: 64px;
+    height: 64px;
+    border-radius: 80px;
+    background-color: #FFFFFF; /* 호버 전 흰색 배경 */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* 테두리 추가 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s ease, border-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+}
+
+.floating-sub-buttons.active .floating-sub-button {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* 각 서브 버튼에 순차적 애니메이션 딜레이 적용 */
+.floating-sub-button[data-index="0"] {
+    transition-delay: 0.05s;
+}
+
+.floating-sub-button[data-index="1"] {
+    transition-delay: 0.1s;
+}
+
+.floating-sub-button[data-index="2"] {
+    transition-delay: 0.15s;
+}
+
+.floating-sub-button:hover {
+    background-color: #E6E6FA; /* 호버 시 더 명확한 색상 차이 */
+    border-color: rgba(0, 0, 0, 0.2); /* 호버 시 테두리 색상 진하게 */
+    transform: translateY(-2px) scale(1.05);
+}
+
+.floating-sub-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
 /* ============================================

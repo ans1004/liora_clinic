@@ -108,7 +108,7 @@ async function loadNavigation() {
         data.languages.forEach(lang => {
             const langItem = document.createElement('a');
             langItem.href = '#';
-            langItem.className = 'language-menu-item liora-body-3';
+            langItem.className = 'language-menu-item liora-title-3'; /* Title3 스타일로 변경 */
             langItem.textContent = lang;
             languageMenu.appendChild(langItem);
         });

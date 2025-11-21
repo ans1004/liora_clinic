@@ -75,15 +75,15 @@
 
 .faq-tab-item span {
     display: block;
-    color: #555555;
+    color: #BBBBBB; /* 비활성화된 탭 버튼 색상 */
 }
 
 .faq-tab-item.active span {
-    color: #000000;
+    color: #000000; /* 활성화된 탭 버튼 색상 */
 }
 
 .faq-tab-item:not(.active) span {
-    color: #555555;
+    color: #BBBBBB; /* 비활성화된 탭 버튼 색상 */
 }
 
 /* Search */
