@@ -774,13 +774,21 @@
 
 /* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
 @media screen and (min-width: 360px) and (max-width: 768px) {
+    /* navbar와 footer가 항상 보이도록 보장 */
+    .navbar {
+        z-index: 2002 !important; /* 모바일 메뉴 오버레이보다 위에 표시 */
+        display: block !important; /* 항상 표시 */
+    }
+    
     .navbar-container {
-        padding: 0 16px;
+        padding: 0 20px !important; /* 모바일 navbar 좌우 패딩 20px */
+        display: block !important; /* 항상 표시 */
     }
 
     .navbar-top {
         height: 64px;
         justify-content: space-between; /* 로고와 버튼들을 양쪽에 배치 */
+        display: flex !important; /* 항상 표시 */
     }
 
     .logo-and-menu {
@@ -803,6 +811,11 @@
         height: 16px; /* 모바일에서 로고 크기 조정 */
     }
     
+    /* footer가 항상 보이도록 보장 */
+    .footer {
+        display: block !important; /* 항상 표시 */
+    }
+    
     /* 모바일 햄버거 메뉴 버튼 */
     .mobile-menu-button {
         display: flex;
@@ -821,15 +834,39 @@
         pointer-events: auto; /* 클릭 가능하도록 */
     }
     
+    /* 메뉴가 열렸을 때 햄버거 버튼 클릭 방지 (유령 클릭 방지) */
+    .navbar.mobile-menu-open .mobile-menu-button,
+    .mobile-menu-overlay.active ~ * .mobile-menu-button {
+        pointer-events: none !important; /* 메뉴가 열렸을 때 클릭 불가 */
+        z-index: 1 !important; /* 닫기 버튼보다 낮게 */
+    }
+    
     .hamburger-line {
         width: 20px;
-        height: 2px;
+        height: 1.3px; /* 굵기 얇게 (2px → 1px) */
         background-color: #111111;
         transition: all 0.3s ease;
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: -10px;
+    }
+    
+    .hamburger-line:nth-child(1) {
+        top: 6px;
+    }
+    
+    .hamburger-line:nth-child(2) {
+        top: 14px;
+    }
+    
+    .hamburger-line:nth-child(3) {
+        top: 22px;
     }
     
     .mobile-menu-button.active .hamburger-line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg);
+        top: 14px;
     }
     
     .mobile-menu-button.active .hamburger-line:nth-child(2) {
@@ -837,111 +874,339 @@
     }
     
     .mobile-menu-button.active .hamburger-line:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg);
+        top: 14px;
     }
     
-    /* 모바일 메뉴 오버레이 */
+    /* ============================================
+       모바일 메뉴 (navbar와 footer 보호)
+       ============================================ */
+    
+    /* navbar와 footer가 항상 보이도록 보장 */
+    .navbar {
+        z-index: 2002 !important; /* 모바일 메뉴 오버레이보다 위에 표시 */
+        display: block !important; /* 항상 표시 */
+    }
+    
+    .navbar-container {
+        display: block !important; /* 항상 표시 */
+    }
+    
+    .navbar-top {
+        display: flex !important; /* 항상 표시 */
+    }
+    
+    .footer {
+        display: block !important; /* 항상 표시 */
+        z-index: 1; /* 기본 z-index */
+    }
+    
+    /* 모바일 메뉴가 열릴 때만 navbar 배경색 변경 */
+    .navbar.mobile-menu-open {
+        background-color: #ffffff !important;
+    }
+    
+    /* 모바일 메뉴 오버레이 (피그마 디자인: 전체 화면) */
     .mobile-menu-overlay {
+        display: none !important; /* 기본적으로 완전히 숨김 */
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 2000;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        z-index: 2003 !important; /* navbar(2002)보다 위에 표시 */
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
+        pointer-events: none; /* 기본적으로 클릭 불가 */
     }
     
     .mobile-menu-overlay.active {
+        display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
-        display: block !important;
+        pointer-events: auto !important; /* 활성화 시 클릭 가능 */
+    }
+    
+    /* active 클래스가 없으면 확실히 숨김 */
+    .mobile-menu-overlay:not(.active) {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
     
     .mobile-menu-content {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 80%;
-        max-width: 320px;
+        display: none !important; /* 기본적으로 완전히 숨김 */
+        position: relative;
+        width: 100%;
         height: 100%;
         background-color: #ffffff;
-        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
         overflow-y: auto;
-        z-index: 2001;
+        z-index: 2004 !important; /* 오버레이보다 위에 표시 */
+        pointer-events: none; /* 기본적으로 클릭 불가 */
     }
     
     .mobile-menu-overlay.active .mobile-menu-content {
-        transform: translateX(0) !important;
+        display: block !important;
+        pointer-events: auto !important; /* 활성화 시 클릭 가능 */
+    }
+    
+    /* 모바일 메뉴 헤더 (로고 + 닫기 버튼) */
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 64px;
+        padding-left: 20px !important; /* navbar-container와 동일한 패딩 16px */
+        padding-right: 20px !important; /* navbar-container와 동일한 패딩 16px */
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        background-color: #ffffff;
+        border-bottom: none; /* border 라인 제거 */
+        position: sticky;
+        top: 0;
+        z-index: 2010;
+    }
+    
+    /* 모바일 메뉴 헤더 내부 로고 - navbar와 동일한 위치 */
+    .mobile-menu-header .logo {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .mobile-menu-header .logo img {
+        height: 16px !important; /* 일반 navbar와 동일한 크기 */
+    }
+    
+    .mobile-menu-header .mobile-menu-close {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .mobile-menu-logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .mobile-menu-logo-text {
+        font-family: 'Italiana', serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: #000000;
+        text-decoration: none;
     }
     
     .mobile-menu-close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 32px;
-        height: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+        height: 28px;
         background: none;
         border: none;
-        font-size: 32px;
-        line-height: 1;
         color: #111111;
         cursor: pointer;
+        padding: 0;
+        gap: 0;
+        position: relative;
+        z-index: 2030 !important; /* 모든 요소보다 위에 표시 */
+        pointer-events: auto !important; /* 클릭 가능하도록 */
+    }
+    
+    .mobile-menu-close svg {
+        width: 32px;
+        height: 32px;
+        display: block;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
+    }
+    
+    
+    /* nav-content 영역 */
+    .nav-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: calc(100vh - 64px);
+        padding-top: 20px; /* navbar와 메인메뉴 사이 간격 */
+    }
+    
+    /* nav-main 영역 */
+    .nav-main {
+        width: 100%;
+        flex: 1;
+    }
+    
+    /* nav-menu-mobile-only (각 메뉴 아이템) */
+    .nav-menu-mobile-only {
+        width: 100%;
+        border-bottom: none; /* border 라인 제거 */
+    }
+    
+    /* mainmenu 영역 */
+    .nav-menu-mobile-only .mainmenu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 79px;
+        padding: 0 20px;
+        background-color: #ffffff;
+        cursor: pointer;
+    }
+    
+    .nav-menu-mobile-only .mainmenu .menu {
+        color: #000000; /* text-styles.css의 liora-mobile-body-1 클래스 사용 */
+    }
+    
+    .nav-menu-mobile-only .mainmenu .icon {
+        width: 32px;
+        height: 32px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0;
+        color: #000000;
+        position: relative;
     }
     
-    .mobile-menu-list {
-        padding: 80px 24px 24px 24px;
-        display: flex;
+    .nav-menu-mobile-only .mainmenu .icon svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease;
+    }
+    
+    .nav-menu-mobile-only .mainmenu .icon .icon-plus {
+        opacity: 1;
+        display: block;
+    }
+    
+    .nav-menu-mobile-only .mainmenu .icon .icon-minus {
+        opacity: 0;
+        display: block;
+    }
+    
+    .nav-menu-mobile-only.active .mainmenu .icon .icon-plus {
+        opacity: 0;
+    }
+    
+    .nav-menu-mobile-only.active .mainmenu .icon .icon-minus {
+        opacity: 1;
+    }
+    
+    /* submenu 영역 - 모바일 전용 */
+    .nav-menu-mobile-only .submenu {
+        display: block !important; /* 항상 block으로 유지 (max-height로 제어) */
+        width: 100% !important;
+        background-color: #f7f7f7 !important;
+        position: static !important; /* 데스크톱 스타일과 충돌 방지 */
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.1s ease-out, opacity 0.1s ease-out, padding 0.1s ease-out !important;
+    }
+    
+    .nav-menu-mobile-only.active .submenu,
+    .nav-menu-mobile-only.active > .submenu {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-height: 1000px !important; /* 충분히 큰 값으로 설정 */
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    
+    /* nav-menu-sub (서브메뉴 아이템) - 모바일 전용 */
+    .nav-menu-mobile-only .submenu .nav-menu-sub {
+        display: flex !important; /* 데스크톱 스타일 덮어쓰기 */
         flex-direction: column;
+        width: 100%;
+        padding: 16px 20px; /* 상하 간격 조정 */
+        background-color: #f7f7f7;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        position: static !important; /* 데스크톱의 absolute 위치 덮어쓰기 */
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        z-index: auto !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .nav-menu-mobile-only .submenu .nav-menu-sub:last-child {
+        border-bottom: none !important; /* 마지막 아이템은 구분선 제거 */
+    }
+    
+    .nav-menu-mobile-only .submenu .nav-menu-sub:hover,
+    .nav-menu-mobile-only .submenu .nav-menu-sub:active {
+        background-color: #e6e6fa;
+    }
+    
+    .nav-menu-mobile-only .submenu .sub-menu-en {
+        color: #000000;
+        margin-bottom: 4px;
+        text-align: left; /* 왼쪽 정렬 */
+        /* text-styles.css의 liora-mobile-title-2 클래스 사용 */
+    }
+    
+    .nav-menu-mobile-only .submenu .sub-menu-kr {
+        color: #555555;
+        text-align: left; /* 왼쪽 정렬 */
+        /* text-styles.css의 liora-mobile-body-3 클래스 사용 */
+    }
+    
+    /* nav-menu-footer-mobile (언어 선택기) */
+    .nav-menu-footer-mobile {
+        width: 100%;
+        height: 38px;
+        padding: 0 20px;
+        margin-top: auto;
+        margin-bottom: 20px;
+    }
+    
+    .language-mobile {
+        display: flex;
         gap: 0;
     }
     
-    .mobile-menu-item {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    
-    .mobile-menu-link {
-        display: block;
-        padding: 20px 0;
-        color: #111111;
-        text-decoration: none;
-    }
-    
-    .mobile-sub-menu {
-        display: none;
-        padding-left: 16px;
-        padding-bottom: 16px;
-    }
-    
-    .mobile-menu-item.active .mobile-sub-menu {
+    .language-frame-mobile {
         display: flex;
-        flex-direction: column;
-        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        height: 38px;
+        padding: 0 13px;
+        cursor: pointer;
+        transition: color 0.3s ease;
     }
     
-    .mobile-sub-menu-item {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        padding: 12px 0;
-        text-decoration: none;
+    .language-frame-mobile .text {
+        font-family: 'Forum', serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        color: #999999;
+    }
+    
+    .language-frame-mobile.active .text {
         color: #111111;
     }
     
-    .mobile-sub-menu-en {
+    .language-frame-mobile:hover .text {
         color: #111111;
-    }
-    
-    .mobile-sub-menu-kr {
-        color: rgba(0, 0, 0, 0.6);
     }
     
     /* 모바일에서 언어 선택 버튼 숨김 */
@@ -949,8 +1214,14 @@
         display: none;
     }
     
-    .menu {
+    /* 모바일에서 데스크톱 메뉴만 숨김 (모바일 메뉴의 .menu는 제외) */
+    .logo-and-menu .menu {
         display: none; /* 모바일에서 데스크톱 메뉴 숨김 */
+    }
+    
+    /* 모바일 메뉴의 .menu는 표시 */
+    .nav-menu-mobile-only .mainmenu .menu {
+        display: block !important; /* 모바일 메뉴 텍스트는 항상 표시 */
     }
 
     .footer {
