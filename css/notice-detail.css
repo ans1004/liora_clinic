@@ -228,18 +228,40 @@
 
 @media screen and (max-width: 768px) {
     .notice-detail-content {
-        padding: 100px 20px 60px 20px;
+        padding: 120px 20px 80px 20px;
+    }
+
+    /* 모바일에서 날짜와 선 사이 간격, 선과 본문 사이 간격 조정 */
+    .notice-detail-title {
+        padding-bottom: 40px; /* 모바일에서 날짜와 선 사이 간격 조정 */
+        margin-bottom: 40px; /* 모바일에서 선과 본문 사이 간격 조정 */
+    }
+
+    /* 모바일에서 본문텍스트와 프레임(테이블) 사이 간격 조정 */
+    .notice-detail-frame {
+        margin-top: 40px; /* 모바일에서 본문텍스트와 테이블 사이 간격 조정 */
     }
 
     .notice-detail-download {
         flex-wrap: wrap;
         height: auto;
         min-height: 56px;
-        padding: 12px 20px;
+        padding: 20px 20px;
+    }
+
+    /* 첨부파일 이름 말줄임표 처리 - 다운로드 버튼과 겹치지 않도록 */
+    .notice-detail-download-filename {
+        flex: 1;
+        min-width: 0; /* flex 아이템이 줄어들 수 있도록 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: calc(100% - 200px); /* 라벨과 다운로드 버튼 공간 확보 */
     }
 
     .notice-detail-download-size {
-        width: 100%;
+        width: auto; /* 한 줄로 유지 */
+        white-space: nowrap; /* 줄바꿈 방지 */
         order: 3;
     }
 

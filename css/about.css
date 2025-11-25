@@ -188,6 +188,15 @@ body:has(.about-hero) .navbar:hover .language-icon svg {
 .our-mission-text-block p {
     color: #111111;
     text-align: center;
+    word-break: keep-all; /* 한국어 단어가 중간에 나뉘지 않도록 */
+    word-wrap: normal; /* 단어 단위로 줄바꿈 */
+    overflow-wrap: normal; /* 단어 단위로 줄바꿈 */
+    hyphens: none; /* 하이픈 없음 */
+}
+
+/* 데스크톱에서 모바일 텍스트 숨김 */
+.our-mission-text-block .mission-text-mobile {
+    display: none;
 }
 
 .our-mission-image-area {
@@ -460,9 +469,9 @@ body:has(.about-hero) .navbar:hover .language-icon svg {
     gap: 8px;
 }
 
-.philosophy-card-title {
-    margin-bottom: 4px;
-}
+    .philosophy-card-title {
+        margin-bottom: 4px;
+    }
 
 .philosophy-card-title p {
     color: #111111;
@@ -511,60 +520,310 @@ body:has(.about-hero) .navbar:hover .language-icon svg {
     }
 }
 
-@media (max-width: 768px) {
+/* 데스크톱/모바일 비디오/이미지 전환 */
+.about-hero-background .hero-video-desktop {
+    display: block;
+}
+
+.about-hero-background .hero-image-mobile {
+    display: none;
+}
+
+/* 데스크톱/모바일 텍스트 전환 */
+.hero-text-mobile,
+.mission-text-mobile,
+.vision-text-mobile,
+.accordion-text-mobile,
+.philosophy-title-mobile,
+.philosophy-text-mobile {
+    display: none;
+}
+
+.hero-text-desktop,
+.mission-text-desktop,
+.vision-text-desktop,
+.accordion-text-desktop,
+.philosophy-title-desktop,
+.philosophy-text-desktop {
+    display: block;
+}
+
+/* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    /* 모바일에서 비디오 숨기고 이미지 표시 */
+    .about-hero-background .hero-video-desktop {
+        display: none;
+    }
+    
+    .about-hero-background .hero-image-mobile {
+        display: block;
+    }
+    
+    /* 모바일에서 데스크톱 텍스트 숨기고 모바일 텍스트 표시 */
+    .about-hero-text .hero-text-desktop,
+    .our-mission-text-block .mission-text-desktop,
+    .our-vision-text-block .vision-text-desktop,
+    .accordion-content .accordion-text-desktop,
+    .philosophy-card-title .philosophy-title-desktop,
+    .philosophy-card-text .philosophy-text-desktop {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    .about-hero-text .hero-text-mobile,
+    .our-mission-text-block .mission-text-mobile,
+    .our-vision-text-block .vision-text-mobile,
+    .accordion-content .accordion-text-mobile,
+    .about-hero-text .hero-text-mobile,
+    .our-mission-text-block .mission-text-mobile,
+    .our-vision-text-block .vision-text-mobile,
+    .accordion-content .accordion-text-mobile,
+    .philosophy-card-title .philosophy-title-mobile,
+    .philosophy-card-text .philosophy-text-mobile {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* Philosophy 카드 타이틀은 인라인 요소일 수 있으므로 조정 */
+    .philosophy-card-title .philosophy-title-desktop,
+    .philosophy-card-title .philosophy-title-mobile {
+        display: inline-block;
+    }
+
+    
     .about-hero {
-        height: 500px;
+        height: 810px; /* 모바일에서 높이 810px */
     }
 
     .about-hero-content {
-        padding: 0 16px;
+        padding: 0 20px 40px 20px; /* 모바일 패딩 조정 */
     }
 
     .about-hero-logo img {
-        width: 300px;
+        width: 200px; /* 모바일에서 로고 크기 조정 */
     }
 
     .about-hero-text {
         margin-bottom: 40px;
     }
+    
+    /* Hero 텍스트는 text-styles.css의 스타일 사용 (중복 제거) */
+    .about-hero-text .hero-text-mobile {
+        white-space: normal; /* br 태그가 작동하도록 설정 */
+    }
 
+    /* Figma About_Mo 레이아웃에 맞춘 섹션 패딩 */
     .our-mission,
     .our-vision,
-    .brand-essence-about,
-    .philosophy {
-        padding: 60px 16px 180px 16px;
+    .philosophy,
+    .brand-essence-about  {
+        padding: 80px 20px 40px 20px; /* 상단 80px, 하단 0px (섹션 간 간격 없음) */
     }
+    
+    
+    /* Figma About_Mo 레이아웃에 맞춘 간격 조정 */
+    /* 타이틀과 텍스트 사이: 80px (Figma: y: 16577 → y: 16657) */
+    .our-mission-text-block h2 {
+        margin-bottom: 32px !important; /* 타이틀과 텍스트 사이 36px */
+    }
+
+    
+    
+    /* 텍스트 블록과 이미지 사이: 36px (Figma: y: 16777 → y: 16813) */
+    /* gap은 flex 컨테이너의 자식 요소 간 간격이므로, 텍스트 블록과 이미지 사이에만 적용 */
+    .our-mission-content {
+        gap: 36px !important; /* 텍스트 블록과 이미지 사이 36px */
+    }
+    
+    /* Our Vision: 텍스트 블록과 이미지 사이 36px */
+    .our-vision-content {
+        gap: 36px !important; /* 텍스트 블록과 이미지 사이 36px */
+    }
+    
+    .our-vision-text-block {
+        margin-bottom: 0 !important; /* Our Vision은 타이틀이 없으므로 margin 제거 */
+    }
+    
+    /* 텍스트 블록과 이미지 영역의 추가 margin 제거 */
+    .our-mission-text-block {
+        margin-bottom: 0 !important; /* gap으로 간격 조정하므로 margin 제거 */
+    }
+    
+    .our-mission-image-area {
+        margin-top: 0 !important; /* gap으로 간격 조정하므로 margin 제거 */
+    }
+    
+    .our-vision-image-area {
+        margin-top: 0 !important; /* gap으로 간격 조정하므로 margin 제거 */
+    }
+    
+
+
+    /* 모바일에서 Philosophy 타이틀과 카드 사이 간격 조절 */
+    .philosophy-content {
+        gap: 40px; /* 타이틀과 카드 리스트 사이 간격 */
+    }
+
+    /* 모바일에서 Brand Essence 타이틀과 아코디언 사이 간격 조절 */
+    .brand-essence-about-content {
+        gap: 40px; /* 타이틀과 아코디언 사이 간격 */
+    }
+    
+    /* 모바일 텍스트는 text-styles.css의 스타일 사용 (중복 제거) */
+    .our-mission-text-block .mission-text-mobile,
+    .our-vision-text-block .vision-text-mobile {
+        white-space: normal; /* br 태그가 작동하도록 설정 */
+    }
+
 
     .our-mission-image-area {
-        flex-direction: column;
-        align-items: center;
+        width: 100%;
+        max-width: 320px;
+        height: 0;
+        padding-bottom: 81.25%; /* 260/320 = 0.8125 (현재 비율 유지) */
+        position: relative;
+        margin: 0 auto;
+        display: block; /* flex 제거 */
     }
 
-    .mission-image-1,
+    /* 모바일에서 mission-image 기본 스타일 오버라이드 */
+    .our-mission-image-area .mission-image {
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .mission-image-1 {
+        position: absolute !important;
+        width: 57.2% !important; /* 183/320 = 0.572 (현재 비율 유지) */
+        height: 86.2% !important; /* 224/260 = 0.862 (현재 비율 유지) */
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 1;
+    }
+    
     .mission-image-2 {
+        position: absolute !important;
+        width: 48.75% !important; /* 156/320 = 0.4875 (현재 비율 유지) */
+        height: 68.8% !important; /* 179/260 = 0.688 (현재 비율 유지) */
+        bottom: 0 !important;
+        right: 0 !important;
+        z-index: 2;
+    }
+    
+    .mission-image img {
         width: 100%;
-        max-width: 400px;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
     .our-vision-image-area {
-        width: calc(100% + 32px);
-        height: 300px;
-        margin-left: -16px;
-        margin-right: -16px;
+        width: calc(100% + 40px);
+        height: 240px; /* 모바일에서 높이 조정 */
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    
+    .brand-essence-about-main {
+        flex-direction: column;
+        gap: 20px;
     }
 
+    /* 모바일에서 brand essence 이미지 숨김 */
     .brand-essence-about-image {
-        height: 300px;
+        display: none !important;
+    }
+    
+    .brand-essence-about-accordion {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px; /* Figma 기준 아코디언 간 간격 8px */
+    }
+    
+    .accordion-item {
+        height: 80px; /* 모바일에서 기본 높이 조정 */
+    }
+    
+    .accordion-item.active {
+        height: auto; /* 모바일에서 활성화 시 자동 높이 */
+        min-height: 200px;
+    }
+    
+    .accordion-header {
+        padding: 20px; /* 모바일에서 패딩 조정 */
+    }
+    
+    /* Accordion 제목과 본문은 text-styles.css의 스타일 사용 (중복 제거) */
+    
+    .accordion-content {
+        padding: 0 20px 20px 20px; /* 모바일에서 패딩 조정 */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 1;
+        will-change: max-height; /* 성능 개선 */
+    }
+
+    .accordion-item.active .accordion-content {
+        max-height: 1000px; /* 충분히 큰 값으로 설정하여 흔들림 방지 */
+    }
+
+    .accordion-content p {
+        margin-top: 0;
+        opacity: 1;
+        transition: none;
     }
 
     .philosophy-card {
         width: 100%;
-        max-width: 400px;
+        max-width: 100%;
     }
+    
+    .philosophy-card-image {
+        height: auto; /* 모바일에서 높이 조정 */
+    }
+    
+    /* Philosophy 카드 텍스트는 text-styles.css의 스타일 사용 (중복 제거) */
 
     .philosophy-card-list {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 48px; /* 모바일에서 카드 간격 조정 */
+    }
+
+    /* 모바일에서 Philosophy 카드 타이틀과 본문 사이 간격 줄이기 */
+    .philosophy-card-text {
+        gap: 4px; /* 기본 8px에서 4px로 줄임 */
+    }
+}
+
+/* 데스크톱: 769px 이상 - 명시적으로 데스크톱 텍스트 표시 */
+@media screen and (min-width: 769px) {
+    .hero-text-desktop,
+    .mission-text-desktop,
+    .vision-text-desktop,
+    .accordion-text-desktop,
+    .philosophy-title-desktop,
+    .philosophy-text-desktop {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .hero-text-mobile,
+    .mission-text-mobile,
+    .vision-text-mobile,
+    .accordion-text-mobile,
+    .philosophy-title-mobile,
+    .philosophy-text-mobile {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /* Philosophy 카드 타이틀은 인라인 요소일 수 있으므로 조정 */
+    .philosophy-card-title .philosophy-title-desktop {
+        display: inline-block;
     }
 }
 

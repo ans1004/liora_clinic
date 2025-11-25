@@ -173,7 +173,7 @@
 }
 
 /* 반응형 디자인 */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     .event-detail-content {
         padding: 120px 40px 80px 40px;
     }
@@ -194,21 +194,43 @@
 
 @media screen and (max-width: 768px) {
     .event-detail-content {
-        padding: 60px 20px;
+        padding: 120px 20px 80px 20px; /* 모바일에서 위 패딩 120px */
+    }
+
+    /* 모바일에서 컨텐츠 왼쪽 정렬 */
+    .event-detail-content-wrapper {
+        align-items: flex-start; /* 모바일에서 왼쪽 정렬 */
     }
 
     .event-detail-title {
-        padding: 24px 16px;
+        padding-bottom: 40px; /* 모바일에서 날짜와 선 사이 간격 조정 */
+        margin-bottom: 40px; /* 모바일에서 선과 이미지 사이 간격 조정 */
     }
 
+    /* 모바일에서 타이틀 텍스트 패딩 제거 */
     .event-detail-title-text {
-        padding: 0 16px;
+        padding: 0; /* 모바일에서 좌우 패딩 제거 */
+    }
+
+    /* 모바일에서 타이틀 텍스트 왼쪽 정렬 */
+    .event-detail-title-main,
+    .event-detail-title-date {
+        text-align: left;
     }
 
     .event-detail-image-area {
         height: 300px;
     }
 
+    /* 모바일에서 이미지와 본문텍스트 사이 간격 조정 */
+    .event-detail-text {
+        gap: 40px; /* 모바일에서 이미지와 본문 사이 간격 조정 */
+    }
+
+    /* 모바일에서 본문텍스트와 테이블 사이 간격 조정 */
+    .event-detail-navigation {
+        margin-top: 40px; /* 모바일에서 본문텍스트와 테이블 사이 간격 조정 */
+    }
 
     .event-detail-table {
         padding: 16px;

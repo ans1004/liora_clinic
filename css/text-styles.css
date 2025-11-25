@@ -171,152 +171,155 @@ body {
 /* ============================================
    Mobile 텍스트 스타일
    ============================================ */
+/* 모바일 클래스들은 미디어 쿼리 안에서만 정의되어 데스크탑에서 적용되지 않도록 함 */
 
-/* Mobile Display 스타일 */
-.liora-mobile-display-1 {
-    font-family: 'Italiana', serif;
-    font-size: 96px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 96px;
-    letter-spacing: 0;
-}
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    /* Mobile Display 스타일 */
+    .liora-mobile-display-1 {
+        font-family: 'Italiana', serif;
+        font-size: 96px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 96px;
+        letter-spacing: 0;
+    }
 
-.liora-mobile-display-2 {
-    font-family: 'Italiana', serif;
-    font-size: 72px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 72px;
-    letter-spacing: 0;
-}
+    .liora-mobile-display-2 {
+        font-family: 'Italiana', serif;
+        font-size: 72px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 72px;
+        letter-spacing: 0;
+    }
 
-.liora-mobile-display-3 {
-    font-family: 'Italiana', serif;
-    font-size: 56px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 56px;
-    letter-spacing: 0;
-}
+    .liora-mobile-display-3 {
+        font-family: 'Italiana', serif;
+        font-size: 56px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 56px;
+        letter-spacing: 0;
+    }
 
-.liora-mobile-display-4 {
-    font-family: 'Italiana', serif;
-    font-size: 48px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 48px;
-    letter-spacing: 0;
-}
+    .liora-mobile-display-4 {
+        font-family: 'Italiana', serif;
+        font-size: 48px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 48px;
+        letter-spacing: 0;
+    }
 
-.liora-mobile-display-5 {
-    font-family: 'Italiana', serif;
-    font-size: 44px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 44px;
-    letter-spacing: 0;
-}
+    .liora-mobile-display-5 {
+        font-family: 'Italiana', serif;
+        font-size: 44px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 44px;
+        letter-spacing: 0;
+    }
 
-.liora-mobile-display-6 {
-    font-family: 'Italiana', serif;
-    font-size: 40px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 40px;
-    letter-spacing: 0;
-}
+    .liora-mobile-display-6 {
+        font-family: 'Italiana', serif;
+        font-size: 40px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 40px;
+        letter-spacing: 0;
+    }
 
-/* Mobile Body 스타일 */
-.liora-mobile-body-1 {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 28px;
-    font-weight: 300; /* Light */
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: -0.84px;
-}
+    /* Mobile Body 스타일 - 태블릿 버전과 동일한 사이즈 */
+    .liora-mobile-body-1 {
+        font-family: 'Pretendard', sans-serif;
+        font-size: 28px; /* 태블릿과 동일 */
+        font-weight: 300; /* Light */
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: -0.96px; /* 태블릿과 동일 (데스크톱 letter-spacing 사용) */
+    }
 
-.liora-mobile-body-1-emphasized {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 28px;
-    font-weight: 600; /* SemiBold */
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: -0.84px;
-}
+    .liora-mobile-body-1-emphasized {
+        font-family: 'Pretendard', sans-serif;
+        font-size: 28px; /* 태블릿과 동일 */
+        font-weight: 600; /* SemiBold */
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: -0.96px; /* 태블릿과 동일 (데스크톱 letter-spacing 사용) */
+    }
 
-.liora-mobile-body-2 {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 16px;
-    font-weight: 400; /* Regular */
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: -0.48px;
-}
+    .liora-mobile-body-2 {
+        font-family: 'Pretendard', sans-serif;
+        font-size: 16px; /* 태블릿과 동일 */
+        font-weight: 400; /* Regular */
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: -0.6px; /* 태블릿과 동일 (데스크톱 letter-spacing 사용) */
+    }
 
-.liora-mobile-body-2-emphasized {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 16px;
-    font-weight: 600; /* SemiBold */
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: -0.48px;
-}
+    .liora-mobile-body-2-emphasized {
+        font-family: 'Pretendard', sans-serif;
+        font-size: 16px; /* 태블릿과 동일 */
+        font-weight: 600; /* SemiBold */
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: -0.6px; /* 태블릿과 동일 (데스크톱 letter-spacing 사용) */
+    }
 
-.liora-mobile-body-3 {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 14px;
-    font-weight: 400; /* Regular */
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: -0.42px;
-}
+    .liora-mobile-body-3 {
+        font-family: 'Pretendard', sans-serif;
+        font-size: 14px; /* 태블릿과 동일 */
+        font-weight: 400; /* Regular */
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: -0.48px; /* 태블릿과 동일 (데스크톱 letter-spacing 사용) */
+    }
 
-.liora-mobile-body-3-emphasized {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 14px;
-    font-weight: 600; /* SemiBold */
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: -0.42px;
-}
+    .liora-mobile-body-3-emphasized {
+        font-family: 'Pretendard', sans-serif;
+        font-size: 14px; /* 태블릿과 동일 */
+        font-weight: 600; /* SemiBold */
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: -0.48px; /* 태블릿과 동일 (데스크톱 letter-spacing 사용) */
+    }
 
-.liora-mobile-body-3-light {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 14px;
-    font-weight: 300; /* Light */
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: -0.42px;
-}
+    .liora-mobile-body-3-light {
+        font-family: 'Pretendard', sans-serif;
+        font-size: 14px; /* 태블릿과 동일 */
+        font-weight: 300; /* Light */
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: -0.48px; /* 태블릿과 동일 (데스크톱 letter-spacing 사용) */
+    }
 
-/* Mobile Title 스타일 */
-.liora-mobile-title-1 {
-    font-family: 'Forum', serif;
-    font-size: 28px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 39.2px;
-    letter-spacing: 0;
-}
+    /* Mobile Title 스타일 */
+    .liora-mobile-title-1 {
+        font-family: 'Forum', serif;
+        font-size: 28px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 39.2px;
+        letter-spacing: 0;
+    }
 
-.liora-mobile-title-2 {
-    font-family: 'Forum', serif;
-    font-size: 20px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 28px;
-    letter-spacing: 0;
-}
+    .liora-mobile-title-2 {
+        font-family: 'Forum', serif;
+        font-size: 20px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 28px;
+        letter-spacing: 0;
+    }
 
-.liora-mobile-title-3 {
-    font-family: 'Forum', serif;
-    font-size: 14px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 19.6px;
-    letter-spacing: 0;
+    .liora-mobile-title-3 {
+        font-family: 'Forum', serif;
+        font-size: 14px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 19.6px;
+        letter-spacing: 0;
+    }
 }
 
 /* ============================================
@@ -401,81 +404,9 @@ body {
     }
 }
 
-/* 모바일 (768px 이하) */
-@media screen and (max-width: 768px) {
-    .liora-display-1 { 
-        font-size: 72px; 
-        line-height: 72px; 
-    }
-
-    .liora-display-2 { 
-        font-size: 56px; 
-        line-height: 56px; 
-    }
-
-    .liora-display-3 { 
-        font-size: 48px; 
-        line-height: 48px; 
-    }
-
-    .liora-display-4 { 
-        font-size: 44px; 
-        line-height: 44px; 
-    }
-
-    .liora-display-5 { 
-        font-size: 40px; 
-        line-height: 40px; 
-    }
-
-    .liora-display-6 { 
-        font-size: 36px; 
-        line-height: 36px; 
-    }
-
-    .liora-body-1 { 
-        font-size: 24px; 
-    }
-
-    .liora-body-1-emphasized { 
-        font-size: 24px; 
-    }
-
-    .liora-body-2 { 
-        font-size: 14px; 
-    }
-
-    .liora-body-2-emphasized { 
-        font-size: 14px; 
-    }
-
-    .liora-body-3 { 
-        font-size: 12px; 
-    }
-
-    .liora-body-3-light { 
-        font-size: 12px; 
-    }
-
-    .liora-body-large { 
-        font-size: 28px; 
-        line-height: 39.2px;
-        letter-spacing: -0.84px;
-    }
-
-    .liora-title-1 { 
-        font-size: 24px; 
-        line-height: 33.6px; 
-    }
-
-    .liora-title-2 { 
-        font-size: 18px; 
-        line-height: 25.2px; 
-    }
-
-    .liora-title-3 { 
-        font-size: 12px; 
-        line-height: 16.8px; 
-    }
-}
+/* 모바일 (768px 이하) 미디어 쿼리 제거됨
+   모바일에서는 .liora-mobile-* 클래스를 사용하므로 
+   데스크톱 클래스(.liora-*)를 조정하는 미디어 쿼리는 불필요하며 충돌을 일으킬 수 있습니다.
+   모바일 전용 클래스는 위의 @media screen and (min-width: 360px) and (max-width: 768px) 블록에 정의되어 있습니다.
+*/
 

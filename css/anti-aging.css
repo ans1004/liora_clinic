@@ -28,6 +28,15 @@
     object-fit: cover;
 }
 
+/* 이미지 전환: 데스크탑에서는 데스크탑 이미지, 모바일에서는 모바일 이미지 */
+.hero-background .img-mobile {
+    display: none; /* 데스크탑에서 모바일 이미지 숨김 */
+}
+
+.hero-background .img-desktop {
+    display: block; /* 데스크탑에서 데스크탑 이미지 표시 */
+}
+
 .hero-section-text {
     position: absolute;
     top: 50%;
@@ -283,9 +292,15 @@
     color: #171414;
     flex: 1;
     max-width: 962px;
-    font-size: 44px; /* 피그마 디자인: Pretendard Light 44px */
-    line-height: 61.6px; /* 피그마 디자인: line-height 61.6px */
-    letter-spacing: -1.32px; /* 피그마 디자인: letter-spacing -1.32px */
+}
+
+/* 데스크톱/모바일 텍스트 분리 */
+.outtro-headline-mobile {
+    display: none; /* 데스크톱에서 숨김 */
+}
+
+.btn-text-label-mobile {
+    display: none; /* 데스크톱에서 숨김 */
 }
 
 .btn-text {
@@ -411,17 +426,31 @@
     }
 }
 
-/* 모바일 (768px 이하) */
-@media screen and (max-width: 768px) {
+/* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    /* 모바일에서 데스크탑 이미지 숨기고 모바일 이미지 표시 */
+    .hero-background .img-desktop {
+        display: none;
+    }
+    
+    .hero-background .img-mobile {
+        display: block;
+    }
+    
     .hero-section {
-        height: 500px;
+        height: 800px; /* 모바일에서 높이 800px */
     }
 
     .hero-section-text {
-        top: 50%;
-        left: 16px;
-        right: 16px;
-        transform: translateY(-50%); /* 위아래 가운데 정렬 */
+        top: auto; /* top 제거 */
+        bottom: 128px; /* 바텀 패딩 128px */
+        left: 20px; /* 좌우 패딩 20px */
+        right: 20px;
+        transform: none; /* transform 제거 */
+        text-align: center; /* 텍스트 가운데 정렬 */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* 가운데 정렬 */
     }
 
     .hero-icon {
@@ -431,31 +460,34 @@
     }
 
     .content {
-        padding: 0 16px;
+        padding: 0 20px; /* 모바일 좌우 패딩 20px */
     }
 
     .section-about {
-        padding: 60px 0;
+        padding: 80px 0;
     }
 
     .text-block {
-        margin-bottom: 32px;
+        margin-bottom: 48px;
     }
 
     .image-area {
-        height: 300px;
+        width: 100%; /* 가변형 너비 - 패딩 고려하여 자동 조정 */
+        height: auto; /* 높이 자동 */
+        aspect-ratio: 320 / 200; /* 320x200 비율 유지 (가로 늘어날 때 비율에 맞게 증가) */
+        margin: 0 auto; /* 가운데 정렬 */
     }
 
     .section-effect {
-        padding: 40px 0;
+        padding: 80px 0;
     }
 
     .core-technology {
-        padding: 60px 16px 180px 16px;
+        padding: 60px 20px 120px 20px; /* 모바일 좌우 패딩 20px */
     }
 
     .core-technology-content {
-        gap: 32px;
+        gap: 36px;
     }
 
     .core-technology-card {
@@ -463,13 +495,20 @@
         max-width: 400px;
     }
 
+    .core-technology-card-image {
+        width: 100%;
+        height: auto; /* 높이 자동 */
+        aspect-ratio: 1 / 1; /* 정사각형 비율 */
+    }
+
     .core-technology-card-list {
         flex-direction: column;
         align-items: center;
+        gap: 48px; /* 모바일 카드 사이간격 48px */
     }
 
     .card-list {
-        gap: 32px;
+        gap: 48px; /* 모바일 Anti-aging Effect 카드 사이간격 48px */
         flex-direction: column;
         align-items: center;
     }
@@ -486,12 +525,37 @@
 
     .section-outtro {
         padding: 40px 0;
-        gap: 24px;
+        gap: 40px !important; /* 모바일 headline과 btn-text 사이간격 40px */
+    }
+
+    /* 모바일에서 데스크톱 텍스트 숨기고 모바일 텍스트 표시 */
+    .outtro-headline-desktop {
+        display: none; /* 모바일에서 숨김 */
+    }
+
+    .outtro-headline-mobile {
+        display: block; /* 모바일에서 표시 */
+    }
+
+    .btn-text-label-desktop {
+        display: none; /* 모바일에서 숨김 */
+    }
+
+    .btn-text-label-mobile {
+        display: block; /* 모바일에서 표시 */
     }
 
     .btn-text {
-        width: 100%;
-        justify-content: center;
+        justify-content: flex-start; /* 모바일에서 왼쪽 정렬 */
+    }
+
+    /* 모바일에서 Care Program 카드 타이틀과 본문 사이 간격 줄이기 */
+    .core-technology-card-text {
+        gap: 4px; /* 기본 8px에서 4px로 줄임 */
+    }
+
+    .core-technology-card-title {
+        margin-bottom: 0; /* 기본 4px에서 0으로 줄임 */
     }
 }
 

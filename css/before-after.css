@@ -50,6 +50,14 @@
 .before-after-tab-list {
     display: flex;
     gap: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.before-after-tab-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .before-after-tab-item {
@@ -59,6 +67,8 @@
     color: #000000;
     cursor: pointer;
     transition: color 0.3s, font-weight 0.3s;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .before-after-tab-item.active {
@@ -247,7 +257,7 @@
 
     .before-after-card-list {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
         justify-items: center;
     }
 
@@ -266,32 +276,81 @@
 }
 
 @media screen and (max-width: 768px) {
+    /* Hero Section - 모바일 패딩 조정 (피그마: y: 120) */
     .before-after-hero {
-        padding: 60px 20px;
+        padding: 120px 20px 80px 20px;
     }
 
+    /* Content Section - 모바일 패딩 조정 (피그마: content 시작 후 40px) */
     .before-after-content {
-        padding: 0 20px 60px 20px;
+        padding: 0 0 80px 0;
+    }
+
+    /* Tab - 모바일 패딩 조정 (피그마: x: 20) */
+    .before-after-tab {
+        padding: 0 20px;
+        margin-bottom: 20px;
     }
 
     .before-after-tab-list {
-        flex-wrap: wrap;
-        gap: 16px;
+        gap: 20px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
     }
 
+    .before-after-tab-list::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .before-after-tab-item {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    /* Before After Section - 모바일 레이아웃 (피그마: 좌우 패딩 20px) */
+    .before-after-section {
+        box-sizing: border-box;
+    }
+
+    .before-after-card-list {
+        gap: 48px;
+        margin-bottom: 60px;
+        justify-items: stretch;
+    }
+
+    /* 카드 이미지 영역 - 모바일 가로 배치 (피그마: 360x180, row: 179x180) */
     .before-after-card-image-area {
-        height: 250px;
-        flex-direction: column;
-        gap: 8px;
+        width: 100%;
+        height: 180px;
+        flex-direction: row;
+        gap: 2px;
+        margin-bottom: 20px;
     }
 
     .before-after-card-row {
         width: 100%;
-        height: 250px;
+        height: 100%;
+    }
+
+    /* 카드 텍스트 블록 - 모바일 너비 조정 */
+    .before-after-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
     }
 
     .before-after-card-text-block {
         width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
+    }
+
+    /* 모바일에서 Before/After 배지 숨김 */
+    .before-after-badge {
+        display: none;
     }
 }
 

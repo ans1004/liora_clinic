@@ -265,51 +265,154 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+/* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    /* text-styles.css에서 모바일 클래스가 미디어 쿼리 안에 정의되어 있으므로 자동으로 적용됨 */
+    /* 데스크탑 클래스는 미디어 쿼리 밖에 정의되어 있어 모바일에서는 적용되지 않음 */
+    /* Hero Section - Figma Location_Mo 기준 */
     .location-hero {
-        padding: 60px 20px;
+        padding: 120px 20px 80px 20px; /* 상단 120px (navbar 64px + 여백 56px) */
     }
 
+    .location-hero-content {
+        max-width: 100%;
+    }
+
+    .location-hero-text-block {
+        width: 320px;
+        gap: 16px; /* Figma 기준 타이틀과 서브타이틀 사이 간격 */
+        align-items: flex-start; /* 왼쪽 정렬 */
+    }
+
+    .location-hero-title {
+        text-align: left; /* 왼쪽 정렬 */
+    }
+
+    .location-hero-subtitle {
+        text-align: left; /* 왼쪽 정렬 */
+    }
+
+    /* Content Section - Figma Location_Mo 기준 */
     .location-content {
-        padding: 0 20px 60px 20px;
+        padding: 0 20px 80px 20px; /* 하단 40px (Footer와의 간격) */
     }
 
+    /* Map/Image Area - Figma 기준 */
     .location-image-area {
-        height: 240px;
-        margin-bottom: 40px;
+        width: 100%;
+        height: 240px; /* Figma 기준 높이 */
+        margin: 0 0 48px 0; /* map과 text-block 사이 48px */
     }
 
+    /* Text Block - Figma 기준 */
     .location-text-block {
-        gap: 40px;
+        width: 100%;
+        max-width: 320px; /* Figma 기준 너비 */
+        margin: 0 auto;
+        gap: 48px; /* 섹션 간 간격: Time → Location 28px, Location → Inquiry 28px */
     }
 
-    .location-time,
-    .location-address,
-    .location-inquiry {
-        flex-direction: column;
-        gap: 20px;
-    }
-
+    /* Section Title - Figma 기준 */
     .location-section-title {
-        margin-bottom: 0;
+        margin-bottom: 20px; /* Figma 기준 타이틀과 콘텐츠 사이 간격 */
         width: auto;
+        text-align: left; /* Figma에서 left 정렬 */
     }
 
-    .location-time-row,
-    .location-inquiry-row {
+    /* Time Section - Figma 기준 */
+    .location-time {
         flex-direction: column;
+        gap: 0;
         align-items: flex-start;
-        gap: 16px;
     }
 
-    .location-time-item:first-child,
-    .location-inquiry-item:first-child {
+    .location-time-content {
+        width: 100%;
+    }
+
+    .location-time-row {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px; /* Figma 기준 간격 */
+        margin-bottom: 4px;
+    }
+
+    .location-time-row:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .location-time-item {
         width: auto;
+    }
+
+    .location-time-item:first-child {
+        width: 124px; /* Figma 기준 "월요일-금요일(평일)" 너비 */
+    }
+
+    .location-time-notice {
+        margin-top: 16px; /* Figma 기준 간격 */
+    }
+
+    /* Location Section - Figma 기준 */
+    .location-address {
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .location-address-content {
+        width: 100%;
+    }
+
+    .location-address-row {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0;
+        align-items: flex-start;
+    }
+
+    .location-address-row:first-child {
+        margin-bottom: 16px; /* Figma 기준 간격 */
+    }
+
+    .location-address-row:nth-child(2) {
+        margin-bottom: 4px; /* Figma 기준 간격 */
     }
 
     .location-address-item {
+        flex-direction: row;
+        gap: 12px; /* Figma 기준 간격 */
+        align-items: center;
+    }
+
+    /* Inquiry Section - Figma 기준 */
+    .location-inquiry {
         flex-direction: column;
-        gap: 8px;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .location-inquiry-content {
+        width: 100%;
+    }
+
+    .location-inquiry-row {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px; /* Figma 기준 간격 */
+        margin-bottom: 4px;
+    }
+
+    .location-inquiry-row:last-child {
+        margin-bottom: 0;
+    }
+
+    .location-inquiry-item {
+        width: auto;
+    }
+
+    .location-inquiry-item:first-child {
+        width: 54px; /* Figma 기준 "전화번호", "이메일" 너비 */
     }
 }
 

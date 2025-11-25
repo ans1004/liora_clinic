@@ -162,22 +162,34 @@
 
 @media screen and (max-width: 768px) {
     .event-hero {
-        padding: 60px 20px;
+        padding: 120px 20px 80px 20px;
     }
 
     .event-content {
         padding: 0 20px 60px 20px;
     }
 
+    /* 모바일에서 탭 버튼과 카드 사이 간격 20px */
+    .event-tab {
+        margin-bottom: 20px;
+    }
+
     .event-card-list {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 48px;
         justify-items: center;
     }
 
     .event-card {
         width: 100%;
+        height: 100%; /* 높이 100%로 변경 */
         max-width: 440px;
+    }
+
+    /* 모바일에서 카드 이미지 영역도 100%로 변경 */
+    .event-card-image-area {
+        width: 100%;
+        height: 100%;
     }
 }
 
