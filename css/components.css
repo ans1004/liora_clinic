@@ -48,6 +48,13 @@
     width: auto;
 }
 
+/* 데스크톱에서 모바일 메뉴 요소 숨김 */
+.mobile-menu-button,
+.mobile-menu-overlay,
+.mobile-menu-content {
+    display: none;
+}
+
 .menu {
     display: flex;
     gap: 46px;
@@ -765,42 +772,224 @@
     }
 }
 
-/* 모바일 (768px 이하) */
-@media screen and (max-width: 768px) {
+/* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
+@media screen and (min-width: 360px) and (max-width: 768px) {
     .navbar-container {
         padding: 0 16px;
     }
 
     .navbar-top {
         height: 64px;
+        justify-content: space-between; /* 로고와 버튼들을 양쪽에 배치 */
     }
 
     .logo-and-menu {
-        gap: 24px;
+        gap: 0; /* 모바일에서는 gap 제거 */
+        flex: 1; /* 남은 공간 차지 */
     }
-
+    
+    /* 모바일에서 데스크톱 메뉴 숨김 */
+    .logo-and-menu .menu {
+        display: none;
+    }
+    
+    /* 로고만 표시 */
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo img {
+        height: 16px; /* 모바일에서 로고 크기 조정 */
+    }
+    
+    /* 모바일 햄버거 메뉴 버튼 */
+    .mobile-menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        gap: 4px;
+        position: relative;
+        z-index: 2002; /* 오버레이보다 위에 표시 */
+        pointer-events: auto; /* 클릭 가능하도록 */
+    }
+    
+    .hamburger-line {
+        width: 20px;
+        height: 2px;
+        background-color: #111111;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-button.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-button.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-button.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* 모바일 메뉴 오버레이 */
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .mobile-menu-overlay.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+    
+    .mobile-menu-content {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 320px;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        z-index: 2001;
+    }
+    
+    .mobile-menu-overlay.active .mobile-menu-content {
+        transform: translateX(0) !important;
+    }
+    
+    .mobile-menu-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        font-size: 32px;
+        line-height: 1;
+        color: #111111;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .mobile-menu-list {
+        padding: 80px 24px 24px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .mobile-menu-item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-menu-link {
+        display: block;
+        padding: 20px 0;
+        color: #111111;
+        text-decoration: none;
+    }
+    
+    .mobile-sub-menu {
+        display: none;
+        padding-left: 16px;
+        padding-bottom: 16px;
+    }
+    
+    .mobile-menu-item.active .mobile-sub-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .mobile-sub-menu-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 0;
+        text-decoration: none;
+        color: #111111;
+    }
+    
+    .mobile-sub-menu-en {
+        color: #111111;
+    }
+    
+    .mobile-sub-menu-kr {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    
+    /* 모바일에서 언어 선택 버튼 숨김 */
+    .language {
+        display: none;
+    }
+    
     .menu {
-        gap: 16px;
+        display: none; /* 모바일에서 데스크톱 메뉴 숨김 */
     }
 
     .footer {
-        padding: 40px 16px 0 16px;
+        padding: 40px 0 0 0; /* 좌우 패딩 제거 */
+    }
+
+    .footer > *:not(.footer-line) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .footer-line {
-        width: 100%;
-        margin: 0 0 48px 0;
+        margin-bottom: 40px;
     }
 
     .footer-privacy-sns-menu {
         flex-direction: column;
-        gap: 32px;
-        padding-top: 40px;
+        gap: 80px;
+        padding-top: 0px;
+        margin-bottom: 60px; /* 모바일에서 footer-logo와의 간격 조절 */
     }
 
-    .footer-menu {
+    /* 모바일에서 footer-privacy와 sns 사이 간격 조절 */
+    .footer-privacy-sns {
+        gap: 32px; /* 모바일에서 footer-privacy와 sns 사이 간격 */
+    }
+
+    /* 모바일에서 footer-privacy를 세로로 정렬 */
+    .footer-privacy {
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
+    }
+
+    /* 모바일에서 footer-menu를 2x2 그리드로 배치 */
+    .footer-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        align-items: start; /* 상단 정렬 */
     }
 
     .footer-menu .menu-1,
@@ -808,15 +997,22 @@
     .footer-menu .menu-3,
     .footer-menu .menu-4 {
         width: 100%;
+        padding-top: 0; /* 상단 패딩 제거 */
+        margin-top: 0; /* 상단 마진 제거 */
+    }
+
+    /* 모바일에서 nav-menu 상단 정렬 */
+    .footer-menu .nav-menu {
+        margin-top: 0; /* 상단 마진 제거 */
     }
 
     .footer-logo-copyright .logo {
-        height: 120px;
+        height: 54px;
     }
 
     .copyright {
         flex-direction: column;
-        gap: 8px;
+        gap: 4px;
     }
 }
 
