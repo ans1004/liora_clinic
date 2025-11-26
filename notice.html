@@ -46,12 +46,26 @@
             <div class="notice-section" id="1_notice">
                 <!-- Search Container -->
                 <div class="notice-container">
-                    <button class="notice-filter-btn">
-                        <span class="liora-body-3">전체</span>
-                        <svg class="notice-filter-icon" width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L8 7L15 1" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+                    <div class="notice-filter-wrapper">
+                        <button class="notice-filter-btn">
+                            <span class="notice-filter-text liora-body-3">전체</span>
+                            <svg class="notice-filter-icon" width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L8 7L15 1" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <!-- 모바일 아코디언 메뉴 -->
+                        <div class="notice-filter-menu">
+                            <button class="notice-filter-menu-item" data-filter="all">
+                                <span class="liora-body-3">전체</span>
+                            </button>
+                            <button class="notice-filter-menu-item" data-filter="공지">
+                                <span class="liora-body-3">공지</span>
+                            </button>
+                            <button class="notice-filter-menu-item" data-filter="일반">
+                                <span class="liora-body-3">일반</span>
+                            </button>
+                        </div>
+                    </div>
                     <div class="notice-search-wrapper">
                         <input type="text" class="notice-search-input liora-body-3" placeholder="키워드를 입력해 주세요.">
                         <svg class="notice-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

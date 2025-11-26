@@ -21,12 +21,12 @@
 
 .notice-hero-title {
     text-align: left;
-    color: #000000;
+    color: #111111;
 }
 
 .notice-hero-subtitle {
     text-align: left;
-    color: #000000;
+    color: #111111;
 }
 
 /* Content Section */
@@ -87,6 +87,72 @@
 .notice-filter-icon {
     flex-shrink: 0;
     pointer-events: none; /* 클릭 이벤트 방지 */
+    transition: transform 0.3s ease;
+}
+
+/* 필터 래퍼 (아코디언 메뉴 포함) */
+.notice-filter-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* 아코디언 메뉴 (데스크탑과 모바일 모두 사용) */
+.notice-filter-menu {
+    display: block; /* 기본적으로 표시 (opacity로 제어) */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 144px; /* 버튼과 동일한 너비 */
+    background-color: #ffffff;
+    border: 1px solid #555555;
+    border-top: none;
+    z-index: 1000;
+    margin-top: 0;
+    padding: 8px 0; /* 위아래 패딩 8px */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.notice-filter-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.notice-filter-menu-item {
+    width: 100%;
+    height: 48px;
+    background: transparent;
+    border: none; /* 모든 테두리 제거 */
+    border-bottom: none; /* 하단 테두리 제거 */
+    padding: 0 20px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #111111;
+    transition: background-color 0.3s;
+}
+
+.notice-filter-menu-item:last-child {
+    border-bottom: none;
+}
+
+.notice-filter-menu-item:hover {
+    background-color: #f7f7f7;
+}
+
+.notice-filter-menu-item.active {
+    background-color: #f7f7f7;
+    font-weight: 600;
+}
+
+.notice-filter-btn.active .notice-filter-icon {
+    transform: rotate(180deg);
 }
 
 .notice-search-wrapper {
@@ -197,7 +263,7 @@
 .notice-table-title {
     flex: 1;
     text-align: left;
-    color: #000000;
+    color: #111111;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -228,7 +294,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000000;
+    color: #111111;
     opacity: 0.2;
 }
 
@@ -251,7 +317,7 @@
     border-radius: 999px;
     border: none;
     background: transparent;
-    color: #000000;
+    color: #111111;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -314,7 +380,13 @@
         gap: 0; /* 간격 제거 */
         border: 1px solid #555555; /* 외부 테두리 */
         border-radius: 0; /* 모서리 둥글게 하지 않음 */
-        overflow: hidden; /* 내부 요소가 테두리를 넘지 않도록 */
+        overflow: visible; /* 아코디언 메뉴가 보이도록 visible로 변경 */
+    }
+
+    .notice-filter-wrapper {
+        position: relative;
+        z-index: 1001; /* 모바일에서 아코디언 메뉴가 보이도록 높은 z-index */
+        overflow: visible; /* 아코디언 메뉴가 잘리지 않도록 */
     }
 
     .notice-filter-btn {
@@ -328,6 +400,35 @@
         flex-shrink: 0; /* 축소 방지 */
         margin: 0; /* 마진 제거 */
         outline: none !important; /* 아웃라인 제거 */
+    }
+
+    /* 모바일에서 아코디언 메뉴 표시 */
+    .notice-filter-menu {
+        display: block !important; /* 모바일에서 강제로 표시 */
+        width: 96px; /* 모바일 버튼 너비와 동일 */
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        z-index: 1001 !important; /* 모바일에서 더 높은 z-index */
+    }
+
+    .notice-filter-menu:not(.active) {
+        opacity: 0 !important;
+        transform: translateY(-10px) !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+    }
+
+    .notice-filter-menu.active {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+
+    .notice-filter-menu-item {
+        height: 48px; /* 모바일 버튼 높이와 동일 */
     }
 
     .notice-search-wrapper {

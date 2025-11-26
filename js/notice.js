@@ -117,18 +117,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    let currentFilter = 'all'; // 현재 선택된 필터
+    
     // 필터링 및 표시
     function filterAndDisplay() {
         // 검색 필터링
         const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        let filtered = noticeData.notices;
+        
+        // 검색어 필터링
         if (searchTerm) {
-            filteredNotices = noticeData.notices.filter(notice => {
+            filtered = filtered.filter(notice => {
                 return notice.title.toLowerCase().includes(searchTerm) ||
                        notice.category.toLowerCase().includes(searchTerm);
             });
-        } else {
-            filteredNotices = noticeData.notices;
         }
+        
+        // 카테고리 필터링
+        if (currentFilter !== 'all') {
+            filtered = filtered.filter(notice => {
+                return notice.category === currentFilter;
+            });
+        }
+        
+        filteredNotices = filtered;
         
         // 페이지 계산
         totalPages = Math.ceil(filteredNotices.length / itemsPerPage);
@@ -237,12 +249,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 필터 버튼 기능 (필요시 확장 가능)
-    if (filterBtn) {
-        filterBtn.addEventListener('click', () => {
-            // TODO: 필터 기능 추가
-            console.log('Filter clicked');
+    // 필터 버튼 및 아코디언 메뉴 기능
+    const filterWrapper = document.querySelector('.notice-filter-wrapper');
+    const filterMenu = document.querySelector('.notice-filter-menu');
+    const filterMenuItems = document.querySelectorAll('.notice-filter-menu-item');
+    const filterText = document.querySelector('.notice-filter-text');
+    
+    // 필터 버튼 클릭 시 아코디언 토글
+    if (filterBtn && filterMenu) {
+        filterBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            filterBtn.classList.toggle('active');
+            filterMenu.classList.toggle('active');
         });
+        
+        // 외부 클릭 시 아코디언 닫기
+        document.addEventListener('click', (e) => {
+            if (!filterWrapper.contains(e.target)) {
+                filterBtn.classList.remove('active');
+                filterMenu.classList.remove('active');
+            }
+        });
+    }
+    
+    // 아코디언 메뉴 아이템 클릭 이벤트
+    filterMenuItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            // 활성화 상태 업데이트
+            filterMenuItems.forEach(menuItem => {
+                menuItem.classList.remove('active');
+            });
+            item.classList.add('active');
+            
+            // 필터 텍스트 업데이트
+            const filterValue = item.getAttribute('data-filter');
+            currentFilter = filterValue;
+            if (filterText) {
+                filterText.textContent = item.querySelector('span').textContent;
+            }
+            
+            // 아코디언 닫기
+            if (filterBtn) {
+                filterBtn.classList.remove('active');
+            }
+            if (filterMenu) {
+                filterMenu.classList.remove('active');
+            }
+            
+            // 필터링 적용
+            currentPage = 1;
+            filterAndDisplay();
+        });
+    });
+    
+    // 초기화 - "전체" 메뉴 아이템 활성화
+    if (filterMenuItems.length > 0) {
+        const allMenuItem = Array.from(filterMenuItems).find(item => item.getAttribute('data-filter') === 'all');
+        if (allMenuItem) {
+            allMenuItem.classList.add('active');
+        }
     }
     
     // 초기화

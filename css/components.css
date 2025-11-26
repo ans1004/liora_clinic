@@ -146,15 +146,15 @@
 
 /* 호버 시 텍스트 색상 변경 */
 .sub-menu-item:hover .sub-menu-en {
-    color: #000000;
+    color: #111111;
 }
 
 .sub-menu-item:hover .sub-menu-kr {
-    color: #000000;
+    color: #111111;
 }
 
 .sub-menu-en {
-    color: #000000;
+    color: #111111;
     margin-bottom: 4px;
     transition: color 0.3s;
     text-align: center;
@@ -321,7 +321,7 @@
 
 .carousel-dot .dot.active .progress-ring .progress-circle {
     fill: none;
-    stroke: #000000; /* 검은색으로 채워짐 */
+    stroke: #111111; /* 검은색으로 채워짐 */
     stroke-width: 1;
     stroke-dasharray: 122.52; /* 원의 둘레 (2 * π * 19.5) */
     stroke-dashoffset: 122.52; /* 초기값: 전체가 비어있음 */
@@ -341,7 +341,7 @@
     transform: translate(-50%, -50%) rotate(45deg);
     width: 8px; /* 8px로 변경 */
     height: 8px; /* 8px로 변경 */
-    background-color: #000000;
+    background-color: #111111;
     border-radius: 0; /* 둥근 모서리 제거하여 뾰족하게 */
     z-index: 2; /* SVG 위에 표시 */
 }
@@ -650,7 +650,7 @@
     justify-content: center;
     border: none; /* 아웃라인 제거 */
     border-radius: 0; /* 라운딩 값 제거 */
-    color: #000000;
+    color: #111111;
     transition: filter 0.3s; /* 호버 시 색상 변경을 위한 transition */
     text-decoration: none;
     font-size: 0; /* 텍스트 숨기기 */
@@ -1003,7 +1003,7 @@
         font-family: 'Italiana', serif;
         font-size: 20px;
         font-weight: 400;
-        color: #000000;
+        color: #111111;
         text-decoration: none;
     }
     
@@ -1069,7 +1069,7 @@
     }
     
     .nav-menu-mobile-only .mainmenu .menu {
-        color: #000000; /* text-styles.css의 liora-mobile-body-1 클래스 사용 */
+        color: #111111; /* text-styles.css의 liora-mobile-body-1 클래스 사용 */
     }
     
     .nav-menu-mobile-only .mainmenu .icon {
@@ -1078,7 +1078,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #000000;
+        color: #111111;
         position: relative;
     }
     
@@ -1163,7 +1163,7 @@
     }
     
     .nav-menu-mobile-only .submenu .sub-menu-en {
-        color: #000000;
+        color: #111111;
         margin-bottom: 4px;
         text-align: left; /* 왼쪽 정렬 */
         /* text-styles.css의 liora-mobile-title-2 클래스 사용 */

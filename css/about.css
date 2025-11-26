@@ -688,7 +688,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 
     .our-mission-image-area {
         width: 100%;
-        max-width: 320px;
+        max-width: 100%; /* 화면이 커질 때 동일한 비율로 확대 */
         height: 0;
         padding-bottom: 81.25%; /* 260/320 = 0.8125 (현재 비율 유지) */
         position: relative;

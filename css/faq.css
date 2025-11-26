@@ -21,12 +21,12 @@
 
 .faq-hero-title {
     text-align: left;
-    color: #000000;
+    color: #111111;
 }
 
 .faq-hero-subtitle {
     text-align: left;
-    color: #000000;
+    color: #111111;
 }
 
 /* Content Section */
@@ -79,7 +79,7 @@
 }
 
 .faq-tab-item.active span {
-    color: #000000; /* 활성화된 탭 버튼 색상 */
+    color: #111111; /* 활성화된 탭 버튼 색상 */
 }
 
 .faq-tab-item:not(.active) span {
@@ -200,7 +200,7 @@
 }
 
 .faq-accordion-question {
-    color: #000000;
+    color: #111111;
 }
 
 .faq-accordion-answer {
@@ -263,7 +263,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000000;
+    color: #111111;
     opacity: 0.2;
 }
 
@@ -286,7 +286,7 @@
     border-radius: 999px;
     border: none;
     background: transparent;
-    color: #000000;
+    color: #111111;
     cursor: pointer;
     display: flex;
     align-items: center;

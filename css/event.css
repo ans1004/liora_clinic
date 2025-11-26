@@ -21,12 +21,12 @@
 
 .event-hero-title {
     text-align: left;
-    color: #000000;
+    color: #111111;
 }
 
 .event-hero-subtitle {
     text-align: left;
-    color: #000000;
+    color: #111111;
 }
 
 /* Content Section */
@@ -51,13 +51,13 @@
     background: none;
     border: none;
     padding: 0;
-    color: #000000;
+    color: #111111;
     cursor: pointer;
     transition: color 0.3s, font-weight 0.3s;
 }
 
 .event-tab-item.active {
-    color: #000000;
+    color: #111111;
     font-weight: 600;
 }
 
@@ -115,12 +115,12 @@
 }
 
 .event-card-title {
-    color: #000000;
+    color: #111111;
     text-align: left;
 }
 
 .event-card-date {
-    color: #000000;
+    color: #111111;
     text-align: left;
 }
 
@@ -213,7 +213,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: #000000;
+    color: #111111;
     transition: opacity 0.3s;
 }
 
@@ -243,7 +243,7 @@
     border-radius: 999px;
     border: none;
     background-color: transparent;
-    color: #000000;
+    color: #111111;
     cursor: pointer;
     display: flex;
     align-items: center;

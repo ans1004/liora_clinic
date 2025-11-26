@@ -25,7 +25,7 @@
 .event-detail-title {
     width: 100%;
     border: none; /* 전체 border 제거 */
-    border-bottom: 1px solid #000000; /* 아래쪽 border만 적용 */
+    border-bottom: 1px solid #111111; /* 아래쪽 border만 적용 */
     padding: 0; /* 패딩 제거 */
     padding-bottom: 40px; /* 아래쪽 패딩만 적용 */
     margin-bottom: 40px; /* 텍스트와의 간격 */
@@ -40,13 +40,13 @@
 }
 
 .event-detail-title-main {
-    color: #000000;
+    color: #111111;
     text-align: left;
     /* text-styles.css의 liora-body-1-emphasized 클래스 사용 */
 }
 
 .event-detail-title-date {
-    color: #000000;
+    color: #111111;
     text-align: left;
 }
 
@@ -69,7 +69,7 @@
 
 .event-detail-description {
     width: 100%;
-    color: #000000;
+    color: #111111;
     text-align: left;
     white-space: pre-line; /* 줄바꿈 처리 */
     /* text-styles.css의 liora-body-3-light 클래스 사용 (line-height: 1.5 = 24px) */
@@ -132,11 +132,11 @@
 .event-detail-nav-icon {
     width: 24px;
     height: 24px;
-    color: #000000;
+    color: #111111;
 }
 
 .event-detail-nav-text {
-    color: #000000;
+    color: #111111;
     text-decoration: none;
     flex: 1;
 }
@@ -153,7 +153,7 @@
 .event-detail-list-btn {
     width: 84px; /* 피그마 기준: 84px */
     height: 40px; /* 피그마 기준: 40px */
-    background-color: #000000;
+    background-color: #111111;
     color: #ffffff;
     display: flex;
     align-items: center;
