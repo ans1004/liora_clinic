@@ -60,6 +60,16 @@ body:has(.about-hero) .navbar:hover .language-icon svg {
     stroke: currentColor;
 }
 
+/* Navbar 햄버거 버튼 - About 페이지에서만 흰색 유지 */
+body:has(.about-hero) .navbar .hamburger-line {
+    background-color: #ffffff; /* About 페이지에서는 흰색 */
+}
+
+body:has(.about-hero) .navbar.scrolled .hamburger-line,
+body:has(.about-hero) .navbar:hover .hamburger-line {
+    background-color: #111111; /* 스크롤 시 검정색 */
+}
+
 /* Hero Section */
 .about-hero {
     position: relative;
@@ -752,28 +762,42 @@ body:has(.about-hero) .navbar:hover .language-icon svg {
     }
     
     .accordion-header {
-        padding: 20px; /* 모바일에서 패딩 조정 */
+        padding: 20px; /* 모바일에서 패딩 조정 (타이틀과 본문 동일한 좌우 패딩) */
     }
     
     /* Accordion 제목과 본문은 text-styles.css의 스타일 사용 (중복 제거) */
     
     .accordion-content {
-        padding: 0 20px 20px 20px; /* 모바일에서 패딩 조정 */
+        padding: 0 20px; /* 타이틀과 동일한 좌우 패딩 20px */
         max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden !important; /* 본문 흘러내림 방지 */
         opacity: 1;
         will-change: max-height; /* 성능 개선 */
+        box-sizing: border-box; /* 패딩 포함 크기 계산 */
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .accordion-item.active .accordion-content {
-        max-height: 1000px; /* 충분히 큰 값으로 설정하여 흔들림 방지 */
+        max-height: 2000px !important; /* 충분히 큰 값으로 설정하여 흔들림 및 흘러내림 방지 */
+        overflow: hidden !important; /* 활성화 시에도 overflow 유지 */
+        padding: 40px 20px 20px 20px !important; /* 상단 80px, 좌우 20px, 하단 20px (타이틀과 동일한 좌우 패딩) */
     }
-
+    
     .accordion-content p {
-        margin-top: 0;
+        margin: 0 !important; /* 모든 마진 제거 */
+        padding: 0 !important; /* 모든 패딩 제거 */
         opacity: 1;
         transition: none;
+    }
+    
+    .accordion-content .accordion-text-mobile {
+        margin: 0 !important; /* 모든 마진 제거 */
+        padding: 0 !important; /* 모든 패딩 제거 */
+    }
+    
+    /* 모바일에서 본문 텍스트의 <br> 태그 숨김 (자연스러운 줄바꿈) */
+    .accordion-content .accordion-text-mobile br {
+        display: none !important;
     }
 
     .philosophy-card {

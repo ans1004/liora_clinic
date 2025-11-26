@@ -466,6 +466,15 @@
         align-items: center; /* 가운데 정렬 */
     }
 
+    /* 모바일에서 hero 텍스트 가운데 정렬 */
+    .signature-package-hero-title {
+        text-align: center !important;
+    }
+
+    .signature-package-hero-subtitle {
+        text-align: center !important;
+    }
+
     .signature-package-hero-icon.hero-icon {
         position: absolute;
         left: 50%;
@@ -646,6 +655,15 @@
 
     .signature-package-point-card-title {
         margin-bottom: 0; /* 기본 4px에서 0으로 줄임 */
+    }
+
+    /* 모바일에서 #1_intro와 #3_Point Signature 본문 텍스트의 <br> 태그 숨기기 */
+    .signature-package-intro-text br {
+        display: none;
+    }
+
+    .signature-package-point-card-text p br {
+        display: none;
     }
 }
 

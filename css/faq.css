@@ -178,6 +178,7 @@
     align-items: flex-start; /* 텍스트는 상단 정렬 */
     gap: 0;
     min-height: 62px; /* 피그마 기준: 닫힌 상태 container height */
+    position: relative; /* 버튼 절대 위치 기준 */
 }
 
 .faq-accordion-text-block {
@@ -227,8 +228,11 @@
     justify-content: center;
     flex-shrink: 0;
     padding: 0;
-    margin-left: auto; /* 오른쪽 정렬 */
-    align-self: center; /* 상하 중앙 정렬 */
+    position: absolute; /* 절대 위치로 고정 */
+    right: 20px; /* 오른쪽 패딩과 동일 */
+    top: calc(32px + (62px / 2)); /* 닫힌 상태의 center 위치 고정 (상단 패딩 + min-height의 중간) */
+    transform: translateY(-50%); /* 정확한 중앙 정렬 */
+    margin: 0; /* 마진 제거 */
 }
 
 .faq-accordion-icon {
@@ -338,7 +342,7 @@
     }
 
     .faq-accordion-container {
-        padding: 20px 20px; /* 모바일에서 안쪽 패딩 20px */
+        padding: 32px 20px; /* 모바일에서 안쪽 패딩 위아래 32px, 좌우 20px */
     }
 
     /* .faq-accordion-question, .faq-accordion-answer는 text-styles.css의 liora-body-2 클래스 사용 (모바일: 14px) */

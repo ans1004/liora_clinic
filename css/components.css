@@ -844,12 +844,18 @@
     .hamburger-line {
         width: 20px;
         height: 1.3px; /* 굵기 얇게 (2px → 1px) */
-        background-color: #111111;
+        background-color: #111111; /* 기본 상태: 검정색 (About 페이지 제외) */
         transition: all 0.3s ease;
         display: block;
         position: absolute;
         left: 50%;
         margin-left: -10px;
+    }
+    
+    /* 스크롤 시에도 검정색 유지 */
+    .navbar.scrolled .hamburger-line,
+    .navbar:hover .hamburger-line {
+        background-color: #111111;
     }
     
     .hamburger-line:nth-child(1) {

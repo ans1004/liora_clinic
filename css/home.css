@@ -776,7 +776,7 @@ button {
     }
     
     .navbar-container {
-        padding: 0 16px;
+        padding: 0 20px;
     }
 
     .navbar-top {
@@ -788,7 +788,7 @@ button {
     }
 
     .menu {
-        gap: 16px;
+        gap: 20px;
     }
 
 
@@ -798,14 +798,14 @@ button {
     }
 
     .hero-text {
-        left: 16px;
-        right: 16px;
+        left: 20px;
+        right: 20px;
         padding-bottom: 88px;
     }
 
     .floating-section {
-        left: 16px;
-        right: 16px;
+        left: 20px;
+        right: 20px;
         bottom: 24px;
         flex-direction: column;
         gap: 16px;
@@ -813,15 +813,17 @@ button {
     }
 
     .floating-button {
-        width: 48px;
-        height: 48px;
-        font-size: 24px;
+        width: 64px; /* 모바일에서 데스크탑과 동일한 크기 */
+        height: 64px; /* 모바일에서 데스크탑과 동일한 크기 */
         right: 20px; /* 모바일에서 오른쪽에서 20px 왼쪽으로 고정 */
         bottom: 20px; /* Home 페이지는 20px 유지 */
+        display: flex !important; /* 모바일에서 보이도록 명시 */
+        position: fixed !important; /* 모바일에서 고정 위치 유지 */
+        z-index: 1001 !important; /* 모바일에서도 최상위 레이어에 표시 */
     }
 
     .brand-essence {
-        padding: 100px 16px;
+        padding: 100px 20px;
     }
 
     .brand-essence-shape {
@@ -890,11 +892,11 @@ button {
     }
 
     .our-solution {
-        padding: 40px 0 40px 16px; /* 위 40px, 오른쪽 0px, 아래 40px, 왼쪽 16px */
+        padding: 40px 0 40px 20px; /* 위 40px, 오른쪽 0px, 아래 40px, 왼쪽 16px */
     }
 
     .our-solution.reversed {
-        padding: 40px 16px 40px 0; /* 위 40px, 오른쪽 16px, 아래 40px, 왼쪽 0px */
+        padding: 40px 20px 40px 0; /* 위 40px, 오른쪽 16px, 아래 40px, 왼쪽 0px */
     }
 
     .our-solution-title {

@@ -41,7 +41,7 @@
     max-width: 1360px;
     margin: 0 auto 80px auto;
     width: 100%;
-    height: 480px;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -307,8 +307,8 @@
     /* Text Block - Figma 기준 */
     .location-text-block {
         width: 100%;
-        max-width: 320px; /* Figma 기준 너비 */
-        margin: 0 auto;
+        max-width: 100%; /* 전체 너비 사용 */
+        margin: 0; /* 가운데 정렬 제거, 왼쪽 정렬 */
         gap: 48px; /* 섹션 간 간격: Time → Location 28px, Location → Inquiry 28px */
     }
 
@@ -316,7 +316,23 @@
     .location-section-title {
         margin-bottom: 20px; /* Figma 기준 타이틀과 콘텐츠 사이 간격 */
         width: auto;
-        text-align: left; /* Figma에서 left 정렬 */
+        text-align: left !important; /* Figma에서 left 정렬 */
+    }
+    
+    /* 모든 텍스트 요소 왼쪽 정렬 */
+    .location-time-content,
+    .location-address-content,
+    .location-inquiry-content {
+        text-align: left !important;
+    }
+    
+    .location-time-content p,
+    .location-address-content p,
+    .location-inquiry-content p,
+    .location-time-item p,
+    .location-address-item p,
+    .location-inquiry-item p {
+        text-align: left !important;
     }
 
     /* Time Section - Figma 기준 */
