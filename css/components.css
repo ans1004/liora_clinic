@@ -11,7 +11,8 @@
     right: 0;
     background-color: transparent; /* 처음에는 투명 */
     z-index: 1000;
-    transition: background-color 0.3s ease; /* 부드러운 전환 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 부드러운 전환 */
+    transform: translateY(0); /* 기본 위치 */
 }
 
 /* 스크롤 시 navbar 배경색 변경 */
@@ -22,6 +23,70 @@
 /* 호버 시 navbar 배경색 변경 (스크롤 상태와 관계없이) */
 .navbar:hover {
     background-color: #ffffff !important;
+}
+
+/* 다크모드 navbar 스타일 */
+[data-theme="dark"] .navbar.scrolled,
+[data-theme="dark"] .navbar:hover {
+    background-color: #222222 !important;
+}
+
+[data-theme="dark"] .nav-menu {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .language-text {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .language-icon {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .sub-menu-en {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .sub-menu-kr {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .nav-menu-sub {
+    background-color: #222222;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .sub-menu-item:hover {
+    background-image: linear-gradient(to bottom, 
+        transparent 0px, 
+        transparent 8px, 
+        rgba(255, 255, 255, 0.1) 8px, 
+        rgba(255, 255, 255, 0.1) calc(100% - 8px), 
+        transparent calc(100% - 8px), 
+        transparent 100%);
+}
+
+[data-theme="dark"] .language-menu {
+    background-color: #222222;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .language-menu-item {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .language-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 다크모드 navbar 로고 - 흰색 필터 */
+[data-theme="dark"] .navbar .logo img {
+    filter: brightness(0) invert(1) !important; /* 흰색으로 변경 */
+}
+
+/* 스크롤을 위로 올릴 때 navbar 숨김 */
+.navbar.hidden {
+    transform: translateY(-100%);
 }
 
 .navbar-container {
@@ -153,6 +218,15 @@
     color: #111111;
 }
 
+/* 다크모드에서 호버 시 텍스트 색상 유지 */
+[data-theme="dark"] .sub-menu-item:hover .sub-menu-en {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .sub-menu-item:hover .sub-menu-kr {
+    color: #ffffff !important;
+}
+
 .sub-menu-en {
     color: #111111;
     margin-bottom: 4px;
@@ -164,6 +238,106 @@
     color: #555555;
     transition: color 0.3s;
     text-align: center;
+}
+
+/* navbar-right: theme controller와 language를 감싸는 컨테이너 */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* Theme Controller 토글 버튼 스타일 */
+.theme-controller-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 52px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 9999px;
+    background-color: transparent;
+    border: 1px solid #111111;
+    transition: border-color 0.3s ease;
+}
+
+.toggle .theme-controller {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 1;
+}
+
+.toggle svg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    color: #111111;
+}
+
+.toggle svg[aria-label="sun"] {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.toggle svg[aria-label="moon"] {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.toggle .theme-controller:checked ~ svg[aria-label="sun"] {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.toggle .theme-controller:checked ~ svg[aria-label="moon"] {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 다크모드 토글 스타일 */
+[data-theme="dark"] .toggle {
+    border-color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+/* 다크모드일 때 모든 토글 아이콘 흰색 */
+[data-theme="dark"] .toggle svg {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .toggle svg[aria-label="sun"] {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .toggle svg[aria-label="moon"] {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .toggle .theme-controller:checked ~ svg[aria-label="sun"] {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .toggle .theme-controller:checked ~ svg[aria-label="moon"] {
+    color: #ffffff !important;
+}
+
+.toggle:hover {
+    opacity: 0.8;
 }
 
 .language {
@@ -382,8 +556,7 @@
     position: fixed; /* floating 버튼만 fixed로 고정 */
     bottom: 20px; /* 모든 페이지에서 20px */
     right: 20px; /* 오른쪽에서 20px 왼쪽으로 고정 */
-    z-index: 999; /* navbar보다 낮지만 다른 요소보다 높게 */
-    isolation: isolate;
+    z-index: 10000 !important; /* our-solution-title 위에 표시 */
 }
 
 .floating-button:hover {
@@ -804,6 +977,16 @@
         height: 64px;
         justify-content: space-between; /* 로고와 버튼들을 양쪽에 배치 */
         display: flex !important; /* 항상 표시 */
+    }
+    
+    /* 모바일에서 navbar-right 스타일 */
+    .navbar-right {
+        gap: 12px;
+    }
+    
+    /* 모바일에서 theme controller 숨김 */
+    .theme-controller-wrapper {
+        display: none !important;
     }
 
     .logo-and-menu {

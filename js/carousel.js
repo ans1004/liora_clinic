@@ -199,5 +199,6 @@
             animationId = requestAnimationFrame(animate);
         });
     });
+    
 })();
 

@@ -13,12 +13,17 @@
         const currentScrollY = window.pageYOffset || window.scrollY || 0;
         
         if (currentScrollY === 0) {
+            // 페이지 최상단일 때는 모든 클래스 제거
             navbar.classList.remove('scrolled');
+            navbar.classList.remove('hidden');
         } else {
             if (currentScrollY > lastScrollY) {
+                // 스크롤을 아래로 내릴 때: 배경 표시
                 navbar.classList.add('scrolled');
+                navbar.classList.remove('hidden');
             } else {
-                navbar.classList.remove('scrolled');
+                // 스크롤을 위로 올릴 때: navbar 숨김
+                navbar.classList.add('hidden');
             }
         }
         
@@ -58,7 +63,10 @@ async function loadNavigation() {
         
         // 네비게이션 컨테이너 찾기
         const navbarContainer = document.querySelector('.navbar-container');
-        if (!navbarContainer) return;
+        if (!navbarContainer) {
+            console.error('navbar-container를 찾을 수 없습니다.');
+            return;
+        }
         
         // 기존 네비게이션 제거
         navbarContainer.innerHTML = '';
@@ -95,6 +103,7 @@ async function loadNavigation() {
             const menuLink = document.createElement('a');
             menuLink.href = '#';
             menuLink.className = 'nav-menu liora-body-3';
+            // 언어에 따라 메뉴 라벨 표시 (현재는 한국어만 있으므로 그대로 사용)
             menuLink.textContent = menuItem.label;
             navMenuItem.appendChild(menuLink);
             
@@ -340,6 +349,7 @@ async function loadNavigation() {
         
         const languageMenu = document.createElement('div');
         languageMenu.className = 'language-menu';
+        
         data.languages.forEach(lang => {
             const langItem = document.createElement('a');
             langItem.href = '#';
@@ -349,13 +359,71 @@ async function loadNavigation() {
         });
         language.appendChild(languageMenu);
         
-        navbarTop.appendChild(language);
+        // Theme Controller 토글 버튼 추가
+        const themeController = document.createElement('div');
+        themeController.className = 'theme-controller-wrapper';
+        
+        const themeLabel = document.createElement('label');
+        themeLabel.className = 'toggle text-base-content';
+        
+        const themeToggle = document.createElement('input');
+        themeToggle.type = 'checkbox';
+        themeToggle.value = 'dark';
+        themeToggle.className = 'theme-controller';
+        themeToggle.id = 'theme-toggle';
+        themeToggle.setAttribute('aria-label', '다크모드 토글');
+        
+        // 태양 아이콘 SVG
+        const sunIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        sunIcon.setAttribute('aria-label', 'sun');
+        sunIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        sunIcon.setAttribute('viewBox', '0 0 24 24');
+        sunIcon.innerHTML = '<g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></g>';
+        
+        // 달 아이콘 SVG
+        const moonIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        moonIcon.setAttribute('aria-label', 'moon');
+        moonIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        moonIcon.setAttribute('viewBox', '0 0 24 24');
+        moonIcon.innerHTML = '<g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></g>';
+        
+        // 로컬 스토리지에서 다크모드 상태 불러오기
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            themeToggle.checked = true;
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        
+        // 다크모드 토글 이벤트
+        themeToggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('darkMode', 'false');
+            }
+        });
+        
+        themeLabel.appendChild(themeToggle);
+        themeLabel.appendChild(sunIcon);
+        themeLabel.appendChild(moonIcon);
+        themeController.appendChild(themeLabel);
+        
+        // language와 theme controller를 감싸는 컨테이너
+        const navbarRight = document.createElement('div');
+        navbarRight.className = 'navbar-right';
+        navbarRight.appendChild(themeController);
+        navbarRight.appendChild(language);
+        
+        navbarTop.appendChild(navbarRight);
         navbarContainer.appendChild(navbarTop);
         
         // 네비게이션 JavaScript 초기화 (기존 navbar.js 기능)
         if (typeof initNavbar === 'function') {
             initNavbar();
         }
+        
     } catch (error) {
         console.error('네비게이션 로드 실패:', error);
     }
