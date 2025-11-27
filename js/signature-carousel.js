@@ -105,23 +105,26 @@
     if (isMobile()) {
         let touchStartX = 0;
         let touchEndX = 0;
+        let touchStartTime = 0;
+        let touchEndTime = 0;
         let isDragging = false;
+        let hasMoved = false; // 실제로 움직였는지 체크
         let currentCard = null;
         let nextCard = null;
         let prevCard = null;
+        const minSwipeDistance = 80; // 최소 스와이프 거리 (픽셀)
+        const minSwipeSpeed = 0.3; // 최소 스와이프 속도 (픽셀/밀리초)
+        const minMoveDistance = 10; // 카드가 움직이기 시작하는 최소 거리
 
         // 터치 시작
         cardsWrapper.addEventListener('touchstart', (e) => {
             touchStartX = e.touches[0].clientX;
+            touchStartTime = Date.now();
             isDragging = true;
+            hasMoved = false;
             currentCard = cards[currentIndex];
             nextCard = currentIndex < totalCards - 1 ? cards[currentIndex + 1] : null;
             prevCard = currentIndex > 0 ? cards[currentIndex - 1] : null;
-            
-            // 드래그 중에는 transition 제거
-            if (currentCard) currentCard.style.transition = 'none';
-            if (nextCard) nextCard.style.transition = 'none';
-            if (prevCard) prevCard.style.transition = 'none';
         }, { passive: true });
 
         // 터치 이동
@@ -129,66 +132,94 @@
             if (!isDragging || !currentCard) return;
             touchEndX = e.touches[0].clientX;
             const diff = touchStartX - touchEndX;
+            const absDiff = Math.abs(diff);
             
-            // 현재 카드를 드래그 방향으로 이동
-            currentCard.style.transform = `translateX(${diff}px)`;
-            
-            // 다음 카드 보이기 (오른쪽으로 드래그)
-            if (diff > 0 && nextCard) {
-                nextCard.style.opacity = '1';
-                nextCard.style.visibility = 'visible';
-                nextCard.style.transform = `translateX(calc(100% + ${diff}px))`;
-            }
-            
-            // 이전 카드 보이기 (왼쪽으로 드래그)
-            if (diff < 0 && prevCard) {
-                prevCard.style.opacity = '1';
-                prevCard.style.visibility = 'visible';
-                prevCard.style.transform = `translateX(calc(-100% + ${diff}px))`;
+            // 최소 이동 거리 이상일 때만 카드 움직이기
+            if (absDiff > minMoveDistance) {
+                hasMoved = true;
+                
+                // 드래그 중에는 transition 제거
+                if (currentCard) currentCard.style.transition = 'none';
+                if (nextCard) nextCard.style.transition = 'none';
+                if (prevCard) prevCard.style.transition = 'none';
+                
+                // 현재 카드를 드래그 방향으로 이동
+                currentCard.style.transform = `translateX(${diff}px)`;
+                
+                // 다음 카드 보이기 (오른쪽으로 드래그)
+                if (diff > 0 && nextCard) {
+                    nextCard.style.opacity = '1';
+                    nextCard.style.visibility = 'visible';
+                    nextCard.style.transform = `translateX(calc(100% + ${diff}px))`;
+                }
+                
+                // 이전 카드 보이기 (왼쪽으로 드래그)
+                if (diff < 0 && prevCard) {
+                    prevCard.style.opacity = '1';
+                    prevCard.style.visibility = 'visible';
+                    prevCard.style.transform = `translateX(calc(-100% + ${diff}px))`;
+                }
             }
         }, { passive: true });
 
         // 터치 종료
         cardsWrapper.addEventListener('touchend', () => {
             if (!isDragging) return;
+            
+            touchEndTime = Date.now();
+            const diff = touchStartX - touchEndX;
+            const absDiff = Math.abs(diff);
+            const timeDiff = touchEndTime - touchStartTime;
+            const swipeSpeed = absDiff / timeDiff; // 픽셀/밀리초
+            
             isDragging = false;
             
-            const diff = touchStartX - touchEndX;
-            const threshold = 50; // 최소 스와이프 거리 (픽셀)
+            // 명확한 스와이프 제스처인지 체크 (거리와 속도 모두 확인)
+            const isSwipe = hasMoved && absDiff > minSwipeDistance && swipeSpeed > minSwipeSpeed;
             
-            // transition 다시 활성화
+            // transition 다시 활성화 (부드러운 애니메이션을 위해)
+            const transitionValue = 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
             cards.forEach(card => {
-                card.style.transition = '';
-                card.style.transform = '';
-                card.style.opacity = '';
-                card.style.visibility = '';
+                card.style.transition = transitionValue;
             });
             
-            if (Math.abs(diff) > threshold) {
-                if (diff > 0) {
-                    // 오른쪽으로 스와이프 (다음 카드)
-                    goToNext();
+            // requestAnimationFrame을 사용하여 부드러운 전환
+            requestAnimationFrame(() => {
+                if (isSwipe) {
+                    if (diff > 0) {
+                        // 오른쪽으로 스와이프 (다음 카드)
+                        goToNext();
+                    } else {
+                        // 왼쪽으로 스와이프 (이전 카드)
+                        goToPrev();
+                    }
                 } else {
-                    // 왼쪽으로 스와이프 (이전 카드)
-                    goToPrev();
+                    // 스와이프가 아니면 원래 위치로 복귀
+                    cards.forEach(card => {
+                        card.style.transform = '';
+                        card.style.opacity = '';
+                        card.style.visibility = '';
+                    });
+                    showCard(currentIndex);
                 }
-            } else {
-                // 스와이프 거리가 부족하면 원래 위치로 복귀
-                showCard(currentIndex);
-            }
+            });
         }, { passive: true });
 
         // 터치 취소
         cardsWrapper.addEventListener('touchcancel', () => {
             if (isDragging) {
                 isDragging = false;
+                hasMoved = false;
+                const transitionValue = 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
                 cards.forEach(card => {
-                    card.style.transition = '';
+                    card.style.transition = transitionValue;
                     card.style.transform = '';
                     card.style.opacity = '';
                     card.style.visibility = '';
                 });
-                showCard(currentIndex);
+                requestAnimationFrame(() => {
+                    showCard(currentIndex);
+                });
             }
         }, { passive: true });
     }
