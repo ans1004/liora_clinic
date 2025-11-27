@@ -12,19 +12,19 @@
         const basePath = window.location.pathname.includes('/liora_clinic/') ? '/liora_clinic/' : './';
         const subButtons = [
             {
-                icon: `${basePath}public/icon/Floating_Hm.svg`,
-                href: `${basePath}index.html`,
+                icon: `${basePath}public/icon/talktalk.svg`,
+                href: 'https://talk.naver.com/',
                 alt: 'Home'
             },
             {
-                icon: `${basePath}public/icon/Floating_Ka.svg`,
-                href: '#',
-                alt: 'Kakao'
+                icon: `${basePath}public/icon/naver-svgrepo-com.svg`,
+                href: 'https://m.place.naver.com/my/timeline?tab=RESERVATION',
+                alt: 'Naver'
             },
             {
-                icon: `${basePath}public/icon/Floating_Ai.svg`,
-                href: '#',
-                alt: 'AI'
+                icon: `${basePath}public/icon/Floating_Ka.svg`,
+                href: 'https://business.kakao.com/info/kakaotalkchannel/',
+                alt: 'Kakao'
             }
         ];
 
