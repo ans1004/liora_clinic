@@ -497,8 +497,8 @@
     .notice-table-row-content {
         flex-direction: column;
         align-items: flex-start;
-        padding: 16px 20px; /* 좌우 패딩 20px 유지 */
-        gap: 12px;
+        padding: 20px 20px; /* 좌우 패딩 20px 유지 */
+        gap: 8px;
     }
 
     .notice-table-category,
