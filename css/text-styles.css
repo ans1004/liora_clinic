@@ -173,7 +173,7 @@ body {
    ============================================ */
 /* 모바일 클래스들은 미디어 쿼리 안에서만 정의되어 데스크탑에서 적용되지 않도록 함 */
 
-@media screen and (min-width: 360px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     /* Mobile Display 스타일 */
     .liora-mobile-display-1 {
         font-family: 'Italiana', serif;

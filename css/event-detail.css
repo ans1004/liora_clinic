@@ -230,6 +230,7 @@
     /* 모바일에서 본문텍스트와 테이블 사이 간격 조정 */
     .event-detail-navigation {
         margin-top: 40px; /* 모바일에서 본문텍스트와 테이블 사이 간격 조정 */
+        gap: 40px; /* 모바일에서 테이블과 목록 버튼 사이 간격 40px */
     }
 
     .event-detail-table {

@@ -114,6 +114,7 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
     visibility: hidden;
+    box-sizing: border-box; /* border 포함한 너비 계산 */
 }
 
 .notice-filter-menu.active {
@@ -362,7 +363,7 @@
     }
 }
 
-@media screen and (min-width: 360px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .notice-hero {
         padding: 120px 20px 80px 20px;
     }
@@ -372,13 +373,13 @@
     }
 
     .notice-container {
-        flex-direction: row; /* 가로 배치 */
+        flex-direction: column; /* 세로 배치 - 전체 버튼을 위로 */
         align-items: stretch;
-        height: 48px; /* 모바일에서 높이 48px */
-        min-height: 48px;
+        height: auto; /* 높이 자동 조절 */
+        min-height: auto;
         padding: 0; /* 패딩 제거 */
-        gap: 0; /* 간격 제거 */
-        border: 1px solid #555555; /* 외부 테두리 */
+        gap: 8px; /* 전체 버튼과 검색 필드 사이 간격 8px */
+        border: none; /* 외부 테두리 제거 */
         border-radius: 0; /* 모서리 둥글게 하지 않음 */
         overflow: visible; /* 아코디언 메뉴가 보이도록 visible로 변경 */
     }
@@ -387,29 +388,46 @@
         position: relative;
         z-index: 1001; /* 모바일에서 아코디언 메뉴가 보이도록 높은 z-index */
         overflow: visible; /* 아코디언 메뉴가 잘리지 않도록 */
+        width: 100%; /* 전체 너비 */
+        border: 1px solid #111111; /* 외부 테두리 */
     }
 
     .notice-filter-btn {
-        width: 96px; /* 모바일에서 왼쪽 버튼 너비 96px */
+        width: 100%; /* 모바일에서 전체 너비 */
         height: 48px; /* 모바일에서 높이 48px */
         border: none; /* 테두리 제거 */
-        border-right: 1px solid #555555; /* 오른쪽 구분선 */
         border-radius: 0; /* 모서리 둥글게 하지 않음 */
         padding: 0 20px; /* 좌우 패딩 20px */
         justify-content: space-between; /* 텍스트와 아이콘 사이 간격 벌리기 */
         flex-shrink: 0; /* 축소 방지 */
         margin: 0; /* 마진 제거 */
         outline: none !important; /* 아웃라인 제거 */
+        box-sizing: border-box; /* border 포함한 너비 계산 */
+    }
+
+    /* 모바일에서 focus/active 상태에서도 border 두께 유지 */
+    .notice-filter-btn:focus,
+    .notice-filter-btn:active,
+    .notice-filter-btn:hover,
+    .notice-filter-btn:focus-visible {
+        border: none !important;
+        border-right: none !important; /* 구분선 제거 (겹침 방지) */
+        outline: none !important;
+        box-shadow: none !important;
     }
 
     /* 모바일에서 아코디언 메뉴 표시 */
     .notice-filter-menu {
         display: block !important; /* 모바일에서 강제로 표시 */
-        width: 96px; /* 모바일 버튼 너비와 동일 */
+        width: calc(100% + 2px) !important; /* wrapper의 border(좌우 2px) 포함한 너비로 맞춤 */
         position: absolute !important;
         top: 100% !important;
-        left: 0 !important;
+        left: -1px !important; /* wrapper의 border와 정렬 */
         z-index: 1001 !important; /* 모바일에서 더 높은 z-index */
+        box-sizing: border-box !important; /* border 포함한 너비 계산 */
+        border-left: 1px solid #111111 !important; /* 좌측 border */
+        border-right: 1px solid #111111 !important; /* 우측 border */
+        border-bottom: 1px solid #111111 !important; /* 하단 border */
     }
 
     .notice-filter-menu:not(.active) {
@@ -432,12 +450,12 @@
     }
 
     .notice-search-wrapper {
-        flex: 1; /* 남은 공간을 모두 차지하도록 설정 */
-        min-width: 224px; /* 최소 너비 224px 유지 */
+        width: 100%; /* 전체 너비 */
         height: 48px; /* 모바일에서 높이 48px */
-        border: none; /* 테두리 제거 */
+        border: 1px solid #111111; /* 외부 테두리 */
         border-radius: 0; /* 모서리 둥글게 하지 않음 */
         margin: 0; /* 마진 제거 */
+        box-sizing: border-box; /* border 포함한 너비 계산 */
     }
 
     .notice-search-input {
@@ -448,6 +466,17 @@
         padding: 14px 40px 14px 16px; /* 좌우 패딩 (오른쪽에 아이콘 공간) */
         margin: 0; /* 마진 제거 */
         outline: none !important; /* 아웃라인 제거 */
+    }
+
+    /* 모바일에서 focus/active 상태에서도 border 없음 유지 */
+    .notice-search-input:focus,
+    .notice-search-input:active,
+    .notice-search-input:hover,
+    .notice-search-input:focus-visible {
+        border: none !important;
+        outline: none !important;
+        outline-offset: 0 !important;
+        box-shadow: none !important;
     }
 
     .notice-search-icon {

@@ -427,7 +427,7 @@
 }
 
 /* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
-@media screen and (min-width: 360px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     /* 모바일에서 데스크탑 이미지 숨기고 모바일 이미지 표시 */
     .hero-background .img-desktop {
         display: none;
@@ -483,7 +483,7 @@
     }
 
     .core-technology {
-        padding: 60px 20px 120px 20px; /* 모바일 좌우 패딩 20px */
+        padding: 60px 20px 80px 20px; /* 모바일 좌우 패딩 20px, 하단 패딩 80px (outtro와의 간격) */
     }
 
     .core-technology-content {
@@ -556,6 +556,11 @@
 
     .core-technology-card-title {
         margin-bottom: 0; /* 기본 4px에서 0으로 줄임 */
+    }
+
+    /* 모바일에서 Care Program 카드 본문의 br 태그 숨기기 */
+    .core-technology-card-text p br {
+        display: none;
     }
 }
 

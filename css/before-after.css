@@ -323,7 +323,7 @@
     /* 카드 이미지 영역 - 모바일 가로 배치 (피그마: 360x180, row: 179x180) */
     .before-after-card-image-area {
         width: 100%;
-        height: 180px;
+        height: 100%;
         flex-direction: row;
         gap: 2px;
         margin-bottom: 20px;

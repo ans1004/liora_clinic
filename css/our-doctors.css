@@ -191,7 +191,7 @@
 }
 
 /* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
-@media screen and (min-width: 360px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     /* Hero Section - Figma OurDoctors_Mo 레이아웃 */
     .our-doctors-hero {
         width: 100%;

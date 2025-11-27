@@ -765,7 +765,7 @@ button {
 
 /* 모바일 (768px 이하) */
 /* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
-@media screen and (min-width: 360px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     /* 모바일에서 이미지 전환 - 간단하게 */
     .img-desktop {
         display: none;
@@ -857,26 +857,65 @@ button {
         width: 100%; /* 모바일 화면 크기에 맞춰 가로 전체 사용 */
         max-width: 100%;
         margin: 0;
+        position: relative;
+        overflow: hidden; /* 넘치는 카드 숨기기 */
+        display: flex !important; /* flex 레이아웃 */
+        flex-direction: column; /* 세로 배치 */
     }
     
     /* 모바일에서 signature-cards-wrapper를 먼저 배치 */
     .signature-cards-wrapper {
         order: 1; /* 먼저 배치 */
-        width: 100%; /* 모바일 화면 크기에 맞춰 가로 전체 사용 */
-        height: auto; /* 비율에 맞게 자동 조정 */
-        aspect-ratio: 360 / 500; /* 360:500 비율 유지 */
+        width: 100% !important; /* 부모의 100% 너비 */
+        height: calc(100vw * 500 / 360) !important; /* 화면 너비 기준으로 360:500 비율 계산 */
+        position: relative !important; /* 상대 위치 */
+        overflow: hidden !important; /* 넘치는 카드 숨기기 */
     }
     
     /* 모바일에서 carousel-dot을 signature-card 밑에 배치 */
     .signature-card-slide .carousel-dot {
-        order: 2; /* signature-card 밑에 배치 */
-        margin-bottom: 0; /* 아래 마진 제거 */
-        margin-top: 16px; /* signature-card와의 간격 */    }
+        order: 2 !important; /* signature-card 밑에 배치 */
+        margin-bottom: 0 !important; /* 아래 마진 제거 */
+        margin-top: 16px !important; /* signature-card와의 간격 */
+        display: flex !important; /* 캐러셀 dot 표시 */
+    }
 
     .signature-card {
-        width: 100%; /* 모바일 화면 크기에 맞춰 가로 전체 사용 */
-        height: 100%; /* 부모의 높이에 맞춤 */
-        aspect-ratio: 360 / 500; /* 360:500 비율 유지 */
+        width: 100% !important; /* 부모의 100% 너비 */
+        height: 100% !important; /* 부모의 100% 높이 */
+        position: absolute !important; /* 절대 위치 */
+        top: 0 !important;
+        left: 0 !important;
+        opacity: 0 !important; /* 기본적으로 숨김 */
+        visibility: hidden !important;
+        transition: opacity 0.3s ease, transform 0.3s ease !important;
+        transform: translateX(100%) !important; /* 오른쪽으로 이동 */
+    }
+    
+    /* 활성화된 카드만 보이기 */
+    .signature-card.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateX(0) !important; /* 원래 위치 */
+    }
+    
+    /* 이전 카드 (왼쪽으로 이동) */
+    .signature-card.prev {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateX(-100%) !important;
+    }
+    
+    /* 다음 카드 (오른쪽으로 이동) */
+    .signature-card.next {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateX(100%) !important;
+    }
+    
+    /* 모바일에서 signature-card 안의 화살표 버튼 숨김 */
+    .signature-card-content .arrow-button-duo {
+        display: none;
     }
     
     /* 모바일에서 signature-card 안의 화살표 버튼 숨김 */
