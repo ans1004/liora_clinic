@@ -48,6 +48,11 @@
         });
     }
 
+    // 모바일 체크 함수
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
     // 버튼 상태 업데이트 함수
     function updateButtonStates() {
         if (!cardsContainer || !prevButton || !nextButton) return;
@@ -68,14 +73,23 @@
         }
 
         // 다음 버튼: 맨 오른쪽이면 비활성화
-        if (currentScroll >= maxScroll - scrollThreshold) {
+        const isAtEnd = currentScroll >= maxScroll - scrollThreshold;
+        if (isAtEnd) {
             nextButton.style.opacity = '0.5';
             nextButton.style.cursor = 'not-allowed';
             nextButton.disabled = true;
+            // 모바일에서 마지막 카드에 도달했을 때 reversed 클래스 추가
+            if (isMobile()) {
+                solutionSection.classList.add('reversed');
+            }
         } else {
             nextButton.style.opacity = '1';
             nextButton.style.cursor = 'pointer';
             nextButton.disabled = false;
+            // 모바일에서 마지막 카드가 아니면 reversed 클래스 제거
+            if (isMobile()) {
+                solutionSection.classList.remove('reversed');
+            }
         }
     }
 
