@@ -89,29 +89,29 @@
 
 .before-after-card-list {
     display: grid;
-    grid-template-columns: repeat(2, 670px);
+    grid-template-columns: repeat(2, minmax(0, 670px)); /* 반응형 그리드 */
     gap: 48px 20px;
     margin-bottom: 80px;
     justify-content: start;
 }
 
 .before-after-card {
-    width: 670px;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .before-after-card-image-area {
     width: 100%;
-    height: 335px;
+    height: 100%;
     display: flex;
     gap: 2px;
     margin-bottom: 20px;
 }
 
 .before-after-card-row {
-    width: 334px;
-    height: 335px;
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
@@ -147,8 +147,9 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    width: 670px;
-    height: 58px;
+    width: 100%;
+    max-width: 670px;
+    min-height: 58px;
 }
 
 .before-after-card-title {
@@ -275,7 +276,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /* Hero Section - 모바일 패딩 조정 (피그마: y: 120) */
     .before-after-hero {
         padding: 120px 20px 80px 20px;

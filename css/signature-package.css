@@ -98,7 +98,7 @@
 }
 
 .signature-package-intro-text-block {
-    max-width: 1360px;
+    max-width: 1024px;
     margin: 0 auto 40px auto;
 }
 
@@ -190,12 +190,15 @@
     height: 200px;
     overflow: hidden;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .signature-package-program-card-image-area img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* 이미지가 잘리지 않도록 contain으로 변경 */
 }
 
 .signature-package-program-card-sub-text {
@@ -248,19 +251,23 @@
     display: flex;
     gap: 28px;
     justify-content: center;
+    flex-wrap: nowrap; /* 1줄로 유지 */
 }
 
 .signature-package-point-card {
-    width: 325px;
+    height: 100%;
+    width: 100%;
+    min-width: 0; /* flex-shrink가 작동하도록 */
     display: flex;
     flex-direction: column;
 }
 
 .signature-package-point-card-image {
     width: 100%;
-    height: 325px;
+    height: 100%;
     overflow: hidden;
     margin-bottom: 20px;
+    flex-shrink: 1; /* 화면이 줄어들 때 이미지 영역도 줄어들 수 있도록 */
 }
 
 .signature-package-point-card-image img {
@@ -352,68 +359,8 @@
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .signature-package-hero {
-        height: 600px;
-    }
-
-    .signature-package-hero-text-block {
-        top: 50%;
-        left: 24px;
-        right: 24px;
-        transform: translateY(-50%); /* 위아래 가운데 정렬 */
-    }
-
-    .signature-package-hero-icon {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 40px;
-    }
-
-    .signature-package-intro {
-        padding: 80px 24px;
-    }
-
-    .signature-package-program {
-        padding: 80px 0;
-    }
-
-    .signature-package-program-title-block {
-        padding: 0 24px;
-    }
-
-    .signature-package-program-card-list {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .signature-package-program-card:not(:first-child) {
-        border-left: 1px solid #111111;
-        border-top: none;
-    }
-
-    .signature-package-point {
-        padding: 80px 24px 200px 24px;
-    }
-
-    .signature-package-point-content {
-        gap: 40px;
-    }
-
-    .signature-package-point-card-list {
-        flex-wrap: wrap;
-        gap: 24px;
-    }
-
-    .signature-package-point-card {
-        width: calc(50% - 12px);
-        max-width: 325px;
-    }
-
-}
-
 /* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /* Hero Section - 안티에이징과 동일 */
     .signature-package-hero {
         position: relative;

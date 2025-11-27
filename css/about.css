@@ -127,8 +127,8 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .about-hero-logo img {
-    width: 670px;
-    height: auto;
+    width: 100%;
+    height: 100%;
     filter: brightness(0) invert(1);
 }
 
@@ -166,8 +166,8 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .arrow-button-solo img {
-    width: 48px;
-    height: 48px;
+    width: 100%;
+    height: 100%;
     display: block;
 }
 
@@ -307,7 +307,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .brand-essence-about-image {
-    width: 670px;
+    width: auto;
     height: 670px;
     flex-shrink: 0;
     overflow: hidden;
@@ -320,9 +320,10 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .brand-essence-about-accordion {
-    width: 670px;
+    width: 100%;
+    max-width: 670px;
     height: 670px;
-    flex-shrink: 0;
+    flex-shrink: 1;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -450,7 +451,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 
 .philosophy-card-image {
     width: 100%;
-    height: 325px;
+    aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
     overflow: hidden;
     margin-bottom: 20px;
     border-radius: 0; /* 기본 정사각형 */
@@ -499,7 +500,8 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     }
 
     .about-hero-logo img {
-        width: 500px;
+        width: 100%;
+        height: 100%;
     }
 
     .our-mission,
@@ -559,7 +561,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 /* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /* 모바일에서 비디오 숨기고 이미지 표시 */
     .about-hero-background .hero-video-desktop {
         display: none;
@@ -610,7 +612,8 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     }
 
     .about-hero-logo img {
-        width: 200px; /* 모바일에서 로고 크기 조정 */
+        width: 100%;
+        height: 100%;
     }
 
     .about-hero-text {
@@ -729,9 +732,14 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 
     .our-vision-image-area {
         width: calc(100% + 40px);
-        height: 240px; /* 모바일에서 높이 조정 */
+        height: 100%; /* 모바일에서 높이 조정 */
         margin-left: -20px;
         margin-right: -20px;
+    }
+    
+    .our-vision-image-area img {
+        width: 100%;
+        height: 100%;
     }
     
     .brand-essence-about-main {
@@ -806,7 +814,12 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     }
     
     .philosophy-card-image {
-        height: auto; /* 모바일에서 높이 조정 */
+        aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
+    }
+    
+    .philosophy-card-image img {
+        width: 100%;
+        height: 100%;
     }
     
     /* Philosophy 카드 텍스트는 text-styles.css의 스타일 사용 (중복 제거) */

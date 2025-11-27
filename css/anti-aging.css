@@ -119,7 +119,7 @@
 }
 
 /* 큰 화면에서 피그마 디자인과 일치하도록 gap 조정 */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
     .text-block {
         gap: 534px; /* 피그마 디자인: 1360 - 156 - 670 = 534px */
     }
@@ -427,7 +427,7 @@
 }
 
 /* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /* 모바일에서 데스크탑 이미지 숨기고 모바일 이미지 표시 */
     .hero-background .img-desktop {
         display: none;
