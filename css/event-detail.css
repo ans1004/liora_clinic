@@ -224,3 +224,56 @@
     }
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .event-detail-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .event-detail-title {
+    border-bottom-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-detail-title-main {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-detail-title-date {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-detail-description {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-detail-table {
+    border-top-color: hsl(var(--text-primary));
+    border-bottom-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-detail-nav-icon {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-detail-nav-text {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-detail-nav-disabled {
+    color: hsla(var(--text-primary), 0.6);
+}
+
+[data-theme="dark"] .event-detail-list-btn {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .event-detail-list-btn:hover {
+    background-color: hsla(var(--text-primary), 0.8);
+}
+
+[data-theme="dark"] .event-detail-list-btn span {
+    color: hsl(var(--bg-page));
+}
+

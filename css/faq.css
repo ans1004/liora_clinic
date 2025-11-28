@@ -353,3 +353,97 @@
     /* .faq-accordion-question, .faq-accordion-answer는 text-styles.css의 liora-body-2 클래스 사용 (모바일: 14px) */
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .faq-hero {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .faq-hero-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .faq-hero-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .faq-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .faq-tab-item span {
+    color: hsla(var(--text-primary), 0.6); /* 비활성화된 탭 버튼 색상 */
+}
+
+[data-theme="dark"] .faq-tab-item.active span {
+    color: hsl(var(--text-primary)); /* 활성화된 탭 버튼 색상 */
+}
+
+[data-theme="dark"] .faq-tab-item:not(.active) span {
+    color: hsla(var(--text-primary), 0.6); /* 비활성화된 탭 버튼 색상 */
+}
+
+[data-theme="dark"] .faq-search-wrapper {
+    border-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .faq-search-input {
+    border-color: hsl(var(--text-primary));
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .faq-search-input::placeholder {
+    color: hsla(var(--text-primary), 0.6);
+}
+
+[data-theme="dark"] .faq-search-icon {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .faq-search-icon path {
+    stroke: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .faq-accordion {
+    border-color: hsl(var(--text-primary));
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .faq-accordion.active {
+    background-color: hsla(var(--text-primary), 0.1);
+}
+
+[data-theme="dark"] .faq-accordion-category {
+    color: hsla(var(--text-primary), 0.6);
+}
+
+[data-theme="dark"] .faq-accordion-question {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .faq-accordion-answer {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .faq-accordion-icon {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .faq-accordion-button {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-arrow {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-number {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-number.active {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-page));
+}
+

@@ -270,3 +270,89 @@
     }
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .notice-detail-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .notice-detail-title {
+    border-bottom-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-title-main {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-title-date {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-description {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-download {
+    background-color: hsla(var(--text-primary), 0.1);
+    border-top-color: hsl(var(--text-primary));
+    border-bottom-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-download-label {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-download-filename {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-download-size {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-download-btn {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-download-icon {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-download-icon path {
+    stroke: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-table {
+    border-bottom-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-nav-button {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-nav-icon {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-nav-icon path {
+    stroke: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-nav-text {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-detail-nav-disabled {
+    color: hsla(var(--text-primary), 0.6);
+}
+
+[data-theme="dark"] .notice-detail-list-btn {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .notice-detail-list-btn:hover {
+    opacity: 0.8;
+}
+

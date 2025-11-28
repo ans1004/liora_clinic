@@ -28,55 +28,55 @@
 /* 다크모드 navbar 스타일 */
 [data-theme="dark"] .navbar.scrolled,
 [data-theme="dark"] .navbar:hover {
-    background-color: #222222 !important;
+    background-color: hsl(var(--bg-navbar)) !important;
 }
 
 [data-theme="dark"] .nav-menu {
-    color: #ffffff;
+    color: hsl(var(--text-primary));
 }
 
 [data-theme="dark"] .language-text {
-    color: #ffffff;
+    color: hsl(var(--text-primary));
 }
 
 [data-theme="dark"] .language-icon {
-    color: #ffffff;
+    color: hsl(var(--text-primary));
 }
 
 [data-theme="dark"] .sub-menu-en {
-    color: #ffffff;
+    color: hsl(var(--text-primary));
 }
 
 [data-theme="dark"] .sub-menu-kr {
-    color: #ffffff;
+    color: hsl(var(--text-primary));
 }
 
 [data-theme="dark"] .nav-menu-sub {
-    background-color: #222222;
-    border-color: rgba(255, 255, 255, 0.1);
+    background-color: hsl(var(--bg-navbar));
+    border-color: hsla(var(--text-white), var(--opacity-border-light));
 }
 
 [data-theme="dark"] .sub-menu-item:hover {
     background-image: linear-gradient(to bottom, 
         transparent 0px, 
         transparent 8px, 
-        rgba(255, 255, 255, 0.1) 8px, 
-        rgba(255, 255, 255, 0.1) calc(100% - 8px), 
+        hsla(var(--text-white), var(--opacity-hover)) 8px, 
+        hsla(var(--text-white), var(--opacity-hover)) calc(100% - 8px), 
         transparent calc(100% - 8px), 
         transparent 100%);
 }
 
 [data-theme="dark"] .language-menu {
-    background-color: #222222;
-    border-color: rgba(255, 255, 255, 0.1);
+    background-color: hsl(var(--bg-navbar));
+    border-color: hsla(var(--text-white), var(--opacity-border-light));
 }
 
 [data-theme="dark"] .language-menu-item {
-    color: #ffffff;
+    color: hsl(var(--text-primary));
 }
 
 [data-theme="dark"] .language-menu-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: hsla(var(--text-white), var(--opacity-hover));
 }
 
 /* 다크모드 navbar 로고 - 흰색 필터 */
@@ -220,11 +220,11 @@
 
 /* 다크모드에서 호버 시 텍스트 색상 유지 */
 [data-theme="dark"] .sub-menu-item:hover .sub-menu-en {
-    color: #ffffff !important;
+    color: hsl(var(--text-primary)) !important;
 }
 
 [data-theme="dark"] .sub-menu-item:hover .sub-menu-kr {
-    color: #ffffff !important;
+    color: hsl(var(--text-primary)) !important;
 }
 
 .sub-menu-en {
@@ -311,29 +311,29 @@
 
 /* 다크모드 토글 스타일 */
 [data-theme="dark"] .toggle {
-    border-color: #ffffff !important;
+    border-color: hsl(var(--text-primary)) !important;
     background-color: transparent !important;
 }
 
 /* 다크모드일 때 모든 토글 아이콘 흰색 */
 [data-theme="dark"] .toggle svg {
-    color: #ffffff !important;
+    color: hsl(var(--text-primary)) !important;
 }
 
 [data-theme="dark"] .toggle svg[aria-label="sun"] {
-    color: #ffffff !important;
+    color: hsl(var(--text-primary)) !important;
 }
 
 [data-theme="dark"] .toggle svg[aria-label="moon"] {
-    color: #ffffff !important;
+    color: hsl(var(--text-primary)) !important;
 }
 
 [data-theme="dark"] .toggle .theme-controller:checked ~ svg[aria-label="sun"] {
-    color: #ffffff !important;
+    color: hsl(var(--text-primary)) !important;
 }
 
 [data-theme="dark"] .toggle .theme-controller:checked ~ svg[aria-label="moon"] {
-    color: #ffffff !important;
+    color: hsl(var(--text-primary)) !important;
 }
 
 .toggle:hover {
@@ -1499,4 +1499,26 @@
         gap: 4px;
     }
 }
+
+/* ============================================
+   Floating 버튼 다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .floating-button {
+    background-color: hsla(var(--text-white), 0.6); /* 다크모드에서 밝은 배경 */
+}
+
+[data-theme="dark"] .floating-button:hover {
+    background-color: hsla(var(--text-white), 0.8); /* 호버 시 더 밝게 */
+}
+
+[data-theme="dark"] .icon-add {
+    color: hsl(var(--text-primary)); /* 다크모드에서 어두운 색상 */
+}
+
+[data-theme="dark"] .icon-add::before,
+[data-theme="dark"] .icon-add::after {
+    background-color: hsl(var(--text-primary)) !important; /* 다크모드에서 어두운 색상 */
+}
+
+/* 서브메뉴는 다크모드에서도 기존 흰색 유지 */
 

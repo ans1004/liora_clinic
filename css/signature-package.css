@@ -836,3 +836,82 @@
     }
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .signature-package-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .signature-package-intro {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .signature-package-intro-text {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-program {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .signature-package-program-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-program-card {
+    border-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-program-card-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-program-card-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-program-card-sub-text p {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-program-card-button {
+    border-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-program-card-button span {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-point {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .signature-package-point-title h2 {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-point-card-title p {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .signature-package-point-card-text p {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .outtro-headline {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .btn-text {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .btn-text-label {
+    color: hsl(var(--text-primary));
+}
+

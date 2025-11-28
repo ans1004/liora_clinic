@@ -138,7 +138,7 @@
     color: #111111;
     width: 80px;
     height: 32px;
-    display: flex;
+    display: none; /* Before/After 배지 숨김 */
     align-items: center;
     justify-content: center;
 }
@@ -329,5 +329,67 @@
     .before-after-badge {
         display: none;
     }
+}
+
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .before-after-hero {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .before-after-hero-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .before-after-hero-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .before-after-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .before-after-tab-item {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .before-after-tab-item.active {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .before-after-tab-item:not(.active) {
+    color: hsla(var(--text-primary), 0.6); /* 비활성화 탭은 약간 투명하게 */
+}
+
+[data-theme="dark"] .before-after-card-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .before-after-card-description {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .before-after-badge {
+    background-color: hsl(var(--bg-page));
+    color: hsl(var(--text-primary));
+    border: 1px solid hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-arrow {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-number {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-number.active {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .pagination-number:not(.active):hover {
+    background-color: hsla(var(--text-primary), 0.1);
 }
 

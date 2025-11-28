@@ -1,0 +1,86 @@
+/* 다크모드 색상 변수 정의 (HSL 포맷) */
+/* 블로그 참고: https://xenosium.com/entry/8679/ */
+
+/* 라이트 모드 색상 변수 */
+:root {
+    /* 텍스트 색상 */
+    --text-primary: 0, 0%, 7%; /* #111111 */
+    --text-white: 0, 0%, 100%; /* #ffffff */
+    
+    /* 페이지 배경 색상 */
+    --bg-page: 0, 0%, 100%; /* #ffffff */
+    
+    /* 배경 색상 */
+    --bg-accordion-default: 0, 0%, 97%; /* #f7f7f7 */
+    --bg-accordion-button: 0, 0%, 100%; /* #ffffff */
+    
+    /* 네비게이션 및 섹션 배경 색상 (라이트 모드) */
+    --bg-navbar: 0, 0%, 100%; /* #ffffff - 라이트 모드에서는 흰색 */
+    --bg-section: 0, 0%, 100%; /* #ffffff - 라이트 모드에서는 흰색 */
+    
+    /* 투명도 값 (라이트 모드) */
+    --opacity-border-light: 0.1;
+    --opacity-border-medium: 0.2;
+    --opacity-hover: 0.1;
+    --opacity-dot-inactive: 0.4;
+    
+    /* 아코디언 활성화 배경 색상 */
+    --bg-accordion-active-default: 0, 100%, 94%; /* #ffe0e0 */
+    --bg-accordion-active-clarity: 200, 100%, 88%; /* #C4E9FF */
+    --bg-accordion-active-elegance: 30, 100%, 84%; /* #FFD7B0 */
+    --bg-accordion-active-resilience: 50, 100%, 92%; /* #FFF5D5 */
+    
+    /* About 페이지 전용 변수 (하위 호환성 유지) */
+    --about-text-primary: var(--text-primary);
+    --about-text-white: var(--text-white);
+    --about-bg-page: var(--bg-page);
+    --about-bg-accordion-default: var(--bg-accordion-default);
+    --about-bg-accordion-button: var(--bg-accordion-button);
+    --about-bg-accordion-active-default: var(--bg-accordion-active-default);
+    --about-bg-accordion-active-clarity: var(--bg-accordion-active-clarity);
+    --about-bg-accordion-active-elegance: var(--bg-accordion-active-elegance);
+    --about-bg-accordion-active-resilience: var(--bg-accordion-active-resilience);
+}
+
+/* 다크모드 색상 변수 */
+[data-theme="dark"] {
+    /* 텍스트 색상 - 다크모드에서는 모두 흰색 */
+    --text-primary: 0, 0%, 100%; /* #ffffff */
+    
+    /* 페이지 배경 색상 - 다크모드에서는 어두운 배경 */
+    --bg-page: 240, 5%, 7%; /* #121214 */
+    
+    /* 배경 색상 - 다크모드에서는 어두운 배경 */
+    --bg-accordion-default: 0, 0%, 15%; /* 어두운 회색 */
+    --bg-accordion-button: 0, 0%, 20%; /* 약간 밝은 어두운 회색 */
+    
+    /* 네비게이션 및 섹션 배경 색상 */
+    --bg-navbar: 240, 5%, 7%; /* #121214 - 네비게이션 바 배경 */
+    --bg-section: 240, 5%, 7%; /* #121214 - 섹션 배경 */
+    
+    /* 투명도 값 (rgba와 함께 사용) */
+    --opacity-border-light: 0.1; /* 보더/라인 투명도 */
+    --opacity-border-medium: 0.2; /* 보더/라인 중간 투명도 */
+    --opacity-hover: 0.1; /* 호버 배경 투명도 */
+    --opacity-dot-inactive: 0.4; /* 비활성화된 점 투명도 */
+    
+    /* 아코디언 활성화 배경 색상 - 다크모드에서는 회색으로 조정 */
+    /* 라이트 모드 밝기 대칭 반전: 94%->22%, 88%->20%, 84%->18%, 92%->22% */
+    /* 적절한 가독성을 위해 20-22% 범위의 회색 사용 */
+    --bg-accordion-active-default: 0, 0%, 22%; /* 회색 (라이트 94% 대칭) */
+    --bg-accordion-active-clarity: 0, 0%, 20%; /* 회색 (라이트 88% 대칭) */
+    --bg-accordion-active-elegance: 0, 0%, 20%; /* 회색 (라이트 84% 대칭) */
+    --bg-accordion-active-resilience: 0, 0%, 22%; /* 회색 (라이트 92% 대칭) */
+    
+    /* About 페이지 전용 변수 (하위 호환성 유지) */
+    --about-text-primary: var(--text-primary);
+    --about-text-white: var(--text-white);
+    --about-bg-page: var(--bg-page);
+    --about-bg-accordion-default: var(--bg-accordion-default);
+    --about-bg-accordion-button: var(--bg-accordion-button);
+    --about-bg-accordion-active-default: var(--bg-accordion-active-default);
+    --about-bg-accordion-active-clarity: var(--bg-accordion-active-clarity);
+    --about-bg-accordion-active-elegance: var(--bg-accordion-active-elegance);
+    --about-bg-accordion-active-resilience: var(--bg-accordion-active-resilience);
+}
+

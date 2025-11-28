@@ -260,3 +260,59 @@
     background-color: #f0f0f0;
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .event-hero {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .event-hero-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-hero-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .event-tab-item {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-tab-item.active {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-tab-item:not(.active) {
+    color: hsla(var(--text-primary), 0.6); /* 비활성화 탭은 약간 투명하게 */
+}
+
+[data-theme="dark"] .event-card-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-card-date {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-pagination .pagination-arrow {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-pagination .pagination-number {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .event-pagination .pagination-number.active {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .event-pagination .pagination-number:not(.active):hover {
+    background-color: hsla(var(--text-primary), 0.1);
+}
+

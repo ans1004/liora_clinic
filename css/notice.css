@@ -625,3 +625,95 @@
     }
 }
 
+
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .notice-hero {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .notice-hero-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-hero-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .notice-filter-btn {
+    border-color: hsl(var(--text-primary));
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-filter-btn span {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-filter-menu {
+    background-color: hsl(var(--bg-page));
+    border-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-filter-menu-item {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-filter-menu-item:hover {
+    background-color: hsla(var(--text-primary), 0.1);
+}
+
+[data-theme="dark"] .notice-filter-menu-item.active {
+    background-color: hsla(var(--text-primary), 0.1);
+}
+
+[data-theme="dark"] .notice-search-wrapper {
+    border-color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-search-input {
+    border-color: hsl(var(--text-primary));
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-search-input::placeholder {
+    color: hsla(var(--text-primary), 0.6);
+}
+
+[data-theme="dark"] .notice-table-row {
+    border-color: hsl(var(--text-primary));
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .notice-table-row:hover {
+    background-color: hsla(var(--text-primary), 0.1);
+}
+
+[data-theme="dark"] .notice-table-category {
+    color: hsla(var(--text-primary), 0.6);
+}
+
+[data-theme="dark"] .notice-table-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .notice-table-date {
+    color: hsla(var(--text-primary), 0.6);
+}
+
+[data-theme="dark"] .pagination-arrow {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-number {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-number.active {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-page));
+}
