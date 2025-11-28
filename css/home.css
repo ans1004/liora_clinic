@@ -1037,6 +1037,181 @@ button {
     }
 
     /* footer 반응형 스타일은 components.css에서 관리 */
+
+    /* ============================================
+       모바일 다크모드 스타일
+       ============================================ */
+    
+    /* Body 배경 - 다크모드 */
+    [data-theme="dark"] body {
+        background-color: hsl(var(--bg-section));
+        color: hsl(var(--text-primary));
+    }
+
+    /* Brand Essence 섹션 - 배경 */
+    [data-theme="dark"] .brand-essence {
+        background-color: hsl(var(--bg-section));
+    }
+
+    [data-theme="dark"] .headline_be {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .learn-more-btn {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .learn-more-btn:hover {
+        opacity: 0.8;
+    }
+
+    /* Learn More 버튼 화살표 아이콘 - 흰색 (SVG 이미지) */
+    [data-theme="dark"] .learn-more-btn .icon {
+        filter: brightness(0) invert(1) !important; /* 흰색으로 변경 */
+    }
+
+    /* Signature 섹션 - 배경 */
+    [data-theme="dark"] .signature {
+        background-color: hsl(var(--bg-section));
+    }
+
+    [data-theme="dark"] .headline_sg {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .signature-maintext {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .signature-card-content .liora-body-3-light {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .signature-card-content .learn-more-btn {
+        color: hsl(var(--text-primary));
+    }
+
+    /* Signature 카드 Learn More 버튼 화살표 아이콘 - 흰색 (SVG 이미지) */
+    [data-theme="dark"] .signature-card-content .learn-more-btn .icon {
+        filter: brightness(0) invert(1) !important; /* 흰색으로 변경 */
+    }
+
+    /* Liora Signature 캐러셀 - 흰색 */
+    [data-theme="dark"] .signature-card-slide .carousel-dot .dot.active .progress-ring .bg-circle {
+        stroke: hsla(var(--text-white), var(--opacity-border-medium)) !important;
+    }
+
+    [data-theme="dark"] .signature-card-slide .carousel-dot .dot.active .progress-ring .progress-circle {
+        stroke: hsl(var(--text-primary)) !important;
+    }
+
+    [data-theme="dark"] .signature-card-slide .carousel-dot .dot.active::after {
+        background-color: hsl(var(--text-primary)) !important;
+    }
+
+    [data-theme="dark"] .signature-card-slide .carousel-dot .dot:not(.active)::after {
+        background-color: hsla(var(--text-white), var(--opacity-dot-inactive)) !important;
+    }
+
+    /* Our Solution 섹션 - 배경 */
+    [data-theme="dark"] .our-solution {
+        background-color: hsl(var(--bg-section));
+    }
+
+    [data-theme="dark"] .our-solution-title {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .solution-number {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .solution-title {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .solution-subtitle {
+        color: hsl(var(--text-primary));
+    }
+
+    /* Our Solution 버튼 border - 흰색 */
+    [data-theme="dark"] .control .button-prev,
+    [data-theme="dark"] .control .button-next {
+        border-color: hsl(var(--text-primary));
+    }
+
+    /* Our Solution 버튼 아이콘 - 흰색 필터 */
+    [data-theme="dark"] .our-solution .control .button-next::before,
+    [data-theme="dark"] .our-solution .control .button-prev::before {
+        filter: brightness(0) invert(1) !important; /* 흰색으로 변경 */
+    }
+
+    /* Our Solution 버튼 호버 - 다크모드 */
+    [data-theme="dark"] .control .button-prev:hover,
+    [data-theme="dark"] .control .button-next:hover {
+        background-color: hsla(var(--text-white), var(--opacity-hover));
+    }
+
+    /* Our Solution 타이틀 h2 색상 */
+    [data-theme="dark"] .our-solution-title h2 {
+        color: hsl(var(--text-primary));
+    }
+
+    /* Our Solution 타이틀 배경 - 다크모드 배경색 */
+    [data-theme="dark"] .our-solution-title {
+        background-color: hsl(var(--bg-section));
+    }
+
+    /* Marquee 섹션 - 배경 */
+    [data-theme="dark"] .marquee {
+        background-color: hsl(var(--bg-section));
+    }
+
+    [data-theme="dark"] .marquee-text {
+        color: hsl(var(--text-primary));
+    }
+
+    /* Footer 배경 - 다크모드 배경색 */
+    [data-theme="dark"] .footer {
+        background-color: hsl(var(--bg-section));
+    }
+
+    /* Footer 콘텐츠 - 흰색 */
+    [data-theme="dark"] .footer-privacy a {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .footer-menu .nav-menu {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .footer-menu .sub-menu a {
+        color: hsl(var(--text-primary));
+    }
+
+    [data-theme="dark"] .copyright p {
+        color: hsl(var(--text-primary));
+    }
+
+    /* Footer SNS 아이콘 - 흰색 필터 */
+    [data-theme="dark"] .sns-icon {
+        filter: brightness(0) invert(1) !important; /* 흰색으로 변경 */
+    }
+
+    [data-theme="dark"] .sns-icon:hover {
+        filter: brightness(0) saturate(100%) invert(73%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+    }
+
+    /* Footer 라인 - 흰색 */
+    [data-theme="dark"] .footer-line {
+        background-color: hsla(var(--text-white), var(--opacity-border-medium)) !important;
+        border-top-color: hsla(var(--text-white), var(--opacity-border-medium)) !important;
+    }
+
+    /* Footer 로고 - 흰색 필터 */
+    [data-theme="dark"] .footer-logo-copyright .logo img {
+        filter: brightness(0) invert(1) !important; /* 흰색으로 변경 */
+    }
 }
 
 /* ============================================
