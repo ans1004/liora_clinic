@@ -801,6 +801,18 @@
         width: 100%;
     }
 
+    /* 모바일에서 상담하러가기 버튼 화살표 아이콘 크기 조절 */
+    .btn-icon {
+        width: 32px; /* 40px에서 32px로 축소 */
+        height: 32px; /* 40px에서 32px로 축소 */
+    }
+
+    .btn-icon svg,
+    .btn-icon img {
+        width: 32px; /* 40px에서 32px로 축소 */
+        height: 32px; /* 40px에서 32px로 축소 */
+    }
+
     .outtro-headline {
         max-width: 100%;
     }
@@ -913,5 +925,10 @@
 
 [data-theme="dark"] .btn-text-label {
     color: hsl(var(--text-primary));
+}
+
+/* 상담하러가기 버튼 화살표 아이콘 - 다크모드에서 흰색 */
+[data-theme="dark"] .btn-icon img {
+    filter: brightness(0) invert(1) !important; /* 흰색으로 변경 */
 }
 
