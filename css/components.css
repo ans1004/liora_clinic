@@ -1676,20 +1676,20 @@
    Floating 버튼 다크모드 스타일
    ============================================ */
 [data-theme="dark"] .floating-button {
-    background-color: hsla(var(--text-white), 0.6); /* 다크모드에서 밝은 배경 */
+    background-color: hsla(var(--text-white), 0.6); /* 다크모드에서 어두운 배경 */
 }
 
 [data-theme="dark"] .floating-button:hover {
-    background-color: hsla(var(--text-white), 0.8); /* 호버 시 더 밝게 */
+    background-color: hsla(var(--text-white), 0.8); /* 호버 시 조금 더 밝게 */
 }
 
 [data-theme="dark"] .icon-add {
-    color: hsl(var(--text-primary)); /* 다크모드에서 어두운 색상 */
+    color: hsl(0, 0%, 0%); /* 다크모드에서 검정색 */
 }
 
 [data-theme="dark"] .icon-add::before,
 [data-theme="dark"] .icon-add::after {
-    background-color: hsl(var(--text-primary)) !important; /* 다크모드에서 어두운 색상 */
+    background-color: hsl(0, 0%, 0%) !important; /* 다크모드에서 검정색 */
 }
 
 /* 서브메뉴는 다크모드에서도 기존 흰색 유지 */
