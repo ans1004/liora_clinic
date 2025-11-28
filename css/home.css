@@ -144,6 +144,9 @@ button {
     display: flex !important; /* 모든 화면 크기에서 보이도록 명시 */
     visibility: visible !important; /* 항상 보이도록 설정 */
     opacity: 1 !important; /* 투명도 1로 설정 */
+    transform: translateZ(0); /* 모바일 브라우저에서 하드웨어 가속 활성화 및 레이어 분리 */
+    -webkit-transform: translateZ(0); /* iOS Safari 지원 */
+    will-change: transform; /* 성능 최적화 */
 }
 
 /* carousel-dot, floating-button 컴포넌트 스타일은 components.css에서 관리 */
@@ -843,6 +846,9 @@ button {
         z-index: 10000 !important; /* 모바일에서도 최상위 레이어에 표시 (태블릿/데스크탑과 동일) */
         visibility: visible !important; /* 항상 보이도록 설정 */
         opacity: 1 !important; /* 투명도 1로 설정 */
+        transform: translateZ(0) !important; /* 모바일 브라우저에서 하드웨어 가속 활성화 및 레이어 분리 */
+        -webkit-transform: translateZ(0) !important; /* iOS Safari 지원 */
+        will-change: transform !important; /* 성능 최적화 */
     }
 
     .brand-essence {

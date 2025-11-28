@@ -559,6 +559,9 @@
     z-index: 10000 !important; /* our-solution-title 위에 표시 */
     visibility: visible !important; /* 항상 보이도록 설정 */
     opacity: 1 !important; /* 투명도 1로 설정 */
+    transform: translateZ(0); /* 모바일 브라우저에서 하드웨어 가속 활성화 및 레이어 분리 */
+    -webkit-transform: translateZ(0); /* iOS Safari 지원 */
+    will-change: transform; /* 성능 최적화 */
 }
 
 .floating-button:hover {
