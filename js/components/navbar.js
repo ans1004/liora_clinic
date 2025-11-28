@@ -312,6 +312,78 @@ async function loadNavigation() {
         });
         
         navMenuFooterMobile.appendChild(languageMobile);
+        
+        // 모바일 다크모드 버튼 추가 (언어 버튼 오른쪽)
+        const themeControllerMobile = document.createElement('div');
+        themeControllerMobile.className = 'theme-controller-wrapper theme-controller-mobile';
+        
+        const themeLabelMobile = document.createElement('label');
+        themeLabelMobile.className = 'toggle toggle-mobile';
+        
+        const themeToggleMobile = document.createElement('input');
+        themeToggleMobile.type = 'checkbox';
+        themeToggleMobile.value = 'dark';
+        themeToggleMobile.className = 'theme-controller';
+        themeToggleMobile.id = 'theme-toggle-mobile';
+        themeToggleMobile.setAttribute('aria-label', '다크모드 토글');
+        
+        // 태양 아이콘 SVG
+        const sunIconMobile = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        sunIconMobile.setAttribute('aria-label', 'sun');
+        sunIconMobile.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        sunIconMobile.setAttribute('viewBox', '0 0 24 24');
+        sunIconMobile.innerHTML = '<g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></g>';
+        
+        // 달 아이콘 SVG
+        const moonIconMobile = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        moonIconMobile.setAttribute('aria-label', 'moon');
+        moonIconMobile.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        moonIconMobile.setAttribute('viewBox', '0 0 24 24');
+        moonIconMobile.innerHTML = '<g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></g>';
+        
+        // 로컬 스토리지에서 다크모드 상태 불러오기
+        const isDarkModeMobile = localStorage.getItem('darkMode') === 'true';
+        if (isDarkModeMobile) {
+            themeToggleMobile.checked = true;
+        }
+        
+        // 다크모드 토글 이벤트 (데스크톱과 동기화)
+        themeToggleMobile.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('darkMode', 'true');
+                // 데스크톱 토글도 동기화 (나중에 실행)
+                setTimeout(() => {
+                    const desktopToggle = document.getElementById('theme-toggle');
+                    if (desktopToggle) desktopToggle.checked = true;
+                }, 0);
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('darkMode', 'false');
+                // 데스크톱 토글도 동기화 (나중에 실행)
+                setTimeout(() => {
+                    const desktopToggle = document.getElementById('theme-toggle');
+                    if (desktopToggle) desktopToggle.checked = false;
+                }, 0);
+            }
+        });
+        
+        // 데스크톱 토글 변경 시 모바일 토글도 동기화 (나중에 실행)
+        setTimeout(() => {
+            const desktopToggle = document.getElementById('theme-toggle');
+            if (desktopToggle) {
+                desktopToggle.addEventListener('change', (e) => {
+                    themeToggleMobile.checked = e.target.checked;
+                });
+            }
+        }, 0);
+        
+        themeLabelMobile.appendChild(themeToggleMobile);
+        themeLabelMobile.appendChild(sunIconMobile);
+        themeLabelMobile.appendChild(moonIconMobile);
+        themeControllerMobile.appendChild(themeLabelMobile);
+        
+        navMenuFooterMobile.appendChild(themeControllerMobile);
         navContent.appendChild(navMenuFooterMobile);
         
         mobileMenuContent.appendChild(navContent);
@@ -462,6 +534,11 @@ function setupMobileMenu() {
         if (navbar) navbar.classList.add('mobile-menu-open');
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
+        // 플로팅 버튼 숨기기
+        const floatingButton = document.querySelector('.floating-button');
+        const floatingSubButtons = document.querySelector('.floating-sub-buttons');
+        if (floatingButton) floatingButton.style.display = 'none';
+        if (floatingSubButtons) floatingSubButtons.style.display = 'none';
     }
     
     // 메뉴 닫기
@@ -475,6 +552,11 @@ function setupMobileMenu() {
         document.querySelectorAll('.nav-menu-mobile-only').forEach(item => {
             item.classList.remove('active');
         });
+        // 플로팅 버튼 다시 표시
+        const floatingButton = document.querySelector('.floating-button');
+        const floatingSubButtons = document.querySelector('.floating-sub-buttons');
+        if (floatingButton) floatingButton.style.display = '';
+        if (floatingSubButtons) floatingSubButtons.style.display = '';
     }
     
     // 이벤트 리스너 등록
