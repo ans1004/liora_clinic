@@ -7,6 +7,11 @@
         const floatingButton = document.querySelector('.floating-button');
         if (!floatingButton) return;
 
+        // 사파리에서 position: fixed가 제대로 동작하도록 floating 버튼을 body에 직접 배치
+        // 부모 요소의 overflow: hidden이나 transform이 position: fixed에 영향을 주는 것을 방지
+        const originalParent = floatingButton.parentElement;
+        document.body.appendChild(floatingButton);
+
         // 서브 Floating 버튼들 데이터
         // 경로는 현재 페이지의 위치에 따라 조정
         const basePath = window.location.pathname.includes('/liora_clinic/') ? '/liora_clinic/' : './';
@@ -48,8 +53,8 @@
             subButtonsContainer.appendChild(subButton);
         });
 
-        // 서브 버튼 컨테이너를 floating-button의 부모에 추가
-        floatingButton.parentElement.appendChild(subButtonsContainer);
+        // 서브 버튼 컨테이너를 body에 추가 (floating 버튼과 함께)
+        document.body.appendChild(subButtonsContainer);
 
         // 클릭 이벤트 리스너 추가
         floatingButton.addEventListener('click', function(e) {
