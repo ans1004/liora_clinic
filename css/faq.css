@@ -305,13 +305,14 @@
     }
 
     .faq-content {
-        padding: 0 24px 80px 24px;
+        padding: 0 0 80px 0; /* 테블릿에서 좌우 패딩 제거 */
     }
 
     .faq-container {
         flex-direction: column;
         gap: 20px;
         align-items: stretch;
+        padding: 0 20px; /* 컨테이너에 좌우 패딩 20px */
     }
 
     .faq-tab {
@@ -320,6 +321,10 @@
 
     .faq-search {
         width: 100%;
+    }
+
+    .faq-accordion-container {
+        padding: 32px 20px; /* 테블릿에서 안쪽 좌우 패딩 20px */
     }
 }
 
