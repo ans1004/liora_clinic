@@ -314,6 +314,15 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     object-fit: cover;
 }
 
+/* 데스크탑/모바일 이미지 전환 */
+.our-vision-image-area .img-desktop {
+    display: block;
+}
+
+.our-vision-image-area .img-mobile {
+    display: none;
+}
+
 /* Brand Essence Section */
 .brand-essence-about {
     max-width: 1440px;
@@ -819,6 +828,15 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     .our-vision-image-area img {
         width: 100%;
         height: 100%;
+    }
+
+    /* 모바일에서 이미지 전환 */
+    .our-vision-image-area .img-desktop {
+        display: none;
+    }
+
+    .our-vision-image-area .img-mobile {
+        display: block;
     }
     
     .brand-essence-about-main {
