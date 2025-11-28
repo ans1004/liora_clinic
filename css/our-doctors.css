@@ -324,3 +324,42 @@
     }
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .our-doctors-hero {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .our-doctors-hero-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .our-doctors-hero-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .our-doctors-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .our-doctors-profile-name {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .our-doctors-profile-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .our-doctors-profile-description {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .our-doctors-profile-label {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .our-doctors-profile-list li {
+    color: hsl(var(--text-primary));
+}
+

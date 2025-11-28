@@ -220,3 +220,55 @@
     }
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .patents-hero {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .patents-hero-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .patents-hero-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .patents-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .patents-tab-item span {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .patents-tab-item.active span {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .patents-tab-item:not(.active) span {
+    color: hsla(var(--text-primary), 0.6); /* 비활성화 탭은 약간 투명하게 */
+}
+
+[data-theme="dark"] .patents-card-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .patents-card-number {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-arrow {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-number {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .pagination-number.active {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-page));
+}
+

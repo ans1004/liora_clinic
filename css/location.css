@@ -432,3 +432,42 @@
     }
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .location-hero {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .location-hero-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .location-hero-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .location-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .location-section-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .location-time-item {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .location-time-notice {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .location-address-item {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .location-inquiry-item {
+    color: hsl(var(--text-primary));
+}
+

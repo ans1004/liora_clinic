@@ -1,4 +1,5 @@
 /* About 페이지 스타일 */
+/* 다크모드 색상 변수는 theme-colors.css에서 전역으로 관리됩니다 */
 
 /* Navbar 스타일 - About 페이지에서만 적용 */
 body:has(.about-hero) .navbar .nav-menu {
@@ -68,6 +69,38 @@ body:has(.about-hero) .navbar .hamburger-line {
 body:has(.about-hero) .navbar.scrolled .hamburger-line,
 body:has(.about-hero) .navbar:hover .hamburger-line {
     background-color: #111111; /* 스크롤 시 검정색 */
+}
+
+/* 다크모드 - About 페이지 Navbar 스크롤 시에도 흰색 유지 */
+[data-theme="dark"] body:has(.about-hero) .navbar.scrolled .nav-menu,
+[data-theme="dark"] body:has(.about-hero) .navbar:hover .nav-menu {
+    color: #ffffff;
+}
+
+[data-theme="dark"] body:has(.about-hero) .navbar.scrolled .nav-menu:hover,
+[data-theme="dark"] body:has(.about-hero) .navbar:hover .nav-menu:hover {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+[data-theme="dark"] body:has(.about-hero) .navbar.scrolled .logo img,
+[data-theme="dark"] body:has(.about-hero) .navbar:hover .logo img {
+    filter: brightness(0) invert(1);
+}
+
+[data-theme="dark"] body:has(.about-hero) .navbar.scrolled .language-text,
+[data-theme="dark"] body:has(.about-hero) .navbar:hover .language-text {
+    color: #ffffff;
+}
+
+[data-theme="dark"] body:has(.about-hero) .navbar.scrolled .language-icon,
+[data-theme="dark"] body:has(.about-hero) .navbar:hover .language-icon {
+    color: #ffffff;
+}
+
+[data-theme="dark"] body:has(.about-hero) .navbar.scrolled .hamburger-line,
+[data-theme="dark"] body:has(.about-hero) .navbar:hover .hamburger-line {
+    background-color: #ffffff;
 }
 
 /* Hero Section */
@@ -176,6 +209,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     max-width: 1440px;
     margin: 0 auto;
     padding: 120px 40px;
+    background-color: hsl(var(--about-bg-page));
 }
 
 .our-mission-content {
@@ -192,11 +226,11 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 
 .our-mission-text-block h2 {
     margin-bottom: 40px;
-    color: #111111;
+    color: hsl(var(--about-text-primary));
 }
 
 .our-mission-text-block p {
-    color: #111111;
+    color: hsl(var(--about-text-primary));
     text-align: center;
     word-break: keep-all; /* 한국어 단어가 중간에 나뉘지 않도록 */
     word-wrap: normal; /* 단어 단위로 줄바꿈 */
@@ -249,6 +283,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     max-width: 1440px;
     margin: 0 auto;
     padding: 120px 40px;
+    background-color: hsl(var(--about-bg-page));
 }
 
 .our-vision-content {
@@ -262,7 +297,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .our-vision-text-block p {
-    color: #111111;
+    color: hsl(var(--about-text-primary));
 }
 
 .our-vision-image-area {
@@ -284,6 +319,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     max-width: 1440px;
     margin: 0 auto;
     padding: 120px 40px;
+    background-color: hsl(var(--about-bg-page));
 }
 
 .brand-essence-about-content {
@@ -297,7 +333,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .brand-essence-about-title h2 {
-    color: #111111;
+    color: hsl(var(--about-text-primary));
 }
 
 .brand-essence-about-main {
@@ -330,7 +366,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .accordion-item {
-    background-color: #f7f7f7;
+    background-color: hsl(var(--about-bg-accordion-default));
     border-radius: 0;
     overflow: hidden;
     transition: all 0.3s;
@@ -340,20 +376,20 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .accordion-item.active {
-    background-color: #ffe0e0;
+    background-color: hsl(var(--about-bg-accordion-active-default));
     height: 346px;
 }
 
 .accordion-item.accordion-clarity.active {
-    background-color: #C4E9FF;
+    background-color: hsl(var(--about-bg-accordion-active-clarity));
 }
 
 .accordion-item.accordion-elegance.active {
-    background-color: #FFD7B0;
+    background-color: hsl(var(--about-bg-accordion-active-elegance));
 }
 
 .accordion-item.accordion-resilience.active {
-    background-color: #FFF5D5;
+    background-color: hsl(var(--about-bg-accordion-active-resilience));
 }
 
 .accordion-header {
@@ -365,7 +401,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .accordion-header h3 {
-    color: #111111;
+    color: hsl(var(--about-text-primary));
 }
 
 .accordion-button {
@@ -373,8 +409,8 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     height: 44px;
     border-radius: 42px;
     border: none;
-    background-color: #ffffff;
-    color: #111111;
+    background-color: hsl(var(--about-bg-accordion-button));
+    color: hsl(var(--about-text-primary));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -405,7 +441,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .accordion-content p {
-    color: #111111;
+    color: hsl(var(--about-text-primary));
     margin: 0 0 28px 0;
     margin-top: auto;
     transition: opacity 0.3s ease-out 0.1s;
@@ -421,6 +457,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     max-width: 1440px;
     margin: 0 auto;
     padding: 120px 40px 240px 40px;
+    background-color: hsl(var(--about-bg-page));
 }
 
 .philosophy-content {
@@ -434,7 +471,7 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
 }
 
 .philosophy-title h2 {
-    color: #111111;
+    color: hsl(var(--about-text-primary));
 }
 
 .philosophy-card-list {
@@ -493,13 +530,15 @@ body:has(.about-hero) .navbar:hover .hamburger-line {
     }
 
 .philosophy-card-title p {
-    color: #111111;
+    color: hsl(var(--about-text-primary));
     text-align: left;
 }
 
 .philosophy-card-text p {
-    color: #111111;
+    color: hsl(var(--about-text-primary));
 }
+
+/* 다크모드 스타일은 CSS 변수로 자동 적용됨 */
 
 /* Responsive Styles */
 /* 태블릿 (769px ~ 1024px) */

@@ -1,6 +1,9 @@
 /* Liora 메인 스타일 파일 */
 /* 모든 페이지에서 사용되는 전역 스타일 */
 
+/* 다크모드 색상 변수 시스템 import (가장 먼저 로드) */
+@import url('./theme-colors.css');
+
 /* 텍스트 스타일 시스템 import */
 @import url('./text-styles.css');
 
@@ -54,6 +57,9 @@
 
 /* Our Doctors 페이지 스타일 import */
 @import url('./our-doctors.css');
+
+/* About 페이지 스타일 import */
+@import url('./about.css');
 
 /* 추가 전역 스타일은 여기에 작성 */
 

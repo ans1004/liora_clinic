@@ -611,3 +611,58 @@
     }
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .section-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .section-description {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .effect-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .circle-card .card-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .circle-card .card-description {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .core-technology {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .core-technology-title h2 {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .core-technology-card-title p {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .core-technology-card-text p {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .outtro-headline {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .btn-text {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .btn-text-label {
+    color: hsl(var(--text-primary));
+}
+

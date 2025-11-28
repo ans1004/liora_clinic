@@ -306,3 +306,55 @@
     }
 }
 
+/* ============================================
+   다크모드 스타일
+   ============================================ */
+[data-theme="dark"] .medical-device-hero {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .medical-device-hero-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .medical-device-hero-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .medical-device-content {
+    background-color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .medical-title {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .medical-subtitle {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .medical-description {
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .medical-button {
+    border-color: hsl(var(--text-primary));
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .medical-button:hover {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-page));
+}
+
+[data-theme="dark"] .medical-button-filled {
+    background-color: hsla(var(--text-primary), 0.1); /* 다크모드에서는 약간 밝은 배경 */
+    border-color: hsl(var(--text-primary));
+    color: hsl(var(--text-primary));
+}
+
+[data-theme="dark"] .medical-button-filled:hover {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-page));
+}
+
