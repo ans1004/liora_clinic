@@ -226,7 +226,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .notice-detail-content {
         padding: 120px 20px 80px 20px;
     }

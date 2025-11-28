@@ -74,15 +74,15 @@
 
 .event-card-list {
     display: grid;
-    grid-template-columns: repeat(3, 440px);
-    column-gap: 20px !important;
+    grid-template-columns: repeat(3, 1fr); /* 반응형으로 변경: 1fr 사용 */
+    column-gap: 20px;
     row-gap: 48px;
     justify-content: start;
 }
 
 .event-card {
-    width: 440px;
-    height: 408px;
+    width: 100%; /* 반응형으로 변경: 100% 너비 */
+    height: auto; /* 높이 자동 조정으로 변경 */
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -94,16 +94,21 @@
 }
 
 .event-card-image-area {
-    width: 440px;
-    height: 330px;
+    width: 100%; /* 반응형으로 변경: 100% 너비 */
+    height: 0;
+    padding-bottom: 75%; /* 330/440 = 0.75 비율 유지 (세로도 함께 줄어들도록) */
     overflow: hidden;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .event-card-image-area img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .event-card-text {
@@ -111,7 +116,7 @@
     flex-direction: column;
     gap: 8px;
     width: 100%;
-    height: 58px;
+    height: auto; /* 높이 자동 조정으로 변경 */
 }
 
 .event-card-title {
@@ -124,43 +129,38 @@
     text-align: left;
 }
 
-/* 반응형 디자인 */
-@media screen and (max-width: 1440px) {
-    .event-card-list {
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 20px !important;
-        row-gap: 48px;
-        justify-content: start;
-    }
+/* 반응형 디자인 - 1440px 이하 미디어 쿼리 제거 (기본값이 이미 1fr이므로 불필요) */
 
-    .event-card {
-        width: 100%;
-        max-width: 440px;
-    }
-}
-
+/* 태블릿 크기 (1024px 이하) - 2열 레이아웃 */
 @media screen and (max-width: 1024px) {
     .event-hero {
-        padding: 80px 24px;
+        padding: 160px 40px 100px 40px; /* 데스크톱과 동일 */
     }
 
     .event-content {
-        padding: 0 24px 80px 24px;
+        padding: 0 40px 120px 40px; /* 데스크톱과 동일 */
     }
 
     .event-card-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-        justify-items: center;
+        grid-template-columns: repeat(2, 1fr); /* 2열로 변경 */
+        column-gap: 20px;
+        row-gap: 48px;
+        justify-items: start;
     }
 
     .event-card {
         width: 100%;
-        max-width: 440px;
+        max-width: 100%;
+    }
+
+    .event-card-image-area {
+        width: 100%;
+        padding-bottom: 75%; /* 비율 유지 (세로도 함께 줄어들도록) */
     }
 }
 
-@media screen and (max-width: 768px) {
+/* 모바일 크기 (767px 이하) - 1열 레이아웃 */
+@media screen and (max-width: 767px) {
     .event-hero {
         padding: 120px 20px 80px 20px;
     }
@@ -175,21 +175,21 @@
     }
 
     .event-card-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1열로 변경 */
         gap: 48px;
         justify-items: center;
     }
 
     .event-card {
         width: 100%;
-        height: 100%; /* 높이 100%로 변경 */
+        height: auto; /* 높이 자동 조정 */
         max-width: 440px;
     }
 
     /* 모바일에서 카드 이미지 영역도 100%로 변경 */
     .event-card-image-area {
         width: 100%;
-        height: 100%;
+        padding-bottom: 75%; /* 비율 유지 (세로도 함께 줄어들도록) */
     }
 }
 

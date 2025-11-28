@@ -1,0 +1,178 @@
+---
+alwaysApply: true
+// Project Rules for LIORA CLINIC - Final Version (V3.1)
+// Updated: 2025-11-24 - 웹폰트 규칙 제거, 리오라 의원 레퍼런스 기반 최적화
+// 이 파일은 모든 로컬 환경에서 **Git을 통해 동기화**되어야 합니다.
+// =================================================================
+// 0. 모바일 전용 작업 룰 (CRITICAL - 절대 어길 수 없음)
+// =================================================================
+// - **데스크톱은 완성형으로 간주**: 현재 데스크탑 웹사이트는 완성되어 있습니다.
+// - **데스크톱 수정 금지**: 사용자가 명시적으로 "데스크탑 수정" 또는 "데스크탑에서도"라고 
+//   언급하기 전까지는 데스크탑 관련 코드를 절대 수정하지 않습니다.
+// - **모바일 작업만 진행**: 사용자의 모든 요청은 모바일에 대한 것으로 간주하고,
+//   오직 모바일(360px ~ 768px) 스타일만 수정합니다.
+// - **데스크탑 스타일 변경 금지**: 
+//   - 데스크탑 미디어 쿼리(max-width: 1024px 이상)는 절대 수정하지 않습니다.
+//   - 모바일 미디어 쿼리(@media screen and (max-width: 768px))만 수정합니다.
+// - **예외**: 사용자가 명시적으로 "데스크탑 수정" 또는 "데스크탑에서도"라고 언급한 경우에만 데스크탑 수정 가능.
+// - **이 룰은 절대 어길 수 없습니다.**
+// =================================================================
+// 1. 기술 스택 및 환경 (Tech Stack & Environment)
+// =================================================================
+// - 메인 언어: Pure PHP 8.4 (Server-side rendering and logic)
+// - 프론트엔드: HTML5, CSS (Utility-first, Tailwind 방식), Vanilla JavaScript (ES6+).
+// - 서버 환경: Cafe24 New Autobahn (PHP 8.4, UTF-8 인코딩) 준수. MariaDB 사용 안 함.
+// - 데이터 소스: 모든 동적 콘텐츠(시술 정보, 의료진, 이벤트 등)는 'data/' 폴더의 JSON 파일에서 로드.
+
+// =================================================================
+// 2. 스타일 및 구조 (Style & Structure)
+// =================================================================
+// - **디자인 컨셉:** "Clean, Trustworthy, Soft" (화이트/베이지/파스텔 톤 중심의 의료 웹사이트)
+// - **하드코딩 금지:** 웹사이트 구조는 재사용 가능한 컴포넌트 기반으로 작성.
+// - **CSS 관리:** 불필요한 CSS 파일 최소화. `style.css` 하나 또는 유틸리티 클래스 중심.
+// - **Preview CSS 예외:** 개발 가이드 전용 `/css/preview.css` 허용 (배포 제외).
+// - **PHP Include:** 반복 섹션(헤더, 푸터, 상담 신청 폼)은 `include` 사용.
+// - **명명 규칙:** 파일명 및 함수명은 kebab-case(파일) 또는 snake_case(변수) 사용.
+// - **PHP 로직 파일 배치:** 핵심 로직(메일 발송 등)은 **'lib/' 폴더**에 배치.
+
+// - **[CRITICAL] 텍스트 스타일 관리 원칙:**
+//   - **단일 소스 원칙:** 모든 텍스트 스타일은 오직 `css/text-styles.css`에서만 관리합니다.
+//   - **중복 생성 금지:** 다른 CSS 파일에서 `font-family`, `font-size`, `font-weight`, 
+//     `line-height`, `letter-spacing` 등의 텍스트 관련 속성을 직접 정의하는 것을 절대 금지합니다.
+//   - **클래스 사용:** HTML 요소에는 `text-styles.css`에 정의된 클래스만 사용합니다.
+//     예: `liora-display-3`, `liora-body-2`, `liora-mobile-display-3`, `liora-mobile-body-2` 등
+//   - **반응형 텍스트:** 데스크톱과 모바일 텍스트 스타일은 각각 `liora-*`와 `liora-mobile-*` 클래스로 구분합니다.
+//   - **예외 없음:** 이 원칙은 모든 페이지, 모든 컴포넌트에 적용되며 예외가 없습니다.
+//   - **기존 중복 제거:** 기존 코드에서 발견되는 중복 텍스트 스타일은 즉시 제거하고 
+//     `text-styles.css`의 클래스로 대체해야 합니다.
+
+// - **[중요] 데이터 중심 컴포넌트 원칙:**
+//   - **표준 접근:** 반복되는 UI(시술 카드, 후기 리스트 등)는 단일 변수 정의를 금지합니다.
+//   - **강제 원칙:** 항상 `$data` 배열을 `foreach`로 순회하며 `include` 하는 방식을 사용합니다.
+//   - **독립성:** 컴포넌트는 전역 변수에 의존하지 않고 전달받은 `$data`만 사용합니다.
+
+// - **SVG 아이콘 및 이미지:**
+//   - **아이콘:** `fill="currentColor"` 사용, 하드코딩된 색상 제거.
+//   - **이미지:** 시술 전후 사진 등은 `object-fit: cover` 등을 사용하여 레이아웃 깨짐 방지.
+//   - **캐싱:** SVG 로더(PHP)를 통해 인라인 삽입 최적화.
+
+// =================================================================
+// 3. 주요 기능 (Key Features - Clinic Specific)
+// =================================================================
+// - **JSON 로드 로직:** 시술 프로그램, 이벤트, 의료진 정보 비동기 로드.
+// - **상담/예약 기능:**
+//   - 간단 상담(Footer/Modal), 상세 예약(Page) 구현.
+//   - PHP 메일러를 통한 관리자 알림 발송 (SMTP 설정 확인 필요).
+//   - 개인정보처리방침 동의 체크박스 필수.
+// - **팝업 관리:** "이달의 이벤트" 등 프로모션 팝업 (오늘 하루 열지 않음 쿠키 적용).
+// - **관리자:** 별도 어드민 없음. JSON 파일 수정으로 텍스트/이미지 관리.
+
+// =================================================================
+// 4. 개발 환경 (Development Environment)
+// =================================================================
+// - **로컬:** XAMPP (Apache + PHP) 권장.
+// - **URL:** http://localhost/ (루트), http://localhost/pages/ (서브)
+// - **DB:** 사용 안 함 (No MySQL).
+// - **프리뷰 페이지:** `pages/component-preview.php`에서 모든 컴포넌트 테스트.
+
+// =================================================================
+// 5. 외부 API 및 지도 (External API)
+// =================================================================
+// - **지도 API:** 네이버 지도 API (Naver Maps) 사용 권장 (한국 병원 표준).
+// - **위치:** (실제 리오라 의원 주소 입력 필요 - 예: 서울특별시 강남구...)
+// - **파일:** `pages/location.php`, `js/map.js`
+
+// =================================================================
+// 6. 산출물 참고 (Reference Materials)
+// =================================================================
+// - **[레퍼런스 사이트]:** https://ans1004.github.io/liora_clinic/
+//   - 위 사이트의 레이아웃, 색감, 톤앤매너를 분석하여 구현.
+//   - 단, 기술 스택은 Github Pages(Static)가 아닌 PHP SSR 방식을 따름.
+
+// =================================================================
+// 7. AI 페어 프로그래밍 컨텍스트 (AI Pair Programming Context)
+// =================================================================
+// 이 섹션은 Cursor AI가 프로젝트를 이해하기 위한 컨텍스트입니다.
+
+// ==========================================
+// PROJECT CONTEXT / 프로젝트 개요
+// ==========================================
+// You are an expert PHP 8.4 + Vanilla JS pair programmer working on **"LIORA CLINIC WEBSITE"**.
+// This is a Dermatology/Aesthetic Clinic website.
+// Follow all rules defined in `/.cursor/rules/liora-project-rules.mdc`.
+
+// (한글 설명:
+// 당신은 "리오라 의원" 웹사이트 구축을 위한 시니어 개발자입니다.
+// 기존의 정음(Jungeum) 룰을 기반으로 하되, 콘텐츠를 '병원/클리닉'에 맞게 변형해야 합니다.
+// DB 없이 PHP와 JSON으로만 동작하는 고성능 정적/동적 하이브리드 사이트입니다.)
+
+// ==========================================
+// PROJECT STRUCTURE / 폴더 구조 (Clinic Adapted)
+// ==========================================
+// Root folders:
+// - `/components/`
+//     - `layout/` → header, footer, quick-menu(floating), hero-slider
+//     - `cards/` → program-card(시술), event-card(이벤트), doctor-card(의료진), review-card(후기)
+//     - `forms/` → consultation-form, reservation-form, input-group
+//     - `ui/` → buttons, modals(popup), badges(New/Hot/Event), tabs(시술카테고리)
+// - `/lib/` → mail-handler.php, helper-functions.php
+// - `/pages/` → intro.php, programs.php, events.php, location.php
+// - `/data/` → 
+//     - `programs.json` (시술 목록: 리프팅, 색소, 제모 등)
+//     - `doctors.json` (의료진 프로필)
+//     - `events.json` (월별 프로모션)
+//     - `reviews.json` (전후사진 및 후기 데이터)
+// - `/assets/` → images, icons
+
+// ==========================================
+// CODING PRINCIPLES / 코딩 원칙
+// ==========================================
+// ✅ Component Input: All components accept `$data` array.
+// ✅ Loop Rendering: Use `foreach` + `include` for Program lists and Reviews.
+// ✅ Responsive: Mobile-first approach (Tailwind-like utility classes).
+// ✅ Accessibility: Alt tags for "Before/After" images are mandatory.
+// ✅ Inline SVGs: Must use `fill="currentColor"`, no hardcoded color/style.
+
+// (한글 설명:
+// 시술 카드, 의료진 소개 등은 반복이 많으므로 반드시 foreach 문을 사용합니다.
+// 모바일 사용자가 많은 병원 특성상 반응형(Mobile-first)이 매우 중요합니다.
+// 전후 사진(Before/After)에는 시각 장애인을 위한 대체 텍스트가 필수입니다.)
+
+// ==========================================
+// DATA STRUCTURE EXAMPLES / 데이터 예시
+// ==========================================
+// 1. programs.json (시술 정보)
+// [
+//   {
+//     "id": "p-01",
+//     "category": "lifting",
+//     "name": "울쎄라 리프팅",
+//     "summary": "강력한 초음파 리프팅",
+//     "price": "300,000~",
+//     "tags": ["탄력", "주름개선"],
+//     "image": "/assets/img/program/ulthera.jpg"
+//   }
+// ]
+
+// 2. doctors.json (의료진)
+// [
+//   {
+//     "name": "김리오라 대표원장",
+//     "specialty": "항노화/리프팅 전담",
+//     "history": ["전) OO대학병원 피부과", "현) 리오라 의원 대표원장"],
+//     "image": "/assets/img/doctor/dr-kim.jpg"
+//   }
+// ]
+
+// ==========================================
+// HOW TO RESPOND / 응답 방식
+// ==========================================
+// - Always check if the request fits the "Clinic" context.
+// - Provide PHP 8.4 compatible code.
+// - When creating a page, assume data comes from JSON.
+// - If user asks for "Reservation System", explain that we use "Email Form" instead of DB.
+
+// (한글 설명:
+// 사용자가 "예약 시스템"을 요청하면, DB가 없으므로 "상담 신청 이메일 발송" 형태로 구현함을 설명하세요.
+// 코드 작성 시 병원 특유의 신뢰감 있는 톤앤매너를 유지하세요.)
+---

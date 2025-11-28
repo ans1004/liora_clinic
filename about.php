@@ -1,0 +1,239 @@
+<?php
+/**
+ * LIORA CLINIC - About Page
+ * 병원소개 페이지
+ */
+
+// 설정 및 헬퍼 함수 로드
+require_once __DIR__ . '/lib/config.php';
+require_once __DIR__ . '/lib/helper-functions.php';
+
+// 페이지 설정
+$page_title = 'Liora Clinic - About';
+$additional_css = ['css/main.css', 'css/about.css'];
+$additional_js = [
+    'js/components/navbar.js',
+    'js/components/footer.js',
+    'js/components/floating-button.js',
+    'js/navbar.js',
+    'js/about.js'
+];
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= h($page_title) ?></title>
+    <?php foreach ($additional_css as $css): ?>
+    <link rel="stylesheet" href="<?= asset($css) ?>">
+    <?php endforeach; ?>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Forum:wght@400&family=Pretendard:wght@300;400;600&display=swap" rel="stylesheet">
+    <?php foreach ($additional_js as $js): ?>
+    <script src="<?= asset($js) ?>" defer></script>
+    <?php endforeach; ?>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- 네비게이션은 js/components/navbar.js에서 동적으로 생성됩니다 -->
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-background">
+            <video autoplay loop muted playsinline class="hero-video-desktop">
+                <source src="<?= asset('public/images/About/Hero.mp4') ?>" type="video/mp4">
+                <!-- 비디오를 지원하지 않는 브라우저를 위한 폴백 이미지 -->
+                <img src="<?= asset('public/images/About/Frame 326.png') ?>" alt="Hero">
+            </video>
+            <img src="<?= asset('public/images/About/Frame 326.png') ?>" alt="Hero" class="hero-image-mobile">
+        </div>
+        <div class="about-hero-overlay"></div>
+        <div class="about-hero-content">
+            <div class="about-hero-logo">
+                <img src="<?= asset('public/logo/logo.svg') ?>" alt="Liora Clinic">
+            </div>
+            <div class="about-hero-text">
+                <p class="liora-body-2 hero-text-desktop">리오라는 피부 안에 이미 존재하는 본연의 빛이라는 믿음에서 시작했습니다.<br>오직 본연의피부를 넘어, 삶에 빛을 밝히는 라이프스타일 클리닉 입니다.</p>
+                <p class="liora-body-2 hero-text-mobile">리오라는 피부 안에 이미 존재하는 본연의 빛이라는 믿음에서 시작했습니다.<br>오직 본연의피부를 넘어, 삶에 빛을 밝히는 라이프스타일 클리닉 입니다.</p>
+            </div>
+            <div class="about-hero-scroll">
+                <button class="arrow-button-solo">
+                    <img src="<?= asset('public/icon/About/bottom_icon.svg') ?>" alt="Scroll down">
+                </button>
+            </div>
+        </div>
+        <button class="floating-button">
+            <span class="icon-add"></span>
+        </button>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="our-mission">
+        <div class="our-mission-content">
+            <div class="our-mission-text-block">
+                <h2 class="liora-display-4">Our Mission</h2>
+                <p class="liora-body-2 mission-text-desktop">우리의 역할은 모든 사람이 자신만의 고유한 빛을 발견하고, 그 빛으로<br>빛나는 삶을 살아가도록 돕는 것입니다. 진정한 아름다움은 일시적인 것이 아닌,<br>내면에서 우러 나오는 찬란한 광채를 위해 노력하겠습니다.</p>
+                <p class="liora-body-2 mission-text-mobile">우리의 역할은 모든 사람이 자신만의 고유한 빛을<br>발견하고,그 빛으로 빛나는 삶을 살아가도록<br>돕는 것입니다. 진정한 아름다움은 일시적인 것이<br>아닌, 내면에서 우러 나오는 찬란한 광채를<br>위해 노력하겠습니다.</p>
+            </div>
+            <div class="our-mission-image-area">
+                <div class="mission-image mission-image-1">
+                    <img src="<?= asset('public/images/About/OurMisssion_image1.png') ?>" alt="Mission 1">
+                </div>
+                <div class="mission-image mission-image-2">
+                    <img src="<?= asset('public/images/About/OurMission_image2.png') ?>" alt="Mission 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vision Section -->
+    <section class="our-vision">
+        <div class="our-vision-content">
+            <div class="our-vision-text-block">
+                <p class="liora-body-1 vision-text-desktop">LIORA는 '나의 빛'이라는 믿음에서 시작되었습니다. 획일화된 아름다움의<br>기준 속에서, 고객께서 가진 본연의 빛과 아름다움을 잃지 않고 오늘보다<br>나은 내일의 모습을 만들어갈 수 있도록 함께합니다.</p>
+                <p class="liora-mobile-body-1 vision-text-mobile">LIORA는 '나의 빛'이라는 믿음<br>에서 시작되었습니다. 획일화<br>된 아름다움의 기준 속에서,<br>고객께서 가진 본연의 빛과<br>아름다움을 잃지 않고 오늘<br>보다 나은 내일의 모습을 만들<br>어갈 수 있도록 함께합니다.</p>
+            </div>
+            <div class="our-vision-image-area">
+                <img src="<?= asset('public/images/About/image-area.png') ?>" alt="Vision">
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Essence Section -->
+    <section id="brand-essence" class="brand-essence-about">
+        <div class="brand-essence-about-content">
+            <div class="brand-essence-about-title">
+                <h2 class="liora-display-4">Brand Essence</h2>
+            </div>
+            <div class="brand-essence-about-main">
+                <div class="brand-essence-about-image">
+                    <img id="brand-essence-image" src="<?= asset('public/images/About/BrandEssence_image-area.png') ?>" alt="Brand Essence">
+                </div>
+                <div class="brand-essence-about-accordion">
+                    <div class="accordion-item accordion-clarity">
+                        <div class="accordion-header">
+                            <h3 class="liora-display-6">Clarity</h3>
+                            <button class="accordion-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="liora-body-2">LIORA가 선사하는 탄력은 시간이 흘러도 변치 않는 피부의 힘이자, 활기차고 자신감 있는 모습입니다. 우리는 단순한 시술 효과를 넘어, 고객의 아름다움을 유지할 수 있도록 돕습니다.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item active">
+                        <div class="accordion-header">
+                            <h3 class="liora-display-6">Softness</h3>
+                            <button class="accordion-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="liora-body-2">LIORA가 선사하는 탄력은 시간이 흘러도 변치 않는 피부의<br>힘이자, 활기차고 자신감 있는 모습입니다. 우리는 단순한 시술<br>효과를 넘어, 고객의 아름다움을 유지할 수 있도록 돕습니다.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item accordion-elegance">
+                        <div class="accordion-header">
+                            <h3 class="liora-display-6">Elegance</h3>
+                            <button class="accordion-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="liora-body-2">LIORA가 선사하는 탄력은 시간이 흘러도 변치 않는 피부의 힘이자, 활기차고 자신감 있는 모습입니다. 우리는 단순한 시술 효과를 넘어, 고객의 아름다움을 유지할 수 있도록 돕습니다.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item accordion-resilience">
+                        <div class="accordion-header">
+                            <h3 class="liora-display-6">Resilience</h3>
+                            <button class="accordion-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="liora-body-2">LIORA가 선사하는 탄력은 시간이 흘러도 변치 않는 피부의 힘이자, 활기차고 자신감 있는 모습입니다. 우리는 단순한 시술 효과를 넘어, 고객의 아름다움을 유지할 수 있도록 돕습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <div class="philosophy-content">
+            <div class="philosophy-title">
+                <h2 class="liora-display-4">Philosophy</h2>
+            </div>
+            <div class="philosophy-card-list">
+                <div class="philosophy-card">
+                    <div class="philosophy-card-image">
+                        <img src="<?= asset('public/images/About/Philosophy_image1.png') ?>" alt="Philosophy 1">
+                    </div>
+                    <div class="philosophy-card-text">
+                        <div class="philosophy-card-title">
+                            <p class="liora-body-2">과학적 근거 중심 치료</p>
+                        </div>
+                        <p class="liora-body-3-light">안전하고 효과적인 치료를 통해 환자에게 신뢰할 수<br>있는 결과를 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="philosophy-card">
+                    <div class="philosophy-card-image">
+                        <img src="<?= asset('public/images/About/Philosophy_image2.png') ?>" alt="Philosophy 2">
+                    </div>
+                    <div class="philosophy-card-text">
+                        <div class="philosophy-card-title">
+                            <p class="liora-body-2">본연의 아름다움을 회복하는 케어</p>
+                        </div>
+                        <p class="liora-body-3-light">일시적인 개선이 아닌, 피부 본연의 균형을 회복시켜<br>건강하고 오래 지속되는 아름다움을 완성합니다.</p>
+                    </div>
+                </div>
+                <div class="philosophy-card">
+                    <div class="philosophy-card-image">
+                        <img src="<?= asset('public/images/About/Philosophy_image3.png') ?>" alt="Philosophy 3">
+                    </div>
+                    <div class="philosophy-card-text">
+                        <div class="philosophy-card-title">
+                            <p class="liora-body-2">피부 전체를 생각하는 진료</p>
+                        </div>
+                        <p class="liora-body-3-light">피부 본연의 균형을 회복하여 장기적으로 건강하고<br>아름다운 피부를 만들어갑니다.</p>
+                    </div>
+                </div>
+                <div class="philosophy-card">
+                    <div class="philosophy-card-image">
+                        <img src="<?= asset('public/images/About/Philosophy_image4.png') ?>" alt="Philosophy 4">
+                    </div>
+                    <div class="philosophy-card-text">
+                        <div class="philosophy-card-title">
+                            <p class="liora-body-2">환자를 중심으로 하는 케어</p>
+                        </div>
+                        <p class="liora-body-3-light">생활 습관과 고민을 함께 이해하며 맞춤형 솔루션을<br>통해 고객님의 최우선으로 합니다</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- 푸터는 js/components/footer.js에서 동적으로 생성됩니다 -->
+    </footer>
+
+</body>
+</html>
+

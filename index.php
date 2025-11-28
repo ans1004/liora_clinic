@@ -1,0 +1,324 @@
+<?php
+/**
+ * LIORA CLINIC - Home Page
+ * 메인 페이지
+ */
+
+// 설정 및 헬퍼 함수 로드
+require_once __DIR__ . '/lib/config.php';
+require_once __DIR__ . '/lib/helper-functions.php';
+
+// 페이지 설정
+$page_title = 'Liora Clinic - Home';
+$additional_css = ['css/main.css'];
+$additional_js = [
+    'js/components/navbar.js',
+    'js/components/footer.js',
+    'js/components/floating-button.js',
+    'js/navbar.js',
+    'js/carousel.js',
+    'js/signature-carousel.js',
+    'js/solution-carousel.js'
+];
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= h($page_title) ?></title>
+    <?php foreach ($additional_css as $css): ?>
+    <link rel="stylesheet" href="<?= asset($css) ?>">
+    <?php endforeach; ?>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Forum:wght@400&family=Pretendard:wght@300;400;600&display=swap" rel="stylesheet">
+    <?php foreach ($additional_js as $js): ?>
+    <script src="<?= asset($js) ?>" defer></script>
+    <?php endforeach; ?>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- 네비게이션은 js/components/navbar.js에서 동적으로 생성됩니다 -->
+        </div>
+    </nav>
+
+    <!-- Hero Slide Section -->
+    <section class="hero-slide">
+        <div class="slide-background">
+            <!-- 슬라이드 1 -->
+            <div class="slide-item active" data-slide="0">
+                <img src="<?= asset('public/images/Home/Hero_image.jpg') ?>" alt="Hero" class="img-desktop">
+                <img src="<?= asset('public/images/Home_MO/hero-slide.png') ?>" alt="Hero" class="img-mobile">
+            </div>
+            <!-- 슬라이드 2 -->
+            <div class="slide-item" data-slide="1">
+                <img src="<?= asset('public/images/Home/Hero_image2.png') ?>" alt="Hero 2" class="img-desktop">
+                <img src="<?= asset('public/images/Home_MO/hero-slide.png') ?>" alt="Hero 2" class="img-mobile">
+            </div>
+            <!-- 슬라이드 3 -->
+            <div class="slide-item" data-slide="2">
+                <img src="<?= asset('public/images/Home/Hero_image.jpg') ?>" alt="Hero" class="img-desktop">
+                <img src="<?= asset('public/images/Home_MO/hero-slide.png') ?>" alt="Hero" class="img-mobile">
+            </div>
+            <!-- 슬라이드 4 -->
+            <div class="slide-item" data-slide="3">
+                <img src="<?= asset('public/images/Home/Hero_image2.png') ?>" alt="Hero 2" class="img-desktop">
+                <img src="<?= asset('public/images/Home_MO/hero-slide.png') ?>" alt="Hero 2" class="img-mobile">
+            </div>
+        </div>
+        <div class="hero-text">
+            <h1 class="headline_hr liora-display-3">Your Daily Dose of<br>Confidence.</h1>
+            <p class="description_hr liora-body-3-light">매일 아침 거울 앞에서 느끼는 작은 변화가<br>당신의 하루를 완전히 새롭게 만들어 드립니다.</p>
+        </div>
+        <div class="floating-section">
+            <div class="carousel-dot">
+                <div class="dot active" data-index="0">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="bg-circle" cx="20" cy="20" r="19.5"></circle>
+                        <circle class="progress-circle" cx="20" cy="20" r="19.5"></circle>
+                    </svg>
+                </div>
+                <div class="dot" data-index="1">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="bg-circle" cx="20" cy="20" r="19.5"></circle>
+                        <circle class="progress-circle" cx="20" cy="20" r="19.5"></circle>
+                    </svg>
+                </div>
+                <div class="dot" data-index="2">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="bg-circle" cx="20" cy="20" r="19.5"></circle>
+                        <circle class="progress-circle" cx="20" cy="20" r="19.5"></circle>
+                    </svg>
+                </div>
+                <div class="dot" data-index="3">
+                    <svg class="progress-ring" width="40" height="40">
+                        <circle class="bg-circle" cx="20" cy="20" r="19.5"></circle>
+                        <circle class="progress-circle" cx="20" cy="20" r="19.5"></circle>
+                    </svg>
+                </div>
+            </div>
+            <button class="floating-button">
+                <span class="icon-add"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Brand Essence Section -->
+    <section class="brand-essence">
+        <h2 class="headline_be liora-display-2">Clear Skin,<br>Clear Moments.</h2>
+        <div class="brand-essence-content">
+            <div class="brand-essence-shape">
+                <div class="shape-item">
+                    <img src="<?= asset('public/images/Home/shape-clean.png') ?>" alt="Clean">
+                </div>
+                <div class="shape-item">
+                    <img src="<?= asset('public/images/Home/shape-beauty.png') ?>" alt="Beauty">
+                </div>
+                <div class="shape-item">
+                    <img src="<?= asset('public/images/Home/shape-elasticity.png') ?>" alt="Elasticity">
+                </div>
+                <div class="shape-item">
+                    <img src="<?= asset('public/images/Home/shape-soft.png') ?>" alt="Soft">
+                </div>
+            </div>
+            <div class="button_br">
+                <a href="about.html#brand-essence" class="learn-more-btn">
+                    <span class="liora-title-1">Learn More</span>
+                    <span class="icon">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Section -->
+    <section class="signature">
+        <div class="signature-title">
+            <h2 class="headline_sg liora-display-5">Liora Signature</h2>
+        </div>
+        <div class="signature-card-slide">
+            <div class="carousel-dot">
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+                <div class="dot" data-index="3"></div>
+            </div>
+            <div class="signature-cards-wrapper">
+                <div class="signature-card active" data-index="0">
+                    <div class="signature-card-image">
+                        <img src="<?= asset('public/images/Home/signature-card-image.png') ?>" alt="Signature Card" class="img-desktop">
+                        <img src="<?= asset('public/images/Home_MO/signature-card.png') ?>" alt="Signature Card" class="img-mobile">
+                    </div>
+                    <div class="signature-card-content">
+                        <div class="text-button_sg">
+                            <div class="text">
+                                <h3 class="signature-maintext liora-display-4">Secret<br>Contouring</h3>
+                                <p class="liora-body-3-light">시크릿 윤곽선은 단순히 피부를 당기는 것이 아닌,<br>피부 속부터 콜라겐 재생을 촉진하여<br>수술 없이 탄력 있는 얼굴로 돌아가게 합니다.</p>
+                            </div>
+                            <div class="button">
+                                <a href="signature-package.html" class="learn-more-btn-small">
+                                    <span class="liora-title-2">Learn More</span>
+                                    <span class="icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="arrow-button-duo">
+                            <button class="button-prev">←</button>
+                            <button class="button-next">→</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="signature-card" data-index="1">
+                    <div class="signature-card-image">
+                        <img src="<?= asset('public/images/Home/signature-card-image.png') ?>" alt="Signature Card" class="img-desktop">
+                        <img src="<?= asset('public/images/Home_MO/signature-card.png') ?>" alt="Signature Card" class="img-mobile">
+                    </div>
+                    <div class="signature-card-content">
+                        <div class="text-button_sg">
+                            <div class="text">
+                                <h3 class="signature-maintext liora-display-4">Card 2<br>Title</h3>
+                                <p class="liora-body-3-light">두 번째 카드 내용입니다.<br>추가 카드 내용을 여기에 입력하세요.</p>
+                            </div>
+                            <div class="button">
+                                <a href="signature-package.html" class="learn-more-btn-small">
+                                    <span class="liora-title-2">Learn More</span>
+                                    <span class="icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="arrow-button-duo">
+                            <button class="button-prev">←</button>
+                            <button class="button-next">→</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="signature-card" data-index="2">
+                    <div class="signature-card-image">
+                        <img src="<?= asset('public/images/Home/signature-card-image.png') ?>" alt="Signature Card" class="img-desktop">
+                        <img src="<?= asset('public/images/Home_MO/signature-card.png') ?>" alt="Signature Card" class="img-mobile">
+                    </div>
+                    <div class="signature-card-content">
+                        <div class="text-button_sg">
+                            <div class="text">
+                                <h3 class="signature-maintext liora-display-4">Card 3<br>Title</h3>
+                                <p class="liora-body-3-light">세 번째 카드 내용입니다.<br>추가 카드 내용을 여기에 입력하세요.</p>
+                            </div>
+                            <div class="button">
+                                <a href="signature-package.html" class="learn-more-btn-small">
+                                    <span class="liora-title-2">Learn More</span>
+                                    <span class="icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="arrow-button-duo">
+                            <button class="button-prev">←</button>
+                            <button class="button-next">→</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="signature-card" data-index="3">
+                    <div class="signature-card-image">
+                        <img src="<?= asset('public/images/Home/signature-card-image.png') ?>" alt="Signature Card" class="img-desktop">
+                        <img src="<?= asset('public/images/Home_MO/signature-card.png') ?>" alt="Signature Card" class="img-mobile">
+                    </div>
+                    <div class="signature-card-content">
+                        <div class="text-button_sg">
+                            <div class="text">
+                                <h3 class="signature-maintext liora-display-4">Card 4<br>Title</h3>
+                                <p class="liora-body-3-light">네 번째 카드 내용입니다.<br>추가 카드 내용을 여기에 입력하세요.</p>
+                            </div>
+                            <div class="button">
+                                <a href="signature-package.html" class="learn-more-btn-small">
+                                    <span class="liora-title-2">Learn More</span>
+                                    <span class="icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="arrow-button-duo">
+                            <button class="button-prev">←</button>
+                            <button class="button-next">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Solution Section -->
+    <section class="our-solution">
+        <div class="our-solution-title">
+            <h2 class="liora-display-5">Our Solution</h2>
+            <div class="control">
+                <button class="button-prev">←</button>
+                <button class="button-next">→</button>
+            </div>
+        </div>
+        <div class="our-solution-cards">
+            <div class="our-solution-card">
+                <div class="our-solution-image">
+                    <img src="<?= asset('public/images/Home/our solution-nature-image1.png') ?>" alt="Nature" class="img-desktop">
+                    <img src="<?= asset('public/images/Home_MO/our solution-nature-image1.png') ?>" alt="Nature" class="img-mobile">
+                </div>
+                <div class="our-solution-text">
+                    <p class="solution-number liora-title-2">Solution / 01</p>
+                    <h3 class="solution-title liora-display-6">Nature</h3>
+                    <p class="solution-subtitle liora-body-2">수술 없이도 완성되는 자연스러움</p>
+                </div>
+            </div>
+            <div class="our-solution-card">
+                <div class="our-solution-image">
+                    <img src="<?= asset('public/images/Home/our solution-repair-image2.png') ?>" alt="Repair" class="img-desktop">
+                    <img src="<?= asset('public/images/Home_MO/our solution-repair-image2.png') ?>" alt="Repair" class="img-mobile">
+                </div>
+                <div class="our-solution-text">
+                    <p class="solution-number liora-title-2">Solution / 02</p>
+                    <h3 class="solution-title liora-display-6">Repair</h3>
+                    <p class="solution-subtitle liora-body-2">주입 흔적 없이, 피부 속 깊은 재생</p>
+                </div>
+            </div>
+            <div class="our-solution-card">
+                <div class="our-solution-image">
+                    <img src="<?= asset('public/images/Home/our solution-Volume-image3.png') ?>" alt="Volume" class="img-desktop">
+                    <img src="<?= asset('public/images/Home_MO/our solution-Volume-image3.png') ?>" alt="Volume" class="img-mobile">
+                </div>
+                <div class="our-solution-text">
+                    <p class="solution-number liora-title-2">Solution / 03</p>
+                    <h3 class="solution-title liora-display-6">Volume</h3>
+                    <p class="solution-subtitle liora-body-2">과하지 않은 아름다움, 조화로운 볼륨</p>
+                </div>
+            </div>
+            <div class="our-solution-card">
+                <div class="our-solution-image">
+                    <img src="<?= asset('public/images/Home/our solution-Refine-image.png') ?>" alt="Refine" class="img-desktop">
+                    <img src="<?= asset('public/images/Home_MO/our solution-Refine-image4.png') ?>" alt="Refine" class="img-mobile">
+                </div>
+                <div class="our-solution-text">
+                    <p class="solution-number liora-title-2">Solution / 04</p>
+                    <h3 class="solution-title liora-display-6">Refine</h3>
+                    <p class="solution-subtitle liora-body-2">정교함으로 완성하는 아름다운 선</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Section -->
+    <section class="marquee">
+        <div class="marquee-text">
+            <p class="liora-display-1">Natural beauty is the most perfect art.</p>
+        </div>
+        <div class="footer-image">
+            <img src="<?= asset('public/images/Home/footer-image.png') ?>" alt="Footer Image" class="img-desktop">
+            <img src="<?= asset('public/images/Home_MO/footer-image1.png') ?>" alt="Footer Image" class="img-mobile">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- 푸터는 js/components/footer.js에서 동적으로 생성됩니다 -->
+    </footer>
+</body>
+</html>
+

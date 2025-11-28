@@ -173,26 +173,8 @@
 }
 
 /* 반응형 디자인 */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .event-detail-content {
-        padding: 120px 40px 80px 40px;
-    }
 
-    .event-detail-section,
-    .event-detail-navigation {
-        max-width: 100%;
-    }
-
-    .event-detail-title {
-        padding: 30px 20px;
-    }
-
-    .event-detail-image-area {
-        height: 400px;
-    }
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .event-detail-content {
         padding: 120px 20px 80px 20px; /* 모바일에서 위 패딩 120px */
     }

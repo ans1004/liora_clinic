@@ -1,22 +1,40 @@
+<?php
+/**
+ * LIORA CLINIC - Our Doctors Page
+ * 의료진 소개 페이지
+ */
+
+// 설정 및 헬퍼 함수 로드
+require_once __DIR__ . '/lib/config.php';
+require_once __DIR__ . '/lib/helper-functions.php';
+
+// 페이지 설정
+$page_title = 'Liora Clinic - Our Doctors';
+$additional_css = ['css/main.css', 'css/our-doctors.css'];
+$additional_js = [
+    'js/components/navbar.js',
+    'js/components/footer.js',
+    'js/components/floating-button.js',
+    'js/navbar.js',
+    'js/our-doctors.js'
+];
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liora Clinic - Our Doctors</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title><?= h($page_title) ?></title>
+    <?php foreach ($additional_css as $css): ?>
+    <link rel="stylesheet" href="<?= asset($css) ?>">
+    <?php endforeach; ?>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Forum:wght@400&family=Pretendard:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Components JavaScript -->
-    <script src="js/components/navbar.js" defer></script>
-    <script src="js/components/footer.js" defer></script>
-    <script src="js/components/floating-button.js" defer></script>
-    <!-- Navbar JavaScript -->
-    <script src="js/navbar.js" defer></script>
-    <!-- Our Doctors JavaScript -->
-    <script src="js/our-doctors.js" defer></script>
+    <?php foreach ($additional_js as $js): ?>
+    <script src="<?= asset($js) ?>" defer></script>
+    <?php endforeach; ?>
 </head>
 <body>
     <!-- Navbar -->
@@ -30,8 +48,8 @@
     <section class="our-doctors-hero">
         <div class="our-doctors-hero-content">
             <div class="our-doctors-hero-text-block">
-                <h1 class="our-doctors-hero-title liora-display-3">Our Doctors</h1>
-                <p class="our-doctors-hero-subtitle liora-body-2">깊이 있는 진단과 맞춤 솔루션으로 고객님을 지켜드리고자 합니다</p>
+                <h1 class="our-doctors-hero-title liora-display-3 liora-mobile-display-3">Our Doctors</h1>
+                <p class="our-doctors-hero-subtitle liora-body-2 liora-mobile-body-2">깊이 있는 진단과 맞춤 솔루션으로 고객님을 지켜드리고자 합니다</p>
             </div>
         </div>
         <button class="floating-button">
@@ -52,41 +70,44 @@
                     <div class="our-doctors-profile-text-block">
                         <div class="our-doctors-profile-intro">
                             <div class="our-doctors-profile-name-wrapper">
-                                <h2 class="our-doctors-profile-name liora-body-1-emphasized">홍지욱</h2>
-                                <span class="our-doctors-profile-title liora-body-2">대표원장</span>
+                                <h2 class="our-doctors-profile-name liora-body-1-emphasized liora-mobile-body-1">홍지욱</h2>
+                                <span class="our-doctors-profile-title liora-body-2 liora-mobile-body-2">대표원장</span>
                             </div>
-                            <p class="our-doctors-profile-description liora-body-2">모든 피부는 이야기를 담고 있습니다. 그 이야기에 귀를 기울여 가장 어울리는 해답을 찾아드리겠습니다.</p>
+                            <p class="our-doctors-profile-description liora-body-2 liora-mobile-body-2">모든 피부는 이야기를 담고 있습니다. 그 이야기<br>에귀를 기울여 가장 어울리는 해답을 찾아드리겠습니다.</p>
                         </div>
                         <div class="our-doctors-profile-specialty">
-                            <h3 class="our-doctors-profile-label liora-title-2">Specialty</h3>
+                            <h3 class="our-doctors-profile-label liora-title-2 liora-mobile-title-2">Specialty</h3>
                             <ul class="our-doctors-profile-list">
-                                <li class="liora-body-3-light">풀페이스 필러</li>
-                                <li class="liora-body-3-light">탄력·리프팅</li>
-                                <li class="liora-body-3-light">항노화·쁘띠성형</li>
+                                <li class="liora-body-3-light liora-mobile-body-3-light">풀페이스 필러</li>
+                                <li class="liora-body-3-light liora-mobile-body-3-light">탄력·리프팅</li>
+                                <li class="liora-body-3-light liora-mobile-body-3-light">항노화·쁘띠성형</li>
                             </ul>
                         </div>
                         <div class="our-doctors-profile-career">
-                            <h3 class="our-doctors-profile-label liora-title-2">Career</h3>
+                            <h3 class="our-doctors-profile-label liora-title-2 liora-mobile-title-2">Career</h3>
                             <ul class="our-doctors-profile-list">
-                                <li class="liora-body-3-light">스텔라 의과대학 졸업</li>
-                                <li class="liora-body-3-light">오로라 의학전문대학원 수료</li>
-                                <li class="liora-body-3-light">이노바디 비만·체형학회 회원</li>
-                                <li class="liora-body-3-light">울프강 피부미용치료학회 정회원</li>
-                                <li class="liora-body-3-light">바이탈 안티에이징 모임 회원</li>
+                                <li class="liora-body-3-light liora-mobile-body-3-light">스텔라 의과대학 졸업</li>
+                                <li class="liora-body-3-light liora-mobile-body-3-light">오로라 의학전문대학원 수료</li>
+                                <li class="liora-body-3-light liora-mobile-body-3-light">이노바디 비만·체형학회 회원</li>
+                                <li class="liora-body-3-light liora-mobile-body-3-light">울프강 피부미용치료학회 정회원</li>
+                                <li class="liora-body-3-light liora-mobile-body-3-light">바이탈 안티에이징 모임 회원</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Profile 2: 김하은 원장 -->
-                <div class="our-doctors-profile">
+                <div class="our-doctors-profile our-doctors-profile-reverse">
+                    <div class="our-doctors-profile-image">
+                        <img src="public/images/OurDoctors/image2.png" alt="김하은 원장">
+                    </div>
                     <div class="our-doctors-profile-text-block">
                         <div class="our-doctors-profile-intro">
                             <div class="our-doctors-profile-name-wrapper">
-                                <h2 class="our-doctors-profile-name liora-body-1-emphasized">김하은</h2>
-                                <span class="our-doctors-profile-title liora-body-2">원장</span>
+                                <h2 class="our-doctors-profile-name liora-body-1-emphasized liora-mobile-body-1">김하은</h2>
+                                <span class="our-doctors-profile-title liora-body-2 liora-mobile-body-2">원장</span>
                             </div>
-                            <p class="our-doctors-profile-description liora-body-2">아름다움은 순간이 아닌 흐름입니다. 세월이 흘러도 변치 않는 피부를 위해 최선을 다하겠습니다.</p>
+                            <p class="our-doctors-profile-description liora-body-2 liora-mobile-body-2">아름다움은 순간이 아닌 흐름입니다. 세월이 흘러도<br>변치 않는 피부를 위해 최선을 다하겠습니다.</p>
                         </div>
                         <div class="our-doctors-profile-specialty">
                             <h3 class="our-doctors-profile-label liora-title-2">Specialty</h3>
@@ -107,9 +128,6 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="our-doctors-profile-image">
-                        <img src="public/images/OurDoctors/image2.png" alt="김하은 원장">
-                    </div>
                 </div>
 
                 <!-- Profile 3: 윤서린 원장 -->
@@ -120,10 +138,10 @@
                     <div class="our-doctors-profile-text-block">
                         <div class="our-doctors-profile-intro">
                             <div class="our-doctors-profile-name-wrapper">
-                                <h2 class="our-doctors-profile-name liora-body-1-emphasized">윤서린</h2>
-                                <span class="our-doctors-profile-title liora-body-2">원장</span>
+                                <h2 class="our-doctors-profile-name liora-body-1-emphasized liora-mobile-body-1">윤서린</h2>
+                                <span class="our-doctors-profile-title liora-body-2 liora-mobile-body-2">원장</span>
                             </div>
-                            <p class="our-doctors-profile-description liora-body-2">피부 스스로의 힘을 키워, 시간이 흘러도 건강하고 아름다운 상태를 유지할 수 있도록 돕겠습니다.</p>
+                            <p class="our-doctors-profile-description liora-body-2 liora-mobile-body-2">피부 스스로의 힘을 키워, 시간이 흘러도 건강하고<br>아름다운 상태를 유지할 수 있도록 돕겠습니다.</p>
                         </div>
                         <div class="our-doctors-profile-specialty">
                             <h3 class="our-doctors-profile-label liora-title-2">Specialty</h3>
