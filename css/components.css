@@ -547,16 +547,18 @@
     height: 64px;
     border-radius: 80px;
     background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
+    display: flex !important; /* 모든 화면 크기에서 보이도록 명시 */
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s;
     cursor: pointer;
     border: none;
-    position: fixed; /* floating 버튼만 fixed로 고정 */
-    bottom: 20px; /* 모든 페이지에서 20px */
-    right: 20px; /* 오른쪽에서 20px 왼쪽으로 고정 */
+    position: fixed !important; /* floating 버튼만 fixed로 고정 */
+    bottom: 20px !important; /* 모든 페이지에서 20px */
+    right: 20px !important; /* 오른쪽에서 20px 왼쪽으로 고정 */
     z-index: 10000 !important; /* our-solution-title 위에 표시 */
+    visibility: visible !important; /* 항상 보이도록 설정 */
+    opacity: 1 !important; /* 투명도 1로 설정 */
 }
 
 .floating-button:hover {
@@ -961,7 +963,7 @@
 }
 
 /* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /* navbar와 footer가 항상 보이도록 보장 */
     .navbar {
         z-index: 2002 !important; /* 모바일 메뉴 오버레이보다 위에 표시 */

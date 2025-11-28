@@ -137,16 +137,13 @@ button {
 /* floating-button만 fixed로 변경하여 항상 위에 표시 */
 /* Home 페이지는 floating 패딩 20px 유지 */
 .floating-section .floating-button {
-    position: fixed;
-    bottom: 20px; /* Home 페이지는 20px 유지 */
-    right: calc(50% - 640px); /* 중앙 기준 오른쪽 20px (1360px/2 + 20px) */
+    position: fixed !important;
+    bottom: 20px !important; /* Home 페이지는 20px 유지 */
+    right: 20px !important; /* 오른쪽에서 20px 고정 */
     z-index: 10000 !important; /* our-solution-title 위에 표시 (isolation 우회) */
-}
-
-@media screen and (max-width: 1440px) {
-    .floating-section .floating-button {
-        right: 20px; /* 화면 오른쪽에서 20px (Home 페이지는 20px 유지) */
-    }
+    display: flex !important; /* 모든 화면 크기에서 보이도록 명시 */
+    visibility: visible !important; /* 항상 보이도록 설정 */
+    opacity: 1 !important; /* 투명도 1로 설정 */
 }
 
 /* carousel-dot, floating-button 컴포넌트 스타일은 components.css에서 관리 */
@@ -186,6 +183,7 @@ button {
     gap: 20px; /* 이미지 사이 간격 20px */
     margin-bottom: 64px;
     flex-wrap: wrap; /* 기본값 */
+    width: 100%; /* 반응형으로 변경 */
 }
 
 /* 1440px 이상에서 한 줄에 고정 */
@@ -200,23 +198,24 @@ button {
     }
     
     .brand-essence .brand-essence-shape .shape-item {
-        width: 320px !important; /* 이미지 크기 320px */
-        height: 320px !important;
-        flex-shrink: 0 !important;
+        flex: 1 1 0 !important; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
+        min-width: 0 !important; /* flex 아이템이 줄어들 수 있도록 */
+        aspect-ratio: 1 !important; /* 정사각형 비율 유지 */
+        /* max-width 제거하여 화면 크기에 맞춰 자동으로 줄어들도록 */
     }
     
     .brand-essence .brand-essence-shape .shape-item img {
-        width: 320px !important;
-        height: 320px !important;
+        width: 100% !important; /* 반응형으로 변경 */
+        height: 100% !important;
     }
 }
 
 .shape-item {
-    width: 320px; /* 이미지 사이즈 320px */
-    height: 320px; /* 이미지 사이즈 320px */
+    flex: 1 1 0; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
+    min-width: 0; /* flex 아이템이 줄어들 수 있도록 */
+    aspect-ratio: 1; /* 정사각형 비율 유지 */
     border-radius: 0; /* 정사각형으로 변경 */
     overflow: hidden;
-    flex-shrink: 0; /* 축소 방지 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,11 +223,14 @@ button {
 }
 
 .shape-item img {
-    width: 320px; /* 명시적으로 320px로 제한 */
-    height: 320px; /* 명시적으로 320px로 제한 */
+    width: 100%; /* 반응형으로 변경 */
+    height: 100%;
     object-fit: cover;
     object-position: center; /* 이미지 중앙 정렬 */
     display: block; /* 인라인 요소 여백 제거 */
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .button_br {
@@ -735,8 +737,11 @@ button {
     }
 
     .floating-button {
-        right: 20px; /* 태블릿에서 오른쪽에서 20px 왼쪽으로 고정 */
-        bottom: 20px; /* Home 페이지는 20px 유지 */
+        right: 20px !important; /* 태블릿에서 오른쪽에서 20px 왼쪽으로 고정 */
+        bottom: 20px !important; /* Home 페이지는 20px 유지 */
+        display: flex !important; /* 태블릿에서 보이도록 명시 */
+        position: fixed !important; /* 태블릿에서 고정 위치 유지 */
+        z-index: 10000 !important; /* 태블릿에서도 최상위 레이어에 표시 */
     }
 
     .brand-essence {
@@ -748,18 +753,20 @@ button {
     }
 
     .shape-item {
-        width: 240px; /* 태블릿에서 크기 조정 */
-        height: 240px;
+        width: 100%; /* 반응형으로 변경 */
+        max-width: 240px; /* 태블릿 최대 크기 제한 */
+        aspect-ratio: 1; /* 정사각형 비율 유지 */
     }
 
     .shape-item img {
-        width: 240px;
-        height: 240px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
-    .signature {
-        padding: 60px 24px;
-    }
+    /* signature 섹션은 태블릿에서도 데스크톱 레이아웃 유지 */
 
     .our-solution {
         padding: 60px 0 60px 24px; /* 위 60px, 오른쪽 0px, 아래 60px, 왼쪽 24px */
@@ -772,8 +779,8 @@ button {
     /* footer 반응형 스타일은 components.css에서 관리 */
 }
 
-/* 모바일 (768px 이하) */
-/* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
+/* 모바일 (767px 이하) */
+/* 모바일: 360px ~ 767px (표준 360px, 동일한 레이아웃 유지) */
 @media screen and (max-width: 768px) {
     /* 모바일에서 이미지 전환 - 간단하게 */
     .img-desktop {
