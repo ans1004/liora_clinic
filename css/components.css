@@ -779,6 +779,7 @@
     background-color: #ffffff;
     margin-top: 0; /* Marquee와 Footer 사이 간격 제거 */
     position: relative;
+    z-index: 0; /* floating-button 아래에 위치 */
 }
 
 .footer-line {
@@ -1104,7 +1105,7 @@
     
     .footer {
         display: block !important; /* 항상 표시 */
-        z-index: 1; /* 기본 z-index */
+        z-index: 0 !important; /* floating-button 아래에 위치 */
     }
     
     /* 모바일 메뉴가 열릴 때만 navbar 배경색 변경 */
@@ -1484,7 +1485,7 @@
     }
 
     .footer-logo-copyright .logo {
-        height: 54px;
+        height: 100%;
     }
 
     .copyright {

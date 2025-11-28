@@ -91,8 +91,12 @@ async function loadFooter() {
         const footerLogoCopyright = document.createElement('div');
         footerLogoCopyright.className = 'footer-logo-copyright';
         
-        const logo = document.createElement('div');
+        // 로고를 링크로 변경하여 Home으로 이동
+        const logo = document.createElement('a');
+        logo.href = `${basePath}index.html`; // Home 페이지로 이동
         logo.className = 'logo';
+        logo.style.textDecoration = 'none'; // 링크 스타일 제거
+        logo.style.cursor = 'pointer'; // 포인터 커서
         const logoImg = document.createElement('img');
         logoImg.src = `${basePath}public/logo/logo.svg`;
         logoImg.alt = 'Liora Clinic';
