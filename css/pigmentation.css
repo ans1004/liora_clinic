@@ -119,7 +119,7 @@
 }
 
 /* 큰 화면에서 피그마 디자인과 일치하도록 gap 조정 */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
     .text-block {
         gap: 534px; /* 피그마 디자인: 1360 - 156 - 670 = 534px */
     }
@@ -172,11 +172,13 @@
     display: flex;
     justify-content: center;
     gap: 28px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* 줄바꿈 방지 - 1줄로 유지 */
 }
 
 .circle-card {
-    width: 325px;
+    flex: 1 1 0; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
+    min-width: 0; /* flex 아이템이 줄어들 수 있도록 */
+    max-width: 325px; /* 최대 크기 제한 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,12 +186,13 @@
 }
 
 .circle-card .card-image {
-    width: 210px;
-    height: 210px;
+    width: 64.6%; /* 210/325 = 0.646 비율 유지 */
+    aspect-ratio: 1; /* 정원 비율 유지 */
     border-radius: 50%;
     overflow: hidden;
     margin-bottom: 28px;
     flex-shrink: 0;
+    max-width: 210px; /* 최대 크기 제한 */
 }
 
 .circle-card .card-image img {
@@ -235,27 +238,35 @@
 
 .core-technology-card-list {
     display: flex;
-    gap: 28px;
+    gap: 20px;
     justify-content: center;
+    flex-wrap: wrap; /* 화면이 줄어들 때 줄바꿈 허용 */
 }
 
 .core-technology-card {
-    width: 325px;
+    flex: 1 1 0; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
+    min-width: 0; /* flex 아이템이 줄어들 수 있도록 */
+    max-width: 325px; /* 최대 크기 제한 */
     display: flex;
     flex-direction: column;
 }
 
 .core-technology-card-image {
     width: 100%;
-    height: 325px;
+    height: 0;
+    padding-bottom: 100%; /* 정사각형 비율 유지 (1:1) */
     overflow: hidden;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .core-technology-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .core-technology-card-text {
@@ -339,8 +350,17 @@
    반응형 스타일
    ============================================ */
 
-/* 태블릿 (1024px 이하) */
-@media screen and (max-width: 1024px) {
+/* 태블릿 (769px ~ 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    /* 태블릿에서 데스크톱 이미지 사용 */
+    .hero-background .img-desktop {
+        display: block; /* 태블릿에서 데스크탑 이미지 표시 */
+    }
+    
+    .hero-background .img-mobile {
+        display: none; /* 모바일 이미지 숨김 */
+    }
+
     .hero-section {
         height: 600px;
     }
@@ -393,26 +413,29 @@
     }
 
     .core-technology-card-list {
-        flex-wrap: wrap;
-        gap: 24px;
+        display: grid; /* 그리드 레이아웃으로 변경 */
+        grid-template-columns: repeat(2, 1fr); /* 2열로 명확하게 설정 */
+        gap: 48px 20px; /* 좌우 사이 간격 20px로 변경 */
+        justify-items: center; /* 카드 가운데 정렬 */
+        align-items: start; /* 상단 정렬로 변경하여 이미지 위치 맞춤 */
     }
 
     .core-technology-card {
-        width: calc(50% - 12px);
-        max-width: 325px;
+        width: 100%; /* 그리드 아이템은 100% 너비 */
+        max-width: 100%; /* 최대 너비 100%로 설정 */
+        height: auto; /* 높이 자동 조정으로 변경하여 텍스트가 잘리지 않도록 */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .core-technology-card-image {
+        width: 100%;
+        height: 325px; /* 이미지 영역 높이 고정 */
+        flex-shrink: 0; /* 이미지 영역 크기 고정 */
     }
 
     .card-list {
         gap: 24px;
-    }
-
-    .circle-card {
-        width: 280px;
-    }
-
-    .circle-card .card-image {
-        width: 180px;
-        height: 180px;
     }
 
     .section-outtro {
@@ -426,8 +449,8 @@
     }
 }
 
-/* 모바일: 360px ~ 768px (표준 360px, 동일한 레이아웃 유지) */
-@media screen and (min-width: 360px) and (max-width: 768px) {
+/* 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
     /* 모바일에서 데스크탑 이미지 숨기고 모바일 이미지 표시 */
     .hero-background .img-desktop {
         display: none;
@@ -468,7 +491,18 @@
     }
 
     .text-block {
+        flex-direction: column;
+        gap: 8px; /* 타이틀과 본문 사이 간격 조절 */
         margin-bottom: 48px;
+    }
+
+    .section-title {
+        width: 100%;
+        margin-bottom: 0; /* 마진 제거하여 gap으로만 간격 조절 */
+    }
+
+    .section-description {
+        margin-top: 0; /* 마진 제거하여 gap으로만 간격 조절 */
     }
 
     .image-area {
@@ -483,6 +517,8 @@
     }
 
     .core-technology {
+        max-width: 100%; /* 최대 너비 100%로 설정하여 오른쪽 여백 제거 */
+        margin: 0; /* 마진 제거 */
         padding: 60px 20px 120px 20px; /* 모바일 좌우 패딩 20px */
     }
 
@@ -492,7 +528,7 @@
 
     .core-technology-card {
         width: 100%;
-        max-width: 400px;
+        max-width: 100%; /* 최대 너비 100%로 설정하여 오른쪽 여백 제거 */
     }
 
     .core-technology-card-image {
@@ -502,9 +538,12 @@
     }
 
     .core-technology-card-list {
-        flex-direction: column;
+        display: grid; /* 그리드 레이아웃 사용 */
+        grid-template-columns: 1fr; /* 모바일에서 1열로 설정 */
         align-items: center;
         gap: 48px; /* 모바일 카드 사이간격 48px */
+        width: 100%; /* 너비 100%로 설정 */
+        max-width: 100%; /* 최대 너비 100%로 설정 */
     }
 
     .card-list {
@@ -519,13 +558,21 @@
     }
 
     .circle-card .card-image {
-        width: 160px;
-        height: 160px;
+        width: 64.6%; /* 반응형 비율 유지 */
+        aspect-ratio: 1; /* 정원 비율 유지 */
+        max-width: 160px; /* 모바일 최대 크기 제한 */
     }
 
     .section-outtro {
+        flex-direction: column;
+        align-items: flex-start; /* 왼쪽 정렬 */
         padding: 40px 0;
         gap: 40px !important; /* 모바일 headline과 btn-text 사이간격 40px */
+    }
+
+    .outtro-headline {
+        max-width: 100%;
+        text-align: left; /* 왼쪽 정렬 */
     }
 
     /* 모바일에서 데스크톱 텍스트 숨기고 모바일 텍스트 표시 */
